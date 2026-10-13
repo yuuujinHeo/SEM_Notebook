@@ -10,66 +10,425 @@ Get-NetAdapter |
 
 netsh wlan show interfaces
 
-Get-Content "$env:USERPROFILE\.wslconfig"ip -br addr
+Get-Content "$env:USERPROFILE\.wslconfig"
+
+
+
+ip -br addr
 ip route
 ip rule
 ip route get 10.244.201.165
 
 
+[공정 1호기]PS C:\Users\admin\Desktop> Get-NetAdapter |
+>>   Select-Object Name, InterfaceDescription, Status, LinkSpeed
+
+Name                     InterfaceDescription                             Status       LinkSpeed
+----                     --------------------                             ------       ---------
+이더넷 2                 Realtek PCIe GbE Family Controller #2            Up           1 Gbps
+vEthernet (FSE HostVnic) Hyper-V Virtual Ethernet Container Adapter       Up           10 Gbps
+Bluetooth 네트워크 연결  Bluetooth Device (Personal Area Network)         Disconnected 3 Mbps
+이더넷 4                 ASIX AX88179 USB 3.0 to Gigabit Ethernet Adapter Up           100 Mbps
+Wi-Fi                    Intel(R) Wi-Fi 6E AX210 160MHz                   Up           287 Mbps
 
 
-"2026-10-06 오후 5:43:36","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
-"2026-10-06 오후 5:40:07","6062","Netwtw10","6062 - Lso was triggered"
-"2026-10-06 오후 5:40:02","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
-"2026-10-06 오후 5:38:05","6062","Netwtw10","6062 - Lso was triggered"
-"2026-10-06 오후 5:37:52","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
-"2026-10-06 오후 5:37:50","7017","Netwtw10","7017 - secure boot (SB) configuration"
-"2026-10-06 오후 5:37:50","7010","Netwtw10","7010 - driver enabled (miniport init)"
-"2026-10-06 오후 5:37:49","7002","Netwtw10","7002 - CTDP power limit value (SPLC)"
-"2026-10-06 오후 5:37:49","7005","Netwtw10","7005 - SAR value max TX power (WRDS)"
-"2026-10-06 오후 5:37:49","7036","Netwtw10","\Device\NDMP11 서비스가 Intel(R) Wi-Fi 6E AX210 160MHz 상태로 들어갔습니다."
-"2026-10-06 오후 5:37:49","8000","Netwtw10","8000 - Miniport Halt flow (driver disable)"
-"2026-10-06 오후 5:37:48","4003","Microsoft-Windows-WLAN-AutoConfig","WLAN AutoConfig에서 제한된 연결을 검색했으며 자동 복구를 시도합니다.
+PS C:\Users\admin\Desktop>
+PS C:\Users\admin\Desktop> Get-NetAdapter |
+>>   Where-Object InterfaceDescription -Match 'Wi-Fi|Wireless|Intel' |
+>>   ForEach-Object {
+>>     Get-NetAdapterAdvancedProperty -Name $_.Name |
+>>       Select-Object Name, DisplayName, DisplayValue
+>>   }
 
-복구 유형: 4
-오류 코드: 0x0
-트리거 이유: 5
-IP 패밀리: 0
-"
-"2026-10-06 오후 5:37:37","6062","Netwtw10","6062 - Lso was triggered"
-"2026-10-06 오후 5:37:34","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
-"2026-10-06 오후 5:37:15","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
-"2026-10-06 오후 5:37:13","10001","Microsoft-Windows-WLAN-AutoConfig","WLAN 확장성 모듈을 시작했습니다.
+Name  DisplayName                     DisplayValue
+----  -----------                     ------------
+Wi-Fi WoWLAN 연결 해제 시 절전 상태   비활성화함
+Wi-Fi 패킷 통합                       활성화함
+Wi-Fi WoWLAN에 대한 ARP 오프로드      활성화함
+Wi-Fi WoWLAN에 대한 NS 오프로드       활성화함
+Wi-Fi WoWLAN에 대한 GTK 키 재입력     활성화함
+Wi-Fi Wake on 매직 패킷               활성화함
+Wi-Fi Wake on 패턴 일치               활성화함
+Wi-Fi 2.4GHz 채널 폭                  자동
+Wi-Fi 5GHz 채널 폭                    자동
+Wi-Fi 6GHz 채널 폭                    자동
+Wi-Fi 혼합 모드 보호                  RTS/CTS 활성화함
+Wi-Fi AP 선택을 위한 채널 부하의 활용 비활성화함
+Wi-Fi 과부하 채널 비지원              비활성화함
+Wi-Fi 전송 전원                       5. 최고
+Wi-Fi 802.11n/ac/ax 무선 모드         4. 802.11ax
+Wi-Fi 초고대역 (6GHz)                 활성화함
+Wi-Fi MIMO 절전 모드                  SMPS 안 함
+Wi-Fi 로밍의 주동성                   2. 보통-낮음
+Wi-Fi 기본 설정 밴드                  3. 5GHz 밴드 기본 설정
+Wi-Fi 처리량 부스터                   비활성화함
+Wi-Fi U-APSD 지원                     비활성화함
+Wi-Fi 802.11a/b/g 무선 모드           6. 듀얼 밴드 802.11a/b/g
 
-모듈 경로: C:\WINDOWS\system32\IntelIHVRouter10.dll
-"
-"2026-10-06 오후 5:37:13","4000","Microsoft-Windows-WLAN-AutoConfig","WLAN AutoConfig 서비스를 시작했습니다.
-"
-"2026-10-06 오후 5:37:09","7017","Netwtw10","7017 - secure boot (SB) configuration"
-"2026-10-06 오후 5:37:08","7010","Netwtw10","7010 - driver enabled (miniport init)"
-"2026-10-06 오후 5:37:08","7002","Netwtw10","7002 - CTDP power limit value (SPLC)"
-"2026-10-06 오후 5:37:08","7005","Netwtw10","7005 - SAR value max TX power (WRDS)"
-"2026-10-06 오후 5:37:08","7036","Netwtw10","\Device\NDMP4 서비스가 Intel(R) Wi-Fi 6E AX210 160MHz 상태로 들어갔습니다."
-"2026-10-06 오후 4:16:55","6062","Netwtw10","6062 - Lso was triggered"
-"2026-10-06 오후 4:16:55","7003","Netwtw10","7003 - Roam Complete"
-"2026-10-06 오후 4:16:55","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
-"2026-10-06 오후 4:16:30","6062","Netwtw10","6062 - Lso was triggered"
-"2026-10-06 오후 4:16:30","7003","Netwtw10","7003 - Roam Complete"
-"2026-10-06 오후 4:16:30","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
-"2026-10-06 오후 4:15:08","7003","Netwtw10","7003 - Roam Complete"
-"2026-10-06 오후 4:13:59","6062","Netwtw10","6062 - Lso was triggered"
-"2026-10-06 오후 4:13:58","7003","Netwtw10","7003 - Roam Complete"
-"2026-10-06 오후 4:13:58","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
-"2026-10-06 오후 4:11:49","6062","Netwtw10","6062 - Lso was triggered"
-"2026-10-06 오후 4:11:49","7003","Netwtw10","7003 - Roam Complete"
-"2026-10-06 오후 4:11:49","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
-"2026-10-06 오후 4:09:35","7003","Netwtw10","7003 - Roam Complete"
-"2026-10-06 오후 4:09:35","7003","Netwtw10","7003 - Roam Complete"
-"2026-10-06 오후 4:05:17","6062","Netwtw10","6062 - Lso was triggered"
-"2026-10-06 오후 4:05:17","7003","Netwtw10","7003 - Roam Complete"
-"2026-10-06 오후 4:05:17","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
-"2026-10-06 오후 4:02:55","6062","Netwtw10","6062 - Lso was triggered"
-"2026-10-06 오후 4:02:54","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
-"2026-10-06 오후 4:00:44","6062","Netwtw10","6062 - Lso was triggered"
-"2026-10-06 오후 4:00:41","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
-"2026-10-06 오후 4:00:39","10001","Microsoft-Windows-WLAN-AutoConfig","WLAN 확장성 모듈을 시작했습니다.
+
+PS C:\Users\admin\Desktop>
+PS C:\Users\admin\Desktop> netsh wlan show interfaces
+
+시스템에 1 인터페이스가 있습니다.
+
+    이름                   : Wi-Fi
+    설명                   : Intel(R) Wi-Fi 6E AX210 160MHz
+    GUID                   : 2afa640f-98a6-48fe-bc31-5dcba97da8c1
+    물리적 주소            : f8:cf:52:cc:97:82
+    인터페이스 유형         : 기본
+    상태                   : 연결됨
+    SSID                   : sWave_works_shared
+    AP BSSID               : b8:3a:5a:d2:07:91
+    밴드                   : 5GHz
+    채널                : 48
+    네트워크 종류          : 인프라
+    송수신 장치 종류       : 802.11 ax
+    인증                   : WPA2-엔터프라이즈
+    암호                 : CCMP
+    연결 모드        : 프로필
+    수신 속도(Mbps)        : 206
+    전송 속도(Mbps)        : 287
+    신호                   : 69%
+    프로필                : sWave_works_shared
+
+    QoS MSCS 구성됨         : 0
+    QoS 맵 구성됨          : 0
+    정책에서 허용하는 QoS 맵    : 0
+
+    호스트된 네트워크 상태  : 사용할 수 없음
+
+PS C:\Users\admin\Desktop>
+PS C:\Users\admin\Desktop> Get-Content "$env:USERPROFILE\.wslconfig"
+[wsl2]
+networkingMode=mirrored
+dnsTunneling=true
+firewall=false
+
+
+
+[공정2호기]
+PS C:\Users\admin> Get-NetAdapter |
+>>   Where-Object InterfaceDescription -Match 'Wi-Fi|Wireless|Intel' |
+>>   ForEach-Object {
+>>     Get-NetAdapterAdvancedProperty -Name $_.Name |
+>>       Select-Object Name, DisplayName, DisplayValue
+>>   }
+
+Name  DisplayName                 DisplayValue
+----  -----------                 ------------
+Wi-Fi Sleep on WoWLAN Disconnect  Disabled
+Wi-Fi Packet Coalescing           Enabled
+Wi-Fi ARP offload for WoWLAN      Enabled
+Wi-Fi NS offload for WoWLAN       Enabled
+Wi-Fi GTK rekeying for WoWLAN     Enabled
+Wi-Fi Wake on Magic Packet        Enabled
+Wi-Fi Wake on Pattern Match       Enabled
+Wi-Fi Global BG Scan blocking     Never
+Wi-Fi Channel Width for 2.4GHz    Auto
+Wi-Fi Channel Width for 5GHz      Auto
+Wi-Fi Channel Width for 6GHz      Auto
+Wi-Fi Mixed Mode Protection       RTS/CTS Enabled
+Wi-Fi Fat Channel Intolerant      Disabled
+Wi-Fi Transmit Power              5. Highest
+Wi-Fi 802.11n/ac/ax Wireless Mode 4. 802.11ax
+Wi-Fi MIMO Power Save Mode        No SMPS
+Wi-Fi Roaming Aggressiveness      3. Medium
+Wi-Fi Preferred Band              1. No Preference
+Wi-Fi Throughput Booster          Disabled
+Wi-Fi U-APSD support              Disabled
+Wi-Fi 802.11a/b/g Wireless Mode   6. Dual Band 802.11a/b/g
+
+
+PS C:\Users\admin>
+PS C:\Users\admin> netsh wlan show interfaces
+
+시스템에 1 인터페이스가 있습니다.
+
+    이름                   : Wi-Fi
+    설명                   : Intel(R) Wi-Fi 6E AX210 160MHz
+    GUID                   : c7f7ce3b-8159-4b72-b897-598abdde9d00
+    물리적 주소            : 40:d1:33:cd:46:69
+    인터페이스 유형         : 기본
+    상태                   : 연결됨
+    SSID                   : sWave_works_shared
+    AP BSSID               : b8:3a:5a:cd:27:b1
+    밴드                   : 5GHz
+    채널                : 48
+    연결된 Akm-cipher : [ akm = 00-0f-ac:01, 암호 = 00-0f-ac:04 ]
+    네트워크 종류          : 인프라
+    송수신 장치 종류       : 802.11 ax
+    인증                   : WPA2-엔터프라이즈
+    암호                 : CCMP
+    연결 모드        : 자동 연결
+    수신 속도(Mbps)        : 287
+    전송 속도(Mbps)        : 287
+    신호                   : 85%
+    Rssi                   : -56
+    프로필                : sWave_works_shared
+
+    QoS MSCS 구성됨         : 0
+    QoS 맵 구성됨          : 0
+    정책에서 허용하는 QoS 맵    : 0
+
+PS C:\Users\admin>
+PS C:\Users\admin> Get-Content "$env:USERPROFILE\.wslconfig"
+[wsl2]
+networkingMode=mirrored
+dnsTunneling=true
+firewall=false
+
+
+[공정3호기]
+PS C:\Users\admin> Get-NetAdapter |
+>>   Select-Object Name, InterfaceDescription, Status, LinkSpeed
+
+Name                     InterfaceDescription                             Status       LinkSpeed
+----                     --------------------                             ------       ---------
+Fastech                  ASIX AX88179 USB 3.0 to Gigabit Ethernet Adapter Up           100 Mbps
+RB&Vision                Realtek PCIe GbE Family Controller               Up           1 Gbps
+Bluetooth 네트워크 연결  Bluetooth Device (Personal Area Network)         Disconnected 3 Mbps
+vEthernet (FSE HostVnic) Hyper-V Virtual Ethernet Container Adapter       Up           10 Gbps
+Wi-Fi                    Intel(R) Wi-Fi 6E AX210 160MHz                   Up           287 Mbps
+
+
+PS C:\Users\admin>
+PS C:\Users\admin> Get-NetAdapter |
+>>   Where-Object InterfaceDescription -Match 'Wi-Fi|Wireless|Intel' |
+>>   ForEach-Object {
+>>     Get-NetAdapterAdvancedProperty -Name $_.Name |
+>>       Select-Object Name, DisplayName, DisplayValue
+>>   }
+
+Name  DisplayName                 DisplayValue
+----  -----------                 ------------
+Wi-Fi Sleep on WoWLAN Disconnect  Disabled
+Wi-Fi Packet Coalescing           Enabled
+Wi-Fi ARP offload for WoWLAN      Enabled
+Wi-Fi NS offload for WoWLAN       Enabled
+Wi-Fi GTK rekeying for WoWLAN     Enabled
+Wi-Fi Wake on Magic Packet        Enabled
+Wi-Fi Wake on Pattern Match       Enabled
+Wi-Fi Global BG Scan blocking     Never
+Wi-Fi Channel Width for 2.4GHz    Auto
+Wi-Fi Channel Width for 5GHz      Auto
+Wi-Fi Channel Width for 6GHz      Auto
+Wi-Fi Mixed Mode Protection       RTS/CTS Enabled
+Wi-Fi Fat Channel Intolerant      Disabled
+Wi-Fi Transmit Power              5. Highest
+Wi-Fi 802.11n/ac/ax Wireless Mode 4. 802.11ax
+Wi-Fi MIMO Power Save Mode        Auto SMPS
+Wi-Fi Roaming Aggressiveness      3. Medium
+Wi-Fi Preferred Band              1. No Preference
+Wi-Fi Throughput Booster          Disabled
+Wi-Fi U-APSD support              Disabled
+Wi-Fi 802.11a/b/g Wireless Mode   6. Dual Band 802.11a/b/g
+
+
+PS C:\Users\admin>
+PS C:\Users\admin> netsh wlan show interfaces
+
+시스템에 1 인터페이스가 있습니다.
+
+    이름                   : Wi-Fi
+    설명                   : Intel(R) Wi-Fi 6E AX210 160MHz
+    GUID                   : 081c3817-e4c1-4ec4-99f5-342917ab79e3
+    물리적 주소            : 40:d1:33:cd:45:e7
+    인터페이스 유형         : 기본
+    상태                   : 연결됨
+    SSID                   : sWave_works_shared
+    AP BSSID               : b8:3a:5a:d1:e2:91
+    밴드                   : 5GHz
+    채널                : 60
+    연결된 Akm-cipher : [ akm = 00-0f-ac:01, 암호 = 00-0f-ac:04 ]
+    네트워크 종류          : 인프라
+    송수신 장치 종류       : 802.11 ax
+    인증                   : WPA2-엔터프라이즈
+    암호                 : CCMP
+    연결 모드        : 자동 연결
+    수신 속도(Mbps)        : 287
+    전송 속도(Mbps)        : 287
+    신호                   : 83%
+    Rssi                   : -59
+    프로필                : sWave_works_shared
+
+    QoS MSCS 구성됨         : 0
+    QoS 맵 구성됨          : 0
+    정책에서 허용하는 QoS 맵    : 0
+
+PS C:\Users\admin>
+PS C:\Users\admin> Get-Content "$env:USERPROFILE\.wslconfig"
+[wsl2]
+networkingMode=mirrored
+dnsTunneling=true
+firewall=false
+
+
+[물류1호기]
+PS C:\Users\admin> Get-NetAdapter |
+>>   Select-Object Name, InterfaceDescription, Status, LinkSpeed
+
+Name                     InterfaceDescription                             Status       LinkSpeed
+----                     --------------------                             ------       ---------
+RB&Vision                Realtek PCIe GbE Family Controller               Up           1 Gbps
+Wi-Fi                    Intel(R) Wi-Fi 6E AX210 160MHz                   Up           287 Mbps
+Fastech                  ASIX AX88179 USB 3.0 to Gigabit Ethernet Adapter Up           100 Mbps
+Bluetooth 네트워크 연결  Bluetooth Device (Personal Area Network)         Disconnected 3 Mbps
+vEthernet (FSE HostVnic) Hyper-V Virtual Ethernet Container Adapter       Up           10 Gbps
+
+
+PS C:\Users\admin>
+PS C:\Users\admin> Get-NetAdapter |
+>>   Where-Object InterfaceDescription -Match 'Wi-Fi|Wireless|Intel' |
+>>   ForEach-Object {
+>>     Get-NetAdapterAdvancedProperty -Name $_.Name |
+>>       Select-Object Name, DisplayName, DisplayValue
+>>   }
+
+Name  DisplayName                 DisplayValue
+----  -----------                 ------------
+Wi-Fi Sleep on WoWLAN Disconnect  Disabled
+Wi-Fi Packet Coalescing           Enabled
+Wi-Fi ARP offload for WoWLAN      Enabled
+Wi-Fi NS offload for WoWLAN       Enabled
+Wi-Fi GTK rekeying for WoWLAN     Enabled
+Wi-Fi Wake on Magic Packet        Enabled
+Wi-Fi Wake on Pattern Match       Enabled
+Wi-Fi Global BG Scan blocking     Never
+Wi-Fi Channel Width for 2.4GHz    Auto
+Wi-Fi Channel Width for 5GHz      Auto
+Wi-Fi Channel Width for 6GHz      Auto
+Wi-Fi Mixed Mode Protection       RTS/CTS Enabled
+Wi-Fi Fat Channel Intolerant      Disabled
+Wi-Fi Transmit Power              5. Highest
+Wi-Fi 802.11n/ac/ax Wireless Mode 4. 802.11ax
+Wi-Fi MIMO Power Save Mode        Auto SMPS
+Wi-Fi Roaming Aggressiveness      3. Medium
+Wi-Fi Preferred Band              1. No Preference
+Wi-Fi Throughput Booster          Disabled
+Wi-Fi U-APSD support              Disabled
+Wi-Fi 802.11a/b/g Wireless Mode   6. Dual Band 802.11a/b/g
+
+
+PS C:\Users\admin>
+PS C:\Users\admin> netsh wlan show interfaces
+
+시스템에 1 인터페이스가 있습니다.
+
+    이름                   : Wi-Fi
+    설명                   : Intel(R) Wi-Fi 6E AX210 160MHz
+    GUID                   : d29b469c-a217-4c9e-b726-8350340e3248
+    물리적 주소            : 40:d1:33:cd:3f:39
+    인터페이스 유형         : 기본
+    상태                   : 연결됨
+    SSID                   : sWave_works_shared
+    AP BSSID               : b8:3a:5a:d1:6c:f1
+    밴드                   : 5GHz
+    채널                : 124
+    연결된 Akm-cipher : [ akm = 00-0f-ac:01, 암호 = 00-0f-ac:04 ]
+    네트워크 종류          : 인프라
+    송수신 장치 종류       : 802.11 ax
+    인증                   : WPA2-엔터프라이즈
+    암호                 : CCMP
+    연결 모드        : 자동 연결
+    수신 속도(Mbps)        : 229
+    전송 속도(Mbps)        : 287
+    신호                   : 67%
+    Rssi                   : -70
+    프로필                : sWave_works_shared
+
+    QoS MSCS 구성됨         : 0
+    QoS 맵 구성됨          : 0
+    정책에서 허용하는 QoS 맵    : 0
+
+PS C:\Users\admin>
+PS C:\Users\admin> Get-Content "$env:USERPROFILE\.wslconfig"
+[wsl2]
+networkingMode=mirrored
+dnsTunneling=true
+firewall=false
+
+
+
+[물류2호기]
+PS C:\Users\admin> Get-NetAdapter |
+>>   Select-Object Name, InterfaceDescription, Status, LinkSpeed
+
+Name                     InterfaceDescription                             Status       LinkSpeed
+----                     --------------------                             ------       ---------
+Wi-Fi                    Intel(R) Wi-Fi 6E AX210 160MHz                   Up           287 Mbps
+RB&Vision                Realtek PCIe GbE Family Controller               Up           1 Gbps
+Fastech                  ASIX AX88179 USB 3.0 to Gigabit Ethernet Adapter Up           100 Mbps
+Bluetooth 네트워크 연결  Bluetooth Device (Personal Area Network)         Disconnected 3 Mbps
+vEthernet (FSE HostVnic) Hyper-V Virtual Ethernet Container Adapter       Up           10 Gbps
+
+
+PS C:\Users\admin>
+PS C:\Users\admin> Get-NetAdapter |
+>>   Where-Object InterfaceDescription -Match 'Wi-Fi|Wireless|Intel' |
+>>   ForEach-Object {
+>>     Get-NetAdapterAdvancedProperty -Name $_.Name |
+>>       Select-Object Name, DisplayName, DisplayValue
+>>   }
+
+Name  DisplayName                 DisplayValue
+----  -----------                 ------------
+Wi-Fi Sleep on WoWLAN Disconnect  Disabled
+Wi-Fi Packet Coalescing           Enabled
+Wi-Fi ARP offload for WoWLAN      Enabled
+Wi-Fi NS offload for WoWLAN       Enabled
+Wi-Fi GTK rekeying for WoWLAN     Enabled
+Wi-Fi Wake on Magic Packet        Enabled
+Wi-Fi Wake on Pattern Match       Enabled
+Wi-Fi Global BG Scan blocking     Never
+Wi-Fi Channel Width for 2.4GHz    Auto
+Wi-Fi Channel Width for 5GHz      Auto
+Wi-Fi Channel Width for 6GHz      Auto
+Wi-Fi Mixed Mode Protection       RTS/CTS Enabled
+Wi-Fi Fat Channel Intolerant      Disabled
+Wi-Fi Transmit Power              5. Highest
+Wi-Fi 802.11n/ac/ax Wireless Mode 4. 802.11ax
+Wi-Fi MIMO Power Save Mode        Auto SMPS
+Wi-Fi Roaming Aggressiveness      3. Medium
+Wi-Fi Preferred Band              1. No Preference
+Wi-Fi Throughput Booster          Disabled
+Wi-Fi U-APSD support              Disabled
+Wi-Fi 802.11a/b/g Wireless Mode   6. Dual Band 802.11a/b/g
+
+
+PS C:\Users\admin>
+PS C:\Users\admin> netsh wlan show interfaces
+
+시스템에 1 인터페이스가 있습니다.
+
+    이름                   : Wi-Fi
+    설명                   : Intel(R) Wi-Fi 6E AX210 160MHz
+    GUID                   : f81a1466-3599-4725-b5ce-1b88499a1e16
+    물리적 주소            : 40:d1:33:cd:43:da
+    인터페이스 유형         : 기본
+    상태                   : 연결됨
+    SSID                   : sWave_works_shared
+    AP BSSID               : b8:3a:5a:d1:23:f1
+    밴드                   : 5GHz
+    채널                : 116
+    연결된 Akm-cipher : [ akm = 00-0f-ac:01, 암호 = 00-0f-ac:04 ]
+    네트워크 종류          : 인프라
+    송수신 장치 종류       : 802.11 ax
+    인증                   : WPA2-엔터프라이즈
+    암호                 : CCMP
+    연결 모드        : 자동 연결
+    수신 속도(Mbps)        : 172
+    전송 속도(Mbps)        : 287
+    신호                   : 75%
+    Rssi                   : -69
+    프로필                : sWave_works_shared
+
+    QoS MSCS 구성됨         : 0
+    QoS 맵 구성됨          : 0
+    정책에서 허용하는 QoS 맵    : 0
+
+PS C:\Users\admin>
+PS C:\Users\admin> Get-Content "$env:USERPROFILE\.wslconfig"
+[wsl2]
+networkingMode=mirrored
+dnsTunneling=true
+firewall=false
