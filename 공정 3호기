@@ -1,1 +1,15 @@
 
+
+[공정 3호기]
+WSL 버전: 2.7.10.0
+커널 버전: 6.18.33.2-2
+WSLg 버전: 1.0.73.2
+MSRDC 버전: 1.2.6676
+Direct3D 버전: 1.611.1-81528511
+DXCore 버전: 10.0.26100.1-240331-1435.ge-release
+Windows 버전: 10.0.26100.7462
+기본 배포: Ubuntu-22.04
+기본 버전: 2
+WindowsProductName                  WindowsVersion OsBuildNumber
+------------------                  -------------- -------------
+Windows 10 IoT Enterprise LTSC 2024 2009           26100
