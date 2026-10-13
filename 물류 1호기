@@ -12,3 +12,265 @@ Windows 버전: 10.0.26100.7462
 WindowsProductName                  WindowsVersion OsBuildNumber
 ------------------                  -------------- -------------
 Windows 10 IoT Enterprise LTSC 2024 2009           26100
+
+
+
+[
+    {
+        "Id": "e8e1f136455dcbb799f73edd20f960def357939cc2c8c2f45d02c07e62b4c5d8",
+        "Created": "2026-09-16T02:48:04.769122701Z",
+        "Path": "/usr/local/bin/runtime-entrypoint.sh",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1064,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-10-11T23:28:47.473657163Z",
+            "FinishedAt": "2026-10-11T23:28:42.533087664Z"
+        },
+        "Image": "sha256:1627f08337e3ed4e2069f579eecbba7185826167b0098e621f24aff609baa377",
+        "ResolvConfPath": "/var/lib/docker/containers/e8e1f136455dcbb799f73edd20f960def357939cc2c8c2f45d02c07e62b4c5d8/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/e8e1f136455dcbb799f73edd20f960def357939cc2c8c2f45d02c07e62b4c5d8/hostname",
+        "HostsPath": "/var/lib/docker/containers/e8e1f136455dcbb799f73edd20f960def357939cc2c8c2f45d02c07e62b4c5d8/hosts",
+        "LogPath": "/var/lib/docker/containers/e8e1f136455dcbb799f73edd20f960def357939cc2c8c2f45d02c07e62b4c5d8/e8e1f136455dcbb799f73edd20f960def357939cc2c8c2f45d02c07e62b4c5d8-json.log",
+        "Name": "/muscat",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/home/rainbow/robot-repeater-server/common:/app/services/common:ro",
+                "/home/rainbow/robot-repeater-server/log:/app/services/log:ro",
+                "/app/data:/app/data",
+                "/home/rainbow/robot-repeater-server/amr:/app/services/amr:ro"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "host",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "host",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": [
+                "label=disable"
+            ],
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 6442450944,
+            "NanoCpus": 2000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 6442450944,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/app/data",
+                "Destination": "/app/data",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/home/rainbow/robot-repeater-server/amr",
+                "Destination": "/app/services/amr",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/home/rainbow/robot-repeater-server/common",
+                "Destination": "/app/services/common",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/home/rainbow/robot-repeater-server/log",
+                "Destination": "/app/services/log",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "DESKTOP-19T7OTG",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "RB_MODE=prod",
+                "RB_BIN_DIR=/app/services",
+                "RB_LOG_MAX_MB=20",
+                "RB_LOG_BACKUPS=5",
+                "RB_ENABLED_SERVICES=amr,common,log",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "LC_ALL=C.UTF-8",
+                "ROS_DISTRO=jazzy",
+                "RB_SHARED_SITE_PACKAGES=/usr/local/lib/python3.12/dist-packages",
+                "RB_RUNTIME_ROOT=/app/data/runtime",
+                "RB_RUNTIME_VENV=/app/data/runtime/venv",
+                "RB_ROS_WS=/app/data/runtime/ros2_ws",
+                "RB_EXTENSIONS_DIR=/app/data/runtime/extensions",
+                "RB_PROMPT_AGENT_LLM_PROVIDER=ollama",
+                "RB_PROMPT_AGENT_LLM_ENDPOINT=http://host.docker.internal:11434",
+                "RB_PROMPT_AGENT_LLM_MODEL=qwen3:1.7b",
+                "RB_PROMPT_AGENT_LLM_TIMEOUT_SEC=3.0",
+                "RB_PROMPT_AGENT_LLM_NUM_CTX=512",
+                "RB_PROMPT_AGENT_LLM_NUM_PREDICT=96",
+                "RB_PROMPT_AGENT_DECISION_BUDGET_MS=3000"
+            ],
+            "Cmd": null,
+            "Image": "muscat:latest",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "/usr/local/bin/runtime-entrypoint.sh"
+            ],
+            "Labels": {
+                "com.rainbow.project": "muscat",
+                "com.rainbow.role": "muscat",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "637cd525b48f6eb9eb674f6b9699f1c0c2ca994e27238f38adf4163c64cd6dde",
+            "SandboxKey": "/var/run/docker/netns/default",
+            "Ports": {},
+            "Networks": {
+                "host": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "a60a53a72d09958c35c1d6c9928af145aba9006d840cce1bbb95eb4cc95f9b0e",
+                    "EndpointID": "d024d20bd4a9c13681b8c51c816609cedcc60d36b447c842ba28ea889effef90",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:1627f08337e3ed4e2069f579eecbba7185826167b0098e621f24aff609baa377",
+            "size": 5625,
+            "annotations": {
+                "io.containerd.image.name": "docker.io/library/muscat:latest",
+                "org.opencontainers.image.created": "2026-09-15T11:27:59Z",
+                "org.opencontainers.image.ref.name": "latest"
+            },
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
