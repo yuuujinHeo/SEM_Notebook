@@ -1,0 +1,31 @@
+[물류1호기 - 2호기]
+admin@DESKTOP-19T7OTG C:\Users\admin>wsl --version
+WSL 버전: 2.7.10.0
+커널 버전: 6.18.33.2-2
+WSLg 버전: 1.0.73.2
+MSRDC 버전: 1.2.6676
+Direct3D 버전: 1.611.1-81528511
+DXCore 버전: 10.0.26100.1-240331-1435.ge-release
+Windows 버전: 10.0.26100.7462
+
+admin@DESKTOP-19T7OTG C:\Users\admin>wsl --status
+기본 배포: Ubuntu-22.04
+기본 버전: 2
+현재 컴퓨터 구성에서는 WSL1이 지원되지 않습니다.
+WSL1을 사용하려면 "Windows Subsystem for Linux” 선택적 구성 요소를 사용하세요.
+
+admin@DESKTOP-19T7OTG C:\Users\admin>
+admin@DESKTOP-19T7OTG C:\Users\admin>Get-ComputerInfo |
+명령 구문이 올바르지 않습니다.
+admin@DESKTOP-19T7OTG C:\Users\admin>    Select-Object WindowsProductName, WindowsVersion, OsBuildNumber
+'Select-Object'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
+배치 파일이 아닙니다.
+
+admin@DESKTOP-19T7OTG C:\Users\admin>
+admin@DESKTOP-19T7OTG C:\Users\admin>Get-NetAdapter |
+명령 구문이 올바르지 않습니다.
+admin@DESKTOP-19T7OTG C:\Users\admin>    Format-Table Name, InterfaceDescription, Status, LinkSpeed, MacAddress
+'Format-Table'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
+배치 파일이 아닙니다.
+
+admin@DESKTOP-19T7OTG C:\Users\admin>
