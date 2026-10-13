@@ -8,6 +8,9 @@ DXCore 버전: 10.0.26100.1-240331-1435.ge-release
 Windows 버전: 10.0.26100.7462
 기본 배포: Ubuntu-22.04
 기본 버전: 2
+WindowsProductName                  WindowsVersion OsBuildNumber
+------------------                  -------------- -------------
+Windows 10 IoT Enterprise LTSC 2024 2009           26100
 
 [공정 1호기]
 WSL 버전: 2.7.13.0
@@ -21,6 +24,9 @@ Windows 버전: 10.0.26100.3775
 기본 버전: 2
 현재 컴퓨터 구성에서는 WSL1이 지원되지 않습니다.
 WSL1을 사용하려면 "Windows Subsystem for Linux” 선택적 구성 요소를 사용하세요.
+WindowsProductName        WindowsVersion OsBuildNumber
+------------------        -------------- -------------
+Windows 10 IoT Enterprise 2009           26100
 
 [공정 2호기]
 WSL 버전: 2.7.8.0
@@ -32,3 +38,20 @@ DXCore 버전: 10.0.26100.1-240331-1435.ge-release
 Windows 버전: 10.0.26100.7462
 기본 배포: Ubuntu-22.04
 기본 버전: 2
+WindowsProductName                  WindowsVersion OsBuildNumber
+------------------                  -------------- -------------
+Windows 10 IoT Enterprise LTSC 2024 2009           26100
+
+[공정 3호기]
+WSL 버전: 2.7.10.0
+커널 버전: 6.18.33.2-2
+WSLg 버전: 1.0.73.2
+MSRDC 버전: 1.2.6676
+Direct3D 버전: 1.611.1-81528511
+DXCore 버전: 10.0.26100.1-240331-1435.ge-release
+Windows 버전: 10.0.26100.7462
+기본 배포: Ubuntu-22.04
+기본 버전: 2
+WindowsProductName                  WindowsVersion OsBuildNumber
+------------------                  -------------- -------------
+Windows 10 IoT Enterprise LTSC 2024 2009           26100
