@@ -1,0 +1,753 @@
+
+TimeCreated  : 2026-10-12 오전 11:41:42
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:41:42
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:41:25
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:41:24
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:40:37
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:40:37
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:40:20
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:40:15
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:39:58
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:38:43
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:38:43
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:38:43
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:38:26
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:38:26
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:38:26
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:37:50
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:37:50
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:32:27
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:26:47
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:26:47
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:26:47
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:21:25
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:21:24
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:21:24
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:21:23
+ProviderName : Microsoft-Windows-WLAN-AutoConfig
+Id           : 10001
+Message      : WLAN 확장성 모듈을 시작했습니다.
+
+               모듈 경로: C:\WINDOWS\system32\IntelIHVRouter10.dll
+
+
+TimeCreated  : 2026-10-12 오전 11:21:23
+ProviderName : Microsoft-Windows-WLAN-AutoConfig
+Id           : 4000
+Message      : WLAN AutoConfig 서비스를 시작했습니다.
+
+
+TimeCreated  : 2026-10-12 오전 11:21:22
+ProviderName : Microsoft-Windows-WLAN-AutoConfig
+Id           : 4001
+Message      : WLAN AutoConfig 서비스를 중지했습니다.
+
+
+TimeCreated  : 2026-10-12 오전 11:21:22
+ProviderName : Microsoft-Windows-WLAN-AutoConfig
+Id           : 10002
+Message      : WLAN 확장성 모듈을 중지했습니다.
+
+               모듈 경로: C:\WINDOWS\system32\IntelIHVRouter10.dll
+
+
+TimeCreated  : 2026-10-12 오전 11:20:23
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:14:42
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:14:42
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:14:42
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:14:40
+ProviderName : Microsoft-Windows-WLAN-AutoConfig
+Id           : 10001
+Message      : WLAN 확장성 모듈을 시작했습니다.
+
+               모듈 경로: C:\WINDOWS\system32\IntelIHVRouter10.dll
+
+
+TimeCreated  : 2026-10-12 오전 11:14:40
+ProviderName : Netwtw10
+Id           : 7017
+Message      : 7017 - secure boot (SB) configuration
+
+TimeCreated  : 2026-10-12 오전 11:14:40
+ProviderName : Netwtw10
+Id           : 7010
+Message      : 7010 - driver enabled (miniport init)
+
+TimeCreated  : 2026-10-12 오전 11:14:39
+ProviderName : Netwtw10
+Id           : 7002
+Message      : 7002 - CTDP power limit value (SPLC)
+
+TimeCreated  : 2026-10-12 오전 11:14:39
+ProviderName : Netwtw10
+Id           : 7005
+Message      : 7005 - SAR value max TX power (WRDS)
+
+TimeCreated  : 2026-10-12 오전 11:14:39
+ProviderName : Netwtw10
+Id           : 7036
+Message      : \Device\NDMP23 서비스가 Intel(R) Wi-Fi 6E AX210 160MHz 상태로 들어갔습니다.
+
+TimeCreated  : 2026-10-12 오전 11:14:39
+ProviderName : Microsoft-Windows-WLAN-AutoConfig
+Id           : 10002
+Message      : WLAN 확장성 모듈을 중지했습니다.
+
+               모듈 경로: C:\WINDOWS\system32\IntelIHVRouter10.dll
+
+
+TimeCreated  : 2026-10-12 오전 11:14:39
+ProviderName : Netwtw10
+Id           : 8000
+Message      : 8000 - Miniport Halt flow (driver disable)
+
+TimeCreated  : 2026-10-12 오전 11:09:59
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:09:41
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:08:42
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:08:18
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:08:18
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:08:16
+ProviderName : Microsoft-Windows-WLAN-AutoConfig
+Id           : 10001
+Message      : WLAN 확장성 모듈을 시작했습니다.
+
+               모듈 경로: C:\WINDOWS\system32\IntelIHVRouter10.dll
+
+
+TimeCreated  : 2026-10-12 오전 11:08:16
+ProviderName : Microsoft-Windows-WLAN-AutoConfig
+Id           : 4000
+Message      : WLAN AutoConfig 서비스를 시작했습니다.
+
+
+TimeCreated  : 2026-10-12 오전 11:08:11
+ProviderName : Netwtw10
+Id           : 7017
+Message      : 7017 - secure boot (SB) configuration
+
+TimeCreated  : 2026-10-12 오전 11:08:11
+ProviderName : Netwtw10
+Id           : 7010
+Message      : 7010 - driver enabled (miniport init)
+
+TimeCreated  : 2026-10-12 오전 11:08:11
+ProviderName : Netwtw10
+Id           : 7002
+Message      : 7002 - CTDP power limit value (SPLC)
+
+TimeCreated  : 2026-10-12 오전 11:08:11
+ProviderName : Netwtw10
+Id           : 7005
+Message      : 7005 - SAR value max TX power (WRDS)
+
+TimeCreated  : 2026-10-12 오전 11:08:11
+ProviderName : Netwtw10
+Id           : 7036
+Message      : \Device\NDMP6 서비스가 Intel(R) Wi-Fi 6E AX210 160MHz 상태로 들어갔습니다.
+
+TimeCreated  : 2026-10-12 오전 11:07:06
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:49
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:47
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:43
+ProviderName : Netwtw10
+Id           : 7011
+Message      : 7011 - radio ON
+
+TimeCreated  : 2026-10-12 오전 11:06:41
+ProviderName : Netwtw10
+Id           : 7012
+Message      : 7012 - radio OFF
+
+TimeCreated  : 2026-10-12 오전 11:06:34
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:34
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:34
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:34
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:34
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:34
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:34
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:34
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:34
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:17
+ProviderName : Netwtw10
+Id           : 7003
+Message      : 7003 - Roam Complete
+
+TimeCreated  : 2026-10-12 오전 11:06:17
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:16
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:04
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:06:03
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:05:47
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:05:47
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:05:19
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:04:49
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:04:49
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:04:32
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:04:15
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:03:58
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:03:58
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:03:58
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:03:57
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:01:38
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:01:38
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:01:38
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:01:38
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:01:38
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:01:22
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:01:21
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:01:20
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:01:18
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:00:18
+ProviderName : Netwtw10
+Id           : 7003
+Message      : 7003 - Roam Complete
+
+TimeCreated  : 2026-10-12 오전 11:00:18
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:00:14
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 11:00:14
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:59:57
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:59:57
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:59:57
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:59:57
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:59:57
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:57:06
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:57:06
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:57:05
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:57:05
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:56:49
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:56:49
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:56:49
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:53:34
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:53:17
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:53:02
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:53:02
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:52:09
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:52:09
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:52:09
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:52:09
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:52:09
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:52:06
+ProviderName : Microsoft-Windows-WLAN-AutoConfig
+Id           : 10001
+Message      : WLAN 확장성 모듈을 시작했습니다.
+
+               모듈 경로: C:\WINDOWS\system32\IntelIHVRouter10.dll
+
+
+TimeCreated  : 2026-10-12 오전 10:52:06
+ProviderName : Microsoft-Windows-WLAN-AutoConfig
+Id           : 4000
+Message      : WLAN AutoConfig 서비스를 시작했습니다.
+
+
+TimeCreated  : 2026-10-12 오전 10:52:01
+ProviderName : Netwtw10
+Id           : 7017
+Message      : 7017 - secure boot (SB) configuration
+
+TimeCreated  : 2026-10-12 오전 10:52:01
+ProviderName : Netwtw10
+Id           : 7010
+Message      : 7010 - driver enabled (miniport init)
+
+TimeCreated  : 2026-10-12 오전 10:52:01
+ProviderName : Netwtw10
+Id           : 7002
+Message      : 7002 - CTDP power limit value (SPLC)
+
+TimeCreated  : 2026-10-12 오전 10:52:01
+ProviderName : Netwtw10
+Id           : 7005
+Message      : 7005 - SAR value max TX power (WRDS)
+
+TimeCreated  : 2026-10-12 오전 10:52:01
+ProviderName : Netwtw10
+Id           : 7036
+Message      : \Device\NDMP6 서비스가 Intel(R) Wi-Fi 6E AX210 160MHz 상태로 들어갔습니다.
+
+TimeCreated  : 2026-10-12 오전 10:51:47
+ProviderName : Microsoft-Windows-WLAN-AutoConfig
+Id           : 4001
+Message      : WLAN AutoConfig 서비스를 중지했습니다.
+
+
+TimeCreated  : 2026-10-12 오전 10:51:47
+ProviderName : Microsoft-Windows-WLAN-AutoConfig
+Id           : 10002
+Message      : WLAN 확장성 모듈을 중지했습니다.
+
+               모듈 경로: C:\WINDOWS\system32\IntelIHVRouter10.dll
+
+
+TimeCreated  : 2026-10-12 오전 10:50:41
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:50:24
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:50:23
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:50:10
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:50:09
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:47:24
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:47:24
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:47:24
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:47:07
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:47:07
+ProviderName : Netwtw10
+Id           : 7003
+Message      : 7003 - Roam Complete
+
+TimeCreated  : 2026-10-12 오전 10:47:07
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:46:55
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:46:03
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:45:45
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:45:45
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:45:44
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:44:59
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:44:41
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:44:41
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+TimeCreated  : 2026-10-12 오전 10:44:40
+ProviderName : Netwtw10
+Id           : 7021
+Message      : 7021 - Connection telemetry fields and analysis usage
+
+
