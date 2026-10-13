@@ -349,7 +349,3 @@ DriverVersion        : 22.0.1.5
 DriverDate           : 2019-05-12
 DriverInformation    : Driver Date 2019-05-12 Version 22.0.1.5 NDIS 6.60
 
-
-
-PS C:\Users\admin>
-
