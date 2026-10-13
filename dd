@@ -1,3 +1,23 @@
+Get-NetAdapter |
+  Select-Object Name, InterfaceDescription, Status, LinkSpeed
+
+Get-NetAdapter |
+  Where-Object InterfaceDescription -Match 'Wi-Fi|Wireless|Intel' |
+  ForEach-Object {
+    Get-NetAdapterAdvancedProperty -Name $_.Name |
+      Select-Object Name, DisplayName, DisplayValue
+  }
+
+netsh wlan show interfaces
+
+Get-Content "$env:USERPROFILE\.wslconfig"ip -br addr
+ip route
+ip rule
+ip route get 10.244.201.165
+
+
+
+
 "2026-10-06 오후 5:43:36","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
 "2026-10-06 오후 5:40:07","6062","Netwtw10","6062 - Lso was triggered"
 "2026-10-06 오후 5:40:02","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
