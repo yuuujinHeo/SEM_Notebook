@@ -31,6 +31,23 @@ function Test-WindowsTcp {
     } catch { return $false }
 }
 function Test-WslTcp {
+    try {
+        & wsl.exe -d $Distro -- nc -z -w 3 $Server $Port 2>$null
+        $exitCode = $LASTEXITCODE
+
+        if ($exitCode -ne 0) {
+            Write-Log "WSL_PROBE_FAILED exit=$exitCode"
+        }
+
+        return ($exitCode -eq 0)
+    }
+    catch {
+        Write-Log "WSL_PROBE_ERROR $($_.Exception.Message)"
+        return $false
+    }
+}
+mm
+function Test-WslTcp {
     # Run WSL test as a child process with a Windows-side hard timeout.
     $command = "timeout 3 bash -c 'echo > /dev/tcp/$Server/$Port'"
     $out = Join-Path $LogDir ('probe-{0}.out' -f $PID)
