@@ -1,0 +1,811 @@
+
+
+TimeCreated : 2026-10-12 오전 11:38:26
+Id          : 11001
+Message     : 무선 네트워크 연결이 성공했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              관리 프레임 보호 사용: 0x500000000
+
+
+TimeCreated : 2026-10-12 오전 11:38:26
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:38:26
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:38:26
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:38:26
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:38:26
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:38:41
+Id          : 11006
+Message     : 무선 보안에 실패했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              피어 MAC 주소: B8:3A:5A:D1:56:91
+              이유: 802.1x에 인증자가 없는 것으로 나타나지만 프로필에 802.1x가 필요합니다.
+              오류: 0x0
+
+
+TimeCreated : 2026-10-12 오전 11:38:42
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:38:42
+Id          : 8002
+Message     : WLAN AutoConfig 서비스가 무선 네트워크에 연결하지 못했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              연결 모드: 프로필과 수동 연결
+              프로필 이름: sWave_works_shared
+              SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              실패 이유:특정 네트워크를 사용할 수 없습니다.
+              RSSI -62
+
+
+TimeCreated : 2026-10-12 오전 11:38:43
+Id          : 11000
+Message     : 무선 네트워크 연결을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              802.1X 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:38:43
+Id          : 11001
+Message     : 무선 네트워크 연결이 성공했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              관리 프레임 보호 사용: 0x600000000
+
+
+TimeCreated : 2026-10-12 오전 11:38:43
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:38:43
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:38:43
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:38:43
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:38:43
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:38:58
+Id          : 11006
+Message     : 무선 보안에 실패했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              피어 MAC 주소: B8:3A:5A:D2:07:91
+              이유: 802.1x에 인증자가 없는 것으로 나타나지만 프로필에 802.1x가 필요합니다.
+              오류: 0x0
+
+
+TimeCreated : 2026-10-12 오전 11:38:59
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:38:59
+Id          : 8002
+Message     : WLAN AutoConfig 서비스가 무선 네트워크에 연결하지 못했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              연결 모드: 프로필에 자동 연결
+              프로필 이름: sWave_works_shared
+              SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              실패 이유:802.1x에 인증자가 없는 것으로 나타나지만 프로필에 802.1x가 필요합니다.
+              RSSI -65
+
+
+TimeCreated : 2026-10-12 오전 11:39:58
+Id          : 11000
+Message     : 무선 네트워크 연결을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              802.1X 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:39:58
+Id          : 11001
+Message     : 무선 네트워크 연결이 성공했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              관리 프레임 보호 사용: 0x700000000
+
+
+TimeCreated : 2026-10-12 오전 11:39:58
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:40:13
+Id          : 11006
+Message     : 무선 보안에 실패했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              피어 MAC 주소: B8:3A:5A:D1:56:91
+              이유: 802.1x에 인증자가 없는 것으로 나타나지만 프로필에 802.1x가 필요합니다.
+              오류: 0x0
+
+
+TimeCreated : 2026-10-12 오전 11:40:13
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:40:13
+Id          : 8002
+Message     : WLAN AutoConfig 서비스가 무선 네트워크에 연결하지 못했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              연결 모드: 프로필과 수동 연결
+              프로필 이름: sWave_works_shared
+              SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              실패 이유:특정 네트워크를 사용할 수 없습니다.
+              RSSI -72
+
+
+TimeCreated : 2026-10-12 오전 11:40:15
+Id          : 11000
+Message     : 무선 네트워크 연결을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              802.1X 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:40:15
+Id          : 11001
+Message     : 무선 네트워크 연결이 성공했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              관리 프레임 보호 사용: 0x800000000
+
+
+TimeCreated : 2026-10-12 오전 11:40:15
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:40:19
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:40:19
+Id          : 8002
+Message     : WLAN AutoConfig 서비스가 무선 네트워크에 연결하지 못했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              연결 모드: 프로필에 자동 연결
+              프로필 이름: sWave_works_shared
+              SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              실패 이유:작업이 취소되었습니다.
+              RSSI -73
+
+
+TimeCreated : 2026-10-12 오전 11:40:19
+Id          : 11000
+Message     : 무선 네트워크 연결을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              802.1X 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:40:20
+Id          : 11001
+Message     : 무선 네트워크 연결이 성공했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              관리 프레임 보호 사용: 0x900000000
+
+
+TimeCreated : 2026-10-12 오전 11:40:20
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:40:35
+Id          : 11006
+Message     : 무선 보안에 실패했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              피어 MAC 주소: B8:3A:5A:D1:56:91
+              이유: 802.1x에 인증자가 없는 것으로 나타나지만 프로필에 802.1x가 필요합니다.
+              오류: 0x0
+
+
+TimeCreated : 2026-10-12 오전 11:40:36
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:40:36
+Id          : 8002
+Message     : WLAN AutoConfig 서비스가 무선 네트워크에 연결하지 못했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              연결 모드: 프로필과 수동 연결
+              프로필 이름: sWave_works_shared
+              SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              실패 이유:특정 네트워크를 사용할 수 없습니다.
+              RSSI -71
+
+
+TimeCreated : 2026-10-12 오전 11:40:37
+Id          : 11000
+Message     : 무선 네트워크 연결을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              802.1X 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:40:37
+Id          : 11001
+Message     : 무선 네트워크 연결이 성공했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              관리 프레임 보호 사용: 0xa00000000
+
+
+TimeCreated : 2026-10-12 오전 11:40:37
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:40:37
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:40:37
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:40:52
+Id          : 11006
+Message     : 무선 보안에 실패했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              피어 MAC 주소: B8:3A:5A:D2:07:91
+              이유: 802.1x에 인증자가 없는 것으로 나타나지만 프로필에 802.1x가 필요합니다.
+              오류: 0x0
+
+
+TimeCreated : 2026-10-12 오전 11:40:53
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:40:53
+Id          : 8002
+Message     : WLAN AutoConfig 서비스가 무선 네트워크에 연결하지 못했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              연결 모드: 프로필에 자동 연결
+              프로필 이름: sWave_works_shared
+              SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              실패 이유:802.1x에 인증자가 없는 것으로 나타나지만 프로필에 802.1x가 필요합니다.
+              RSSI -60
+
+
+TimeCreated : 2026-10-12 오전 11:41:24
+Id          : 11000
+Message     : 무선 네트워크 연결을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              802.1X 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:41:24
+Id          : 11001
+Message     : 무선 네트워크 연결이 성공했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              관리 프레임 보호 사용: 0xb00000000
+
+
+TimeCreated : 2026-10-12 오전 11:41:24
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:41:25
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:41:25
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:41:40
+Id          : 11006
+Message     : 무선 보안에 실패했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              피어 MAC 주소: B8:3A:5A:D2:07:91
+              이유: 802.1x에 인증자가 없는 것으로 나타나지만 프로필에 802.1x가 필요합니다.
+              오류: 0x0
+
+
+TimeCreated : 2026-10-12 오전 11:41:40
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:41:40
+Id          : 8002
+Message     : WLAN AutoConfig 서비스가 무선 네트워크에 연결하지 못했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              연결 모드: 프로필과 수동 연결
+              프로필 이름: sWave_works_shared
+              SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              실패 이유:특정 네트워크를 사용할 수 없습니다.
+              RSSI -68
+
+
+TimeCreated : 2026-10-12 오전 11:41:42
+Id          : 11000
+Message     : 무선 네트워크 연결을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              802.1X 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:41:42
+Id          : 11001
+Message     : 무선 네트워크 연결이 성공했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              관리 프레임 보호 사용: 0xc00000000
+
+
+TimeCreated : 2026-10-12 오전 11:41:42
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:41:42
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:41:42
+Id          : 11010
+Message     : 무선 보안을 시작했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              인증: WPA2-Enterprise
+              암호화: AES-GCMP-128
+              FIPS 모드: Disabled
+              802.1x 사용: Yes
+
+
+TimeCreated : 2026-10-12 오전 11:41:57
+Id          : 11006
+Message     : 무선 보안에 실패했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              피어 MAC 주소: B8:3A:5A:D1:56:91
+              이유: 802.1x에 인증자가 없는 것으로 나타나지만 프로필에 802.1x가 필요합니다.
+              오류: 0x0
+
+
+TimeCreated : 2026-10-12 오전 11:41:57
+Id          : 11004
+Message     : 무선 보안이 중지되었습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              로컬 MAC 주소: 40:D1:33:CD:46:69
+              네트워크 SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              보안 힌트: 작업이 성공했습니다.
+
+
+TimeCreated : 2026-10-12 오전 11:41:57
+Id          : 8002
+Message     : WLAN AutoConfig 서비스가 무선 네트워크에 연결하지 못했습니다.
+
+              네트워크 어댑터: Intel(R) Wi-Fi 6E AX210 160MHz
+              인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+              연결 모드: 프로필에 자동 연결
+              프로필 이름: sWave_works_shared
+              SSID: sWave_works_shared
+              BSS 유형: Infrastructure
+              실패 이유:802.1x에 인증자가 없는 것으로 나타나지만 프로필에 802.1x가 필요합니다.
+              RSSI -70
+
+
