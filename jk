@@ -11,3 +11,23 @@ Where-Object {
 } |
 Select-Object TimeCreated, ProviderName, Id, Message |
 Format-List
+
+
+
+
+
+
+
+
+
+
+Get-WinEvent -FilterHashtable @{
+    LogName = 'Microsoft-Windows-WLAN-AutoConfig/Operational'
+    StartTime = [datetime]'2026-10-12 10:40:00'
+    EndTime = [datetime]'2026-10-12 11:45:00'
+} |
+Where-Object {
+    $_.Id -in @(8001, 8002, 8003, 11000, 11001, 11004, 11005, 11006, 11010)
+} |
+Sort-Object TimeCreated |
+Format-List TimeCreated, Id, Message
