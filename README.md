@@ -1,4 +1,344 @@
 
+# WSL2 Mirrored Networking 통신 장애 진단 가이드
+
+Windows Wi-Fi 재연결 이후 WSL2 및 Docker(Muscat)에서 통신이 복구되지 않는 문제를 진단하기 위한 절차입니다.
+
+> **주의**
+> - `<TARGET_IP>`는 실제 통신 장애가 발생하는 대상 장비 IP로 변경합니다.
+> - Wi-Fi 어댑터 재시작 및 `wsl --shutdown`은 통신을 중단시킵니다.
+> - 장애 발생 시 복구 명령을 실행하기 전에 네트워크 상태를 먼저 기록합니다.
+
+---
+
+## 1. 기본 환경 확인
+
+### 1.1 Windows 및 WSL 버전
+
+**Windows PowerShell**
+
+```powershell
+wsl --version
+wsl --status
+
+Get-ComputerInfo |
+    Select-Object WindowsProductName, WindowsVersion, OsBuildNumber
+
+Get-NetAdapter |
+    Format-Table Name, InterfaceDescription, Status, LinkSpeed, MacAddress
+```
+
+### 1.2 WSL 설정 확인
+
+**Windows PowerShell**
+
+```powershell
+Get-Content "$env:USERPROFILE\.wslconfig"
+```
+
+예상 설정:
+
+```ini
+[wsl2]
+networkingMode=mirrored
+dnsTunneling=true
+autoProxy=true
+```
+
+### 1.3 WSL 업데이트
+
+**Windows PowerShell**
+
+```powershell
+wsl --update
+wsl --shutdown
+```
+
+이후 WSL과 Muscat을 다시 실행합니다.
+
+> 운영 중인 PC에서는 업데이트 및 재시작 전에 서비스 중단 가능성을 확인합니다.
+
+---
+
+## 2. 정상 상태 기록
+
+장애가 발생하기 전에 Windows, WSL2, Docker의 정상적인 네트워크 상태를 기록합니다.
+
+### 2.1 Windows
+
+**Windows PowerShell**
+
+```powershell
+$target = "<TARGET_IP>"
+
+ping.exe $target
+
+Get-NetRoute -AddressFamily IPv4 |
+    Sort-Object RouteMetric |
+    Format-Table InterfaceAlias, DestinationPrefix, NextHop, RouteMetric
+```
+
+### 2.2 WSL2
+
+**WSL Ubuntu**
+
+```bash
+TARGET_IP="<TARGET_IP>"
+
+ip -br link
+ip -br addr
+ip route
+ip route get "$TARGET_IP"
+ip neigh show to "$TARGET_IP"
+
+ping -c 5 "$TARGET_IP"
+```
+
+### 2.3 Muscat 컨테이너
+
+**WSL Ubuntu**
+
+```bash
+docker exec muscat ping -c 5 <TARGET_IP>
+```
+
+### 2.4 정상 상태 판정
+
+| Windows | WSL2 | Docker | 판단 |
+|---|---|---|---|
+| 성공 | 성공 | 성공 | 정상 |
+| 성공 | 실패 | 실패 | WSL2 네트워크 계층 문제 의심 |
+| 성공 | 성공 | 실패 | Docker 또는 컨테이너 네트워크 문제 의심 |
+| 실패 | 실패 | 실패 | Windows 네트워크, 경로 또는 대상 장비 문제 의심 |
+
+> Ping 결과만으로 원인을 확정할 수는 없습니다. 실제 서비스 장애를 확인하려면 FRS TCP 포트 연결 상태도 함께 점검해야 합니다.
+
+---
+
+## 3. Wi-Fi 재연결 반복 테스트
+
+Wi-Fi 어댑터를 강제로 비활성화한 후 다시 활성화하여 WSL2의 네트워크 복구 동작을 확인합니다.
+
+> **주의:** 이 테스트는 네트워크를 반복적으로 중단합니다. 운영 중인 로봇 PC에서는 실행하지 마세요.
+>
+> 또한 어댑터 강제 OFF/ON은 실제 802.1x 재협상, AP 로밍, 드라이버 자동 복구 이벤트와 동일하지 않습니다.
+
+### 3.1 Wi-Fi 어댑터 이름 확인
+
+**관리자 PowerShell**
+
+```powershell
+Get-NetAdapter
+```
+
+일반적인 인터페이스 이름은 `Wi-Fi`입니다.
+
+### 3.2 반복 테스트 실행
+
+**관리자 PowerShell**
+
+```powershell
+$adapter = "Wi-Fi"
+$target = "<TARGET_IP>"
+
+1..20 | ForEach-Object {
+    $cycle = $_
+
+    Write-Host "`n===== Cycle $cycle : DISABLE =====" -ForegroundColor Yellow
+
+    Disable-NetAdapter -Name $adapter -Confirm:$false
+
+    Start-Sleep -Seconds 3
+
+    Write-Host "===== Cycle $cycle : ENABLE =====" -ForegroundColor Green
+
+    Enable-NetAdapter -Name $adapter -Confirm:$false
+
+    Start-Sleep -Seconds 10
+
+    Write-Host "--- Windows ping ---"
+
+    ping.exe -n 2 -w 2000 $target
+
+    Write-Host "--- WSL route/ping ---"
+
+    wsl -e bash -lc "date; ip -br addr; ip route get '$target'; ip neigh show to '$target'; ping -c 2 -W 2 '$target'"
+}
+```
+
+테스트 중 다음 사항을 확인합니다.
+
+- Wi-Fi 재연결 성공 여부
+- Windows Ping 복구 여부
+- WSL2 Ping 복구 여부
+- Windows와 WSL2의 복구 시점 차이
+- 재연결 후 라우팅 및 Neighbor 상태 변화
+
+---
+
+## 4. 장애 발생 순간 확인
+
+Wi-Fi가 재연결되었지만 Muscat 통신이 복구되지 않는 경우, **WSL 종료 또는 컨테이너 재시작 전에** 아래 명령을 실행합니다.
+
+### 4.1 Windows 상태 확인
+
+**Windows PowerShell**
+
+```powershell
+$target = "<TARGET_IP>"
+
+Write-Host "=== Windows ==="
+
+ping.exe -n 4 -w 2000 $target
+
+Get-NetAdapter |
+    Format-Table Name, Status, LinkSpeed
+
+Get-NetRoute -AddressFamily IPv4 |
+    Sort-Object RouteMetric |
+    Format-Table InterfaceAlias, DestinationPrefix, NextHop, RouteMetric
+```
+
+### 4.2 WSL2 상태 확인
+
+**Windows PowerShell**
+
+```powershell
+$target = "<TARGET_IP>"
+
+Write-Host "=== WSL ==="
+
+wsl -e bash -lc "date; ip -br link; ip -br addr; ip route; ip route get '$target'; ip neigh show; ping -c 4 -W 2 '$target'"
+```
+
+### 4.3 WSL2 및 Muscat 비교
+
+**WSL Ubuntu**
+
+```bash
+TARGET_IP="<TARGET_IP>"
+
+echo "=== WSL ==="
+ping -c 4 -W 2 "$TARGET_IP"
+
+echo "=== Muscat ==="
+docker exec muscat ping -c 4 -W 2 "$TARGET_IP"
+```
+
+---
+
+## 5. 단계별 복구 테스트
+
+복구는 영향 범위가 작은 작업부터 순서대로 수행합니다.
+
+### 5.1 WSL2 Neighbor 캐시 초기화
+
+**WSL Ubuntu**
+
+```bash
+TARGET_IP="<TARGET_IP>"
+
+DEV="$(ip route get "$TARGET_IP" | awk '
+{
+    for (i = 1; i <= NF; i++) {
+        if ($i == "dev") {
+            print $(i+1)
+            exit
+        }
+    }
+}')"
+
+echo "device=$DEV"
+
+if [ -n "$DEV" ]; then
+    sudo ip neigh flush dev "$DEV"
+fi
+
+sudo ip route flush cache
+
+ping -c 5 -W 2 "$TARGET_IP"
+```
+
+> Neighbor 캐시 초기화는 기존 상태를 변경합니다. 실행 전 `ip neigh`와 `ip route get` 결과를 반드시 저장합니다.
+
+### 5.2 WSL2 재시작
+
+캐시 초기화로 복구되지 않는 경우 실행합니다.
+
+**Windows PowerShell**
+
+```powershell
+wsl --shutdown
+```
+
+이 명령은 실행 중인 WSL 배포판과 해당 환경의 프로세스 및 컨테이너에 영향을 줄 수 있습니다.
+
+### 5.3 WSL2 및 Muscat 재실행
+
+**WSL Ubuntu**
+
+```bash
+TARGET_IP="<TARGET_IP>"
+
+ping -c 5 "$TARGET_IP"
+
+docker start muscat
+
+docker exec muscat ping -c 5 "$TARGET_IP"
+```
+
+---
+
+## 6. 최종 판정 기준
+
+다음 조건이 관찰되면 **WSL2 mirrored networking의 복구 문제를 강하게 의심할 수 있습니다.**
+
+1. Wi-Fi 재연결 후 Windows에서 대상 IP로 통신이 정상적으로 복구됩니다.
+2. 같은 시점에 WSL2에서는 동일한 대상 IP로 통신이 실패합니다.
+3. `ip route get`에서 비정상적인 경로가 확인되거나, 관련 Neighbor 항목이 `FAILED` 또는 `INCOMPLETE` 상태입니다.
+4. Docker/Muscat 컨테이너 재시작만으로는 복구되지 않습니다.
+5. `wsl --shutdown` 이후 통신이 정상적으로 복구됩니다.
+
+> 위 조건은 WSL2 mirrored networking 문제를 의심할 수 있는 근거이며, WSL2 자체의 결함을 확정하는 증거는 아닙니다. Windows 방화벽, 인터페이스 경로, Hyper-V 네트워크 구성 등의 추가 확인이 필요할 수 있습니다.
+
+---
+
+## 7. 장애 분석 시 필수 확보 자료
+
+- Windows 및 WSL 버전
+- `.wslconfig` 설정
+- Windows Wi-Fi 어댑터 및 드라이버 정보
+- Windows 라우팅 테이블
+- WSL2 IP 주소 및 라우팅 테이블
+- WSL2 Neighbor 테이블
+- Windows / WSL2 / Docker의 동일 대상 Ping 결과
+- WLAN AutoConfig 이벤트 로그
+- System 로그의 Wi-Fi 드라이버 관련 이벤트
+- 장애 발생 시각 및 복구 시각
+- `wsl --shutdown` 전후 통신 결과
+
+### 주요 WLAN 이벤트
+
+| 이벤트 ID | Provider | 의미 |
+|---|---|---|
+| 11004 | WLAN-AutoConfig | 무선 보안 중지 |
+| 11010 | WLAN-AutoConfig | 무선 보안 시작 |
+| 11005 | WLAN-AutoConfig | 무선 보안 성공 |
+| 7003 | WLAN-AutoConfig | 로밍 완료 관련 |
+| 4003 | WLAN-AutoConfig | 제한된 연결 자동 복구 관련 |
+| 8000 | WLAN-AutoConfig | 무선 네트워크 연결 시작 |
+| 8001 | WLAN-AutoConfig | 무선 네트워크 연결 성공 |
+| 8003 | WLAN-AutoConfig | 무선 네트워크 연결 해제 |
+
+> 이벤트 ID는 Provider와 함께 해석해야 합니다. 예를 들어 WLAN-AutoConfig의 8000과 Intel Wi-Fi 드라이버 Netwtw10의 8000은 의미가 다릅니다.
+
+---
+
+## 8. 핵심 주의사항
+
+**장애 발생 시 `wsl --shutdown`을 실행하기 전에 Windows / WSL2 / Docker의 네트워크 상태를 반드시 저장합니다.**
+
+WSL2를 종료하면 장애 당시의 라우팅, 인터페이스 및 Neighbor 상태가 사라질 수 있으므로, 복구 전에 증거를 확보하는 것이 원인 분석의 핵심입니다.
+
 ### 2.4 정상 상태 판정
 
 | Windows | WSL2 | Docker | 판단 |
