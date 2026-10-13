@@ -1,0 +1,55 @@
+"2026-10-06 오후 5:43:36","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
+"2026-10-06 오후 5:40:07","6062","Netwtw10","6062 - Lso was triggered"
+"2026-10-06 오후 5:40:02","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
+"2026-10-06 오후 5:38:05","6062","Netwtw10","6062 - Lso was triggered"
+"2026-10-06 오후 5:37:52","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
+"2026-10-06 오후 5:37:50","7017","Netwtw10","7017 - secure boot (SB) configuration"
+"2026-10-06 오후 5:37:50","7010","Netwtw10","7010 - driver enabled (miniport init)"
+"2026-10-06 오후 5:37:49","7002","Netwtw10","7002 - CTDP power limit value (SPLC)"
+"2026-10-06 오후 5:37:49","7005","Netwtw10","7005 - SAR value max TX power (WRDS)"
+"2026-10-06 오후 5:37:49","7036","Netwtw10","\Device\NDMP11 서비스가 Intel(R) Wi-Fi 6E AX210 160MHz 상태로 들어갔습니다."
+"2026-10-06 오후 5:37:49","8000","Netwtw10","8000 - Miniport Halt flow (driver disable)"
+"2026-10-06 오후 5:37:48","4003","Microsoft-Windows-WLAN-AutoConfig","WLAN AutoConfig에서 제한된 연결을 검색했으며 자동 복구를 시도합니다.
+
+복구 유형: 4
+오류 코드: 0x0
+트리거 이유: 5
+IP 패밀리: 0
+"
+"2026-10-06 오후 5:37:37","6062","Netwtw10","6062 - Lso was triggered"
+"2026-10-06 오후 5:37:34","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
+"2026-10-06 오후 5:37:15","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
+"2026-10-06 오후 5:37:13","10001","Microsoft-Windows-WLAN-AutoConfig","WLAN 확장성 모듈을 시작했습니다.
+
+모듈 경로: C:\WINDOWS\system32\IntelIHVRouter10.dll
+"
+"2026-10-06 오후 5:37:13","4000","Microsoft-Windows-WLAN-AutoConfig","WLAN AutoConfig 서비스를 시작했습니다.
+"
+"2026-10-06 오후 5:37:09","7017","Netwtw10","7017 - secure boot (SB) configuration"
+"2026-10-06 오후 5:37:08","7010","Netwtw10","7010 - driver enabled (miniport init)"
+"2026-10-06 오후 5:37:08","7002","Netwtw10","7002 - CTDP power limit value (SPLC)"
+"2026-10-06 오후 5:37:08","7005","Netwtw10","7005 - SAR value max TX power (WRDS)"
+"2026-10-06 오후 5:37:08","7036","Netwtw10","\Device\NDMP4 서비스가 Intel(R) Wi-Fi 6E AX210 160MHz 상태로 들어갔습니다."
+"2026-10-06 오후 4:16:55","6062","Netwtw10","6062 - Lso was triggered"
+"2026-10-06 오후 4:16:55","7003","Netwtw10","7003 - Roam Complete"
+"2026-10-06 오후 4:16:55","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
+"2026-10-06 오후 4:16:30","6062","Netwtw10","6062 - Lso was triggered"
+"2026-10-06 오후 4:16:30","7003","Netwtw10","7003 - Roam Complete"
+"2026-10-06 오후 4:16:30","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
+"2026-10-06 오후 4:15:08","7003","Netwtw10","7003 - Roam Complete"
+"2026-10-06 오후 4:13:59","6062","Netwtw10","6062 - Lso was triggered"
+"2026-10-06 오후 4:13:58","7003","Netwtw10","7003 - Roam Complete"
+"2026-10-06 오후 4:13:58","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
+"2026-10-06 오후 4:11:49","6062","Netwtw10","6062 - Lso was triggered"
+"2026-10-06 오후 4:11:49","7003","Netwtw10","7003 - Roam Complete"
+"2026-10-06 오후 4:11:49","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
+"2026-10-06 오후 4:09:35","7003","Netwtw10","7003 - Roam Complete"
+"2026-10-06 오후 4:09:35","7003","Netwtw10","7003 - Roam Complete"
+"2026-10-06 오후 4:05:17","6062","Netwtw10","6062 - Lso was triggered"
+"2026-10-06 오후 4:05:17","7003","Netwtw10","7003 - Roam Complete"
+"2026-10-06 오후 4:05:17","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
+"2026-10-06 오후 4:02:55","6062","Netwtw10","6062 - Lso was triggered"
+"2026-10-06 오후 4:02:54","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
+"2026-10-06 오후 4:00:44","6062","Netwtw10","6062 - Lso was triggered"
+"2026-10-06 오후 4:00:41","7021","Netwtw10","7021 - Connection telemetry fields and analysis usage"
+"2026-10-06 오후 4:00:39","10001","Microsoft-Windows-WLAN-AutoConfig","WLAN 확장성 모듈을 시작했습니다.
