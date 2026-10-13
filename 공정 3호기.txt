@@ -312,4 +312,5 @@ Windows 10 IoT Enterprise LTSC 2024 2009           26100
 ]
 
 
-
+eOfLastStateChange                            : 
+TransitioningToState         
