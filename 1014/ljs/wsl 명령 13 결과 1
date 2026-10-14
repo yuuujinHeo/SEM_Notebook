@@ -1,0 +1,6 @@
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /proc/sys/kernel/lock_stat
+cat: /proc/sys/kernel/lock_stat: No such file or directory
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ zcat /proc/config.gz | grep -E 'CONFIG_LOCK_STAT|CONFIG_DEBUG_LOCK_ALLOC|CONFIG_PROVE_LOCKING'
+# CONFIG_PROVE_LOCKING is not set
+# CONFIG_LOCK_STAT is not set
+# CONFIG_DEBUG_LOCK_ALLOC is not set
