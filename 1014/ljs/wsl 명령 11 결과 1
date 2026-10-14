@@ -1,0 +1,8 @@
+PS C:\Users\admin> Get-VMNetworkAdapter -All |
+>> Select-Object VMName,Name,SwitchName,MacAddress,Status |
+>> Format-Table -AutoSize
+
+VMName Name                                           SwitchName     MacAddress   Status
+------ ----                                           ----------     ----------   ------
+       Host Vnic E0E2889F-A037-464D-8110-7438F3064C0D FSE Switch     00155DE8D3F6 {Ok}
+       Host Vnic C08CB7B8-9B3C-408E-8E30-5E16A3AEB444 Default Switch 00155D9F2C00 {Ok}
