@@ -1,0 +1,127 @@
+PS C:\Users\admin> $server = "10.244.201.165"
+PS C:\Users\admin> $port = 7447
+PS C:\Users\admin> $distro = "Ubuntu-22.04"
+PS C:\Users\admin> $since = (Get-Date).AddMinutes(-30)
+PS C:\Users\admin>
+PS C:\Users\admin> Write-Host "`n========== 1. WIFI STATUS ==========" -ForegroundColor Cyan
+
+========== 1. WIFI STATUS ==========
+PS C:\Users\admin> Get-NetAdapter -Name "Wi-Fi" -ErrorAction SilentlyContinue |
+>>     Format-List Name,Status,LinkSpeed,InterfaceDescription
+
+
+Name                 : Wi-Fi
+Status               : Up
+LinkSpeed            : 287 Mbps
+InterfaceDescription : Intel(R) Wi-Fi 6E AX210 160MHz
+
+
+
+PS C:\Users\admin>
+PS C:\Users\admin> netsh wlan show interfaces
+
+시스템에 1 인터페이스가 있습니다.
+
+    이름                   : Wi-Fi
+    설명                   : Intel(R) Wi-Fi 6E AX210 160MHz
+    GUID                   : c7f7ce3b-8159-4b72-b897-598abdde9d00
+    물리적 주소            : 40:d1:33:cd:46:69
+    인터페이스 유형         : 기본
+    상태                   : 연결됨
+    SSID                   : sWave_works_shared
+    AP BSSID               : b8:3a:5a:cd:27:b1
+    밴드                   : 5GHz
+    채널                : 48
+    연결된 Akm-cipher : [ akm = 00-0f-ac:01, 암호 = 00-0f-ac:04 ]
+    네트워크 종류          : 인프라
+    송수신 장치 종류       : 802.11 ax
+    인증                   : WPA2-엔터프라이즈
+    암호                 : CCMP
+    연결 모드        : 자동 연결
+    수신 속도(Mbps)        : 258
+    전송 속도(Mbps)        : 287
+    신호                   : 82%
+    Rssi                   : -61
+    프로필                : sWave_works_shared
+                                                                                                                            QoS MSCS 구성됨         : 0                                                                                             QoS 맵 구성됨          : 0                                                                                              정책에서 허용하는 QoS 맵    : 0                                                                                                                                                                                                             PS C:\Users\admin>                                                                                                      PS C:\Users\admin> Write-Host "`n========== 2. IP / GATEWAY ==========" -ForegroundColor Cyan                                                                                                                                                   ========== 2. IP / GATEWAY ==========                                                                                   PS C:\Users\admin> Get-NetIPConfiguration -InterfaceAlias "Wi-Fi" -ErrorAction SilentlyContinue |                       >>     Format-List InterfaceAlias,IPv4Address,IPv4DefaultGateway,DNSServer                                                                                                                                                                                                                                                                                              InterfaceAlias     : Wi-Fi                                                                                              IPv4Address        : {10.249.138.60}                                                                                    IPv4DefaultGateway : {MSFT_NetRoute(InstanceID = ":8:8:8:9:55?;55;:8??C8;?B8;55;")}                                     DNSServer          : {MSFT_DNSClientServerAddress(Name = "21", CreationClassName = "", SystemCreationClassName = "", Sy                      stemName = "23"), MSFT_DNSClientServerAddress(Name = "21", CreationClassName = "", SystemCreationC                      lassName = "", SystemName = "2")}                                                                                                                                                                                                                                                                                                                  
+PS C:\Users\admin>
+PS C:\Users\admin> Write-Host "`n========== 3. WINDOWS -> FRS ==========" -ForegroundColor Cyan
+
+========== 3. WINDOWS -> FRS ==========
+PS C:\Users\admin> Test-NetConnection $server -Port $port -InformationLevel Detailed
+
+
+ComputerName            : 10.244.201.165
+RemoteAddress           : 10.244.201.165
+RemotePort              : 7447
+NameResolutionResults   : 10.244.201.165
+                          DESKTOP-0QT5CQ0
+MatchingIPsecRules      :
+NetworkIsolationContext : Internet
+InterfaceAlias          : Wi-Fi
+SourceAddress           : 10.249.138.60
+NetRoute (NextHop)      : 10.249.138.1
+TcpTestSucceeded        : True
+
+
+
+PS C:\Users\admin>
+PS C:\Users\admin> Write-Host "`n========== 4. WSL -> FRS ==========" -ForegroundColor Cyan
+
+========== 4. WSL -> FRS ==========
+PS C:\Users\admin> wsl.exe -d $distro -- nc -vz -w 3 $server $port
+nc: connect to 10.244.201.165 port 7447 (tcp) failed: No route to host
+PS C:\Users\admin> Write-Host "WSL TCP exit code: $LASTEXITCODE"
+WSL TCP exit code: 1
+PS C:\Users\admin>
+PS C:\Users\admin> Write-Host "`n========== 5. WIFI EVENTS (LAST 30 MIN) ==========" -ForegroundColor Cyan
+
+========== 5. WIFI EVENTS (LAST 30 MIN) ==========
+PS C:\Users\admin> Get-WinEvent -FilterHashtable @{
+>>     LogName   = "Microsoft-Windows-WLAN-AutoConfig/Operational"
+>>     StartTime = $since
+>> } -ErrorAction SilentlyContinue |
+>>     Where-Object { $_.Id -in @(8001,8002,11000,11001,11004,11006) } |
+>>     Select-Object -First 30 TimeCreated,Id,Message |
+>>     Format-List
+PS C:\Users\admin>
+PS C:\Users\admin> Write-Host "`n========== 6. WIFI DRIVER EVENTS ==========" -ForegroundColor Cyan
+
+========== 6. WIFI DRIVER EVENTS ==========
+PS C:\Users\admin> Get-WinEvent -FilterHashtable @{
+>>     LogName   = "System"
+>>     StartTime = $since
+>> } -ErrorAction SilentlyContinue |
+>>     Where-Object {
+>>         $_.ProviderName -match "Netwtw|NDIS" -or
+>>         $_.Message -match "AX210|miniport"
+>>     } |
+>>     Select-Object -First 20 TimeCreated,ProviderName,Id,Message |
+>>     Format-List
+PS C:\Users\admin>
+PS C:\Users\admin> Write-Host "`n========== 7. WATCHER LOG ==========" -ForegroundColor Cyan
+
+========== 7. WATCHER LOG ==========
+PS C:\Users\admin> $log = "C:\ProgramData\FRSNetworkWatch\watch.log"
+PS C:\Users\admin> if (Test-Path $log) {
+>>     Get-Content $log -Tail 50
+>> } else {
+>>     Write-Host "Watcher log not found: $log"
+>> }
+Watcher log not found: C:\ProgramData\FRSNetworkWatch\watch.log
+PS C:\Users\admin>
+PS C:\Users\admin> Write-Host "`n========== 8. WATCHER TASK ==========" -ForegroundColor Cyan
+
+========== 8. WATCHER TASK ==========
+PS C:\Users\admin> Get-ScheduledTask -TaskName "FRS-Network-Watch" -ErrorAction SilentlyContinue |
+>>     Select-Object TaskName,State
+
+TaskName          State
+--------          -----
+FRS-Network-Watch Ready
+
+
+PS C:\Users\admin>
+PS C:\Users\admin> Write-Host "`n========== DIAGNOSIS COMPLETE ==========" -ForegroundColor Green
+
+========== DIAGNOSIS COMPLETE ==========
