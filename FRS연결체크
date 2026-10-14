@@ -1,0 +1,56 @@
+$server = "10.244.201.165"
+$port = 7447
+$distro = "Ubuntu-22.04"
+$since = (Get-Date).AddMinutes(-30)
+
+Write-Host "`n========== 1. WIFI STATUS ==========" -ForegroundColor Cyan
+Get-NetAdapter -Name "Wi-Fi" -ErrorAction SilentlyContinue |
+    Format-List Name,Status,LinkSpeed,InterfaceDescription
+
+netsh wlan show interfaces
+
+Write-Host "`n========== 2. IP / GATEWAY ==========" -ForegroundColor Cyan
+Get-NetIPConfiguration -InterfaceAlias "Wi-Fi" -ErrorAction SilentlyContinue |
+    Format-List InterfaceAlias,IPv4Address,IPv4DefaultGateway,DNSServer
+
+Write-Host "`n========== 3. WINDOWS -> FRS ==========" -ForegroundColor Cyan
+Test-NetConnection $server -Port $port -InformationLevel Detailed
+
+Write-Host "`n========== 4. WSL -> FRS ==========" -ForegroundColor Cyan
+wsl.exe -d $distro -- nc -vz -w 3 $server $port
+Write-Host "WSL TCP exit code: $LASTEXITCODE"
+
+Write-Host "`n========== 5. WIFI EVENTS (LAST 30 MIN) ==========" -ForegroundColor Cyan
+Get-WinEvent -FilterHashtable @{
+    LogName   = "Microsoft-Windows-WLAN-AutoConfig/Operational"
+    StartTime = $since
+} -ErrorAction SilentlyContinue |
+    Where-Object { $_.Id -in @(8001,8002,11000,11001,11004,11006) } |
+    Select-Object -First 30 TimeCreated,Id,Message |
+    Format-List
+
+Write-Host "`n========== 6. WIFI DRIVER EVENTS ==========" -ForegroundColor Cyan
+Get-WinEvent -FilterHashtable @{
+    LogName   = "System"
+    StartTime = $since
+} -ErrorAction SilentlyContinue |
+    Where-Object {
+        $_.ProviderName -match "Netwtw|NDIS" -or
+        $_.Message -match "AX210|miniport"
+    } |
+    Select-Object -First 20 TimeCreated,ProviderName,Id,Message |
+    Format-List
+
+Write-Host "`n========== 7. WATCHER LOG ==========" -ForegroundColor Cyan
+$log = "C:\ProgramData\FRSNetworkWatch\watch.log"
+if (Test-Path $log) {
+    Get-Content $log -Tail 50
+} else {
+    Write-Host "Watcher log not found: $log"
+}
+
+Write-Host "`n========== 8. WATCHER TASK ==========" -ForegroundColor Cyan
+Get-ScheduledTask -TaskName "FRS-Network-Watch" -ErrorAction SilentlyContinue |
+    Select-Object TaskName,State
+
+Write-Host "`n========== DIAGNOSIS COMPLETE ==========" -ForegroundColor Green
