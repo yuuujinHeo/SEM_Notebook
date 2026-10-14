@@ -1,0 +1,55 @@
+PS C:\Users\admin> Get-Process -Name "vmmemWSL","wslhost","wslservice" -ErrorAction SilentlyContinue |
+>>     Select-Object ProcessName,Id,CPU,WorkingSet64,StartTime
+
+
+ProcessName  : vmmemWSL
+Id           : 11452
+CPU          : 5367.34375
+WorkingSet64 : 3386327040
+StartTime    : 2026-10-14 오전 7:35:24
+
+ProcessName  : wslhost
+Id           : 4220
+CPU          : 0.015625
+WorkingSet64 : 12320768
+StartTime    : 2026-10-14 오전 9:17:38
+
+ProcessName  : wslhost
+Id           : 6220
+CPU          : 0.078125
+WorkingSet64 : 12587008
+StartTime    : 2026-10-14 오전 7:35:36
+
+ProcessName  : wslhost
+Id           : 6512
+CPU          : 0.015625
+WorkingSet64 : 12431360
+StartTime    : 2026-10-14 오후 7:17:05
+
+ProcessName  : wslhost
+Id           : 13576
+CPU          : 0.015625
+WorkingSet64 : 12259328
+StartTime    : 2026-10-14 오전 7:35:36
+
+ProcessName  : wslhost
+Id           : 15292
+CPU          : 0.015625
+WorkingSet64 : 2215936
+StartTime    : 2026-10-14 오전 7:35:46
+
+ProcessName  : wslhost
+Id           : 15940
+CPU          : 0.03125
+WorkingSet64 : 12431360
+StartTime    : 2026-10-14 오후 7:17:49
+
+ProcessName  : wslservice
+Id           : 4780
+CPU          : 4.609375
+WorkingSet64 : 35008512
+StartTime    : 2026-10-14 오전 7:35:20
+
+
+---
+
