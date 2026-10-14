@@ -9,3 +9,9 @@ LoopbackEnabled       : True
 AllowHostPolicyMerge  : True
 
 Get-NetFirewallHyperVVMSetting -Name
+
+PS C:\Users\admin> Get-Content "$env:USERPROFILE\.wslconfig"
+[wsl2]
+networkingMode=mirrored
+dnsTunneling=true
+firewall=false
