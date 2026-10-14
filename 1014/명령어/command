@@ -18,3 +18,18 @@ ip route get 10.244.201.165
 # 핑도 확인 요청
 ping -S 10.108.2.101 10.244.201.165
 ping -S 10.249.138.60 10.244.201.165
+
+===========================================
+
+# 1) 커널 스레드까지 포함한 멈춘 작업 전부를 dmesg로 출력 (잠금 잡은 쪽이 보통 여기 나옴)
+sudo sh -c 'echo w > /proc/sysrq-trigger'; sudo dmesg | tail -300 > /tmp/blocked.txt; wc -l /tmp/blocked.txt
+
+# 2) 멈춘 커널 스레드(kworker 등) 목록
+ps -eLo pid,stat,wchan:32,comm | awk 'NR==1 || $2 ~ /D/'
+
+# 3) 언제부터 멈췄는지 (4003 시각과 맞춰보기용)
+ps -o pid,lstart,etime,args -p 30341,118545,314
+cat /proc/314/cmdline | tr '\0' ' '; echo
+
+# 4) 이전 경고가 남아 있는지
+sudo dmesg | grep -iE "blocked for more|hung_task|netvsc|rtnl" | tail -50
