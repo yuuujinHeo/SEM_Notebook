@@ -65,3 +65,7 @@ PS C:\Users\admin> wsl -d Ubuntu-22.04
 rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ timeout -k 2s 5s /usr/sbin/ip -4 addr show; echo "ExitCode=$?"
 Killed
 ExitCode=137
+
+ip -4 addr show >/tmp/ip-test.log 2>&1 &
+sleep 2
+ps -eo pid,ppid,stat,wchan:32,comm | grep -E 'PID|ip$'
