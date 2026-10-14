@@ -1,0 +1,53 @@
+rainbow@DESKTOP-19T7OTG:/mnt/c/Temp$ cat /sys/class/net/eth2/statistics/tx_dropped
+25589
+rainbow@DESKTOP-19T7OTG:/mnt/c/Temp$ cat /s
+sbin/ snap/ srv/  sys/
+rainbow@DESKTOP-19T7OTG:/mnt/c/Temp$ cat /s^C
+rainbow@DESKTOP-19T7OTG:/mnt/c/Temp$ cat /sys/class/net/eth2/statistics/tx_packets
+97143
+rainbow@DESKTOP-19T7OTG:/mnt/c/Temp$ cat /sys/class/net/eth2/statistics/tx_errors
+0
+rainbow@DESKTOP-19T7OTG:/mnt/c/Temp$ nc -n -vz -w 3 10.244.201.165 7447
+nc: connect to 10.244.201.165 port 7447 (tcp) timed out: Operation now in progress
+rainbow@DESKTOP-19T7OTG:/mnt/c/Temp$ cat /sys/class/net/eth2/statistics/tx_dropped
+25606
+rainbow@DESKTOP-19T7OTG:/mnt/c/Temp$ cat /sys/class/net/eth2/statistics/tx_packets
+97143
+rainbow@DESKTOP-19T7OTG:/mnt/c/Temp$ cat /sys/class/net/eth2/statistics/tx_errors
+0
+
+
+
+
+
+PS C:\Temp> Get-NetAdapter -INcludeHidden | Where-Object { $_.InterfaceDescription -match 'Hyper-V|Wi-Fi'} | Format-Table Name,Status,InterfaceDescription
+
+Name                       Status       InterfaceDescription
+----                       ------       --------------------
+vSwitch (FSE Switch)       Up           Hyper-V Virtual Switch Extension Adapter #2
+Wi-Fi                      Up           Intel(R) Wi-Fi 6E AX210 160MHz
+로컬 영역 연결* 10         Disconnected Microsoft Wi-Fi Direct Virtual Adapter #2
+vSwitch (Default Switch)   Up           Hyper-V Virtual Switch Extension Adapter
+vEthernet (Default Switch) Up           Hyper-V Virtual Ethernet Adapter
+vEthernet (FSE HostVnic)   Up           Hyper-V Virtual Ethernet Container Adapter
+로컬 영역 연결* 9          Disconnected Microsoft Wi-Fi Direct Virtual Adapter
+
+
+PS C:\Temp> Get-VMSwitch
+
+Name           SwitchType NetAdapterInterfaceDescription
+----           ---------- ------------------------------
+Default Switch Internal
+FSE Switch     Internal
+
+PS C:\Temp> wsl --status
+기본 배포: Ubuntu-22.04
+기본 버전: 2
+
+PS C:\Temp> Get-WinEvent -ListLog '*Lxss*','*Hyper-V-Compute*' -ErrorAction SilentlyCOntinue | Select-Object LogName,IsEnabled,RecordCount
+
+LogName                                       IsEnabled RecordCount
+-------                                       --------- -----------
+Microsoft-Windows-Hyper-V-Compute-Operational      True       12259
+Microsoft-Windows-Hyper-V-Compute-Admin            True         126
+
