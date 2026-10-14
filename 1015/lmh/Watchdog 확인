@@ -1,0 +1,11 @@
+관리자 powershell에서
+Start-ScheduledTask -TaskName "FRS-Network-Watch"
+
+실행 상태 확인은
+Get-ScheduledTask -TaskName "FRS-Network-Watch" |
+    Select-Object TaskName, State
+이고 running 상태여야함
+
+30초마다 검사하고 로그찍을텐데
+Get-Content "C:\ProgramData\FRSNetworkWatch\watch.log" -Tail 30 -Wait
+이거로 로그 쌓이는것까지만 봐주세여
