@@ -1,0 +1,35 @@
+
+acs-si-fms / frs
+si - fms 됨
+muscat - fms 안됨
+
+내부 zenoh 연결 확인 
+로봇PC에서 powershell로
+Test-NetConnection 127.0.0.1 -Port 7447
+
+내부 muscat 확인
+curl.exe -i http://localhost:3000/common/docs
+
+ifconfig
+ip route 안됨
+
+WSL 내부에서 네트워크 인지 못함
+
+WSL
+cat /proc/net/route 명령어 말고 멈춤
+timeout 5 ip -4 route get 10.244.201.165
+echo "route_exit=$?"
+
+timeout 5 ip -4 route show
+echo "route_table_exit=$?"
+
+timeout 5 cat /proc/net/route
+echo "proc_route_exit=$?"
+
+timeout 5 ip -br link
+echo "link_exit=$?"
+
+
+arp -a 결과
+WSL 에서 wifi망의 MAC 주소 못가져옴
+
