@@ -1,0 +1,15 @@
+PS C:\Users\admin> Select-String -Path C:\Users\admin\blocked_full.txt -Pattern 'task:' | % { ($_.Line -split 'task:')[1] -replace ' stack:.*','' } | Group-Object | Sort-Object Count -Descending | Format-Table Count,Name -AutoSize
+
+Count Name
+----- ----
+   73 ip              state:D
+   22 sudo            state:D
+    4 http            state:D
+    2 tcpdump         state:D
+    2 ifconfig        state:D
+    2 hostname        state:D
+    2 GnsEngine       state:D
+    2 kworker/u64:0   state:D
+    2 rx-5            state:D
+    2 wget            state:D
+    2 kworker/0:2     state:D
