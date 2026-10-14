@@ -1,0 +1,44 @@
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ ps -eo pid,ppid,stat,wchan:32,comm,args | grep -E '[i]p -|[t]imeout|[s]trace'
+   1910    1909 Ss+  poll_schedule_timeout.constprop. bash            -bash
+   2042    1911 S+   poll_schedule_timeout.constprop. bash            -bash
+  30341     314 D    rtnl_dumpit                      ip              ip -o -4 addr show
+  46530   46528 Ss+  poll_schedule_timeout.constprop. bash            -bash
+  56041   56039 Ss+  poll_schedule_timeout.constprop. bash            -bash
+ 118545  118525 D    -                                wget            wget --timeout 60 -U wget/1.21.2-2ubuntu1.4 Ubuntu/22.04.5/LTS GNU/Linux/6.18.33.1-microsoft-standard-WSL2/x86_64 Intel(R)/Core(TM)/i5-14400 cloud_id/unknown -O- --content-on-error https://motd.ubuntu.com
+ 242289  242274 D+   rtnl_dumpit                      ip              ip -br addr
+ 243136  243091 D+   rtnetlink_rcv_msg                ip              ip -4 route get 10.244.201.165
+ 246096  246080 S+   sigsuspend                       timeout         timeout 5 ip -4 route show
+ 246097  246096 D+   rtnetlink_rcv_msg                ip              ip -4 route show
+ 246617  246549 S+   sigsuspend                       timeout         timeout 5 ip -4 route show
+ 246618  246617 D+   rtnetlink_rcv_msg                ip              ip -4 route show
+ 246988  246919 S+   sigsuspend                       timeout         timeout 5 ip -br link
+ 246989  246988 D+   rtnl_dumpit                      ip              ip -br link
+ 247217  247050 S+   sigsuspend                       timeout         timeout 5 ip -4 addr show
+ 247218  247217 D+   rtnl_dumpit                      ip              ip -4 addr show
+ 247941  238112 S+   poll_schedule_timeout.constprop. wsl.exe         /init /mnt/c/WINDOWS/system32/wsl.exe wsl.exe -l -v
+ 248741  247294 S+   sigsuspend                       timeout         timeout 8 strace -f -tt -o /tmp/ip-route.strace ip -4 route show
+ 248742  248741 S+   do_wait                          strace          strace -f -tt -o /tmp/ip-route.strace ip -4 route show
+ 248745  248742 D+   rtnetlink_rcv_msg                ip              ip -4 route show
+ 248746  248617 S+   poll_schedule_timeout.constprop. wsl.exe         /init /mnt/c/WINDOWS/system32/wsl.exe wsl.exe -d Ubuntu-22.04 -- /bin/echo WSL_OK
+ 249527  249525 Ss+  poll_schedule_timeout.constprop. bash            -bash
+ 251598  248869 S+   poll_schedule_timeout.constprop. wsl.exe         /init /mnt/c/WINDOWS/system32/wsl.exe wsl.exe -l -v
+ 252006  251840 S+   poll_schedule_timeout.constprop. wsl.exe         /init /mnt/c/WINDOWS/system32/wsl.exe wsl.exe --status
+ 258191  258189 Ss+  poll_schedule_timeout.constprop. bash            -bash
+ 259258  259184 S+   sigsuspend                       timeout         timeout 5 ip -4 route get 10.244.201.165
+ 259259  259258 D+   rtnetlink_rcv_msg                ip              ip -4 route get 10.244.201.165
+ 260710  259405 S+   sigsuspend                       timeout         timeout 5 ip -br link
+ 260711  260710 D+   rtnl_dumpit                      ip              ip -br link
+ 262033     314 S    poll_schedule_timeout.constprop. avahi-publish-s avahi-publish-service rainbowbot-SEC_Process_2 _rainbow-robot._tcp 8180 model=QD-SEC_CNC_A robot_serial=SEC_Process_2 name=SEC_Process_2 alias=삼성전자 A동 CNC QD타입 api_mode=muscat state=DISCONNECT
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /proc/net/dev
+Inter-|   Receive                                                |  Transmit
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+    lo: 97117524 1740082    0    0    0     0          0         0 97117524 1740082    0    0    0     0       0          0
+  eth0: 3993410543 3765638    0    0    0     0          0        44 113487122 1604756    0    0    0     0       0          0
+  eth1:  575463    6083    0    0    0     0          0         9  5828382   16712    0    0    0     0       0          0
+loopback0: 8055665603 11997149    0    0    0     0          0         9 9363029580 7830429    0    0    0     0       0          0
+docker0:  202740    1148    0    0    0     0          0         0  3029368    9822    0    7    0     0       0          0
+veth25ad9b2:     126       3    0    0    0     0          0         0  2735556    8372    0    0    0     0       0          0
+veth280046b:    3305      23    0    0    0     0          0         0  2737344    8391    0    0    0     0       0          0
+vethddc994e:  215255    1119    0    0    0     0          0         0  3027652    9807    0    0    0     0       0          0
+veth06cd98a:     126       3    0    0    0     0          0         0  2735340    8368    0    0    0     0       0          0
+  eth2: 5780167   88236    0    0    0     0          0         0 108431385   97143    0 21569    0     0       0          0
