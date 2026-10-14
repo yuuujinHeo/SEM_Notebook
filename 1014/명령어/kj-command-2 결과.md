@@ -28,6 +28,7 @@ rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ sudo dmesg | grep -iE "blocked for m
 # 명령어 5
 PS C:\Users\admin> Get-WinEvent -FilterHashtable @{LogName='System'; StartTime=(Get-Date).AddDays(-3)} | ? { $_.Id -in 4003,8000 } | select TimeCreated,Id | ft -AutoSize
 
+```
 TimeCreated                Id
 -----------                --
 2026-10-14 오전 8:45:19  8000
@@ -104,3 +105,4 @@ TimeCreated                Id
 2026-10-12 오전 7:33:32  4003
 2026-10-12 오전 7:23:19  8000
 2026-10-12 오전 7:23:19  4003
+```
