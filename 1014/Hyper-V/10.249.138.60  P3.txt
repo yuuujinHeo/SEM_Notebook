@@ -66,6 +66,41 @@ rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ timeout -k 2s 5s /usr/sbin/ip -4 add
 Killed
 ExitCode=137
 
-ip -4 addr show >/tmp/ip-test.log 2>&1 &
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ ip -4 addr show >/tmp/ip-test.log 2>&1 &
 sleep 2
 ps -eo pid,ppid,stat,wchan:32,comm | grep -E 'PID|ip$'
+[1] 309234
+    PID    PPID STAT WCHAN                            COMMAND
+  30341     314 D    rtnl_dumpit                      ip
+ 237456  237329 D+   rtnetlink_rcv_msg                ip
+ 242289  242274 D+   rtnl_dumpit                      ip
+ 243136  243091 D+   rtnetlink_rcv_msg                ip
+ 246097  246096 D+   rtnetlink_rcv_msg                ip
+ 246618  246617 D+   rtnetlink_rcv_msg                ip
+ 246989  246988 D+   rtnl_dumpit                      ip
+ 247218  247217 D+   rtnl_dumpit                      ip
+ 248745  248742 D+   rtnetlink_rcv_msg                ip
+ 259259  259258 D+   rtnetlink_rcv_msg                ip
+ 260711  260710 D+   rtnl_dumpit                      ip
+ 264182  258191 D+   rtnetlink_rcv_msg                ip
+ 264612  264542 D+   rtnetlink_rcv_msg                ip
+ 264825  264809 D+   rtnl_dumpit                      ip
+ 264956  264941 D+   rtnl_dumpit                      ip
+ 269817  269612 D+   rtnetlink_rcv_msg                ip
+ 300472  300402 D+   rtnl_dumpit                      ip
+ 301428  301427 D+   rtnetlink_rcv_msg                ip
+ 301615  301543 D+   rtnl_dumpit                      ip
+ 302854  302853 D+   rtnl_dumpit                      ip
+ 304364  304363 D+   rtnl_dumpit                      ip
+ 304620  304619 D    rtnl_dumpit                      ip
+ 304813  304812 D+   rtnl_dumpit                      ip
+ 304993  304992 D    rtnetlink_rcv_msg                ip
+ 305114  305113 D    rtnl_dumpit                      ip
+ 306669  306666 D    rtnl_dumpit                      ip
+ 306842  306839 D    rtnl_dumpit                      ip
+ 306990  306987 D    rtnl_dumpit                      ip
+ 307783  307777 D    rtnl_dumpit                      ip
+ 307850  307845 D    rtnl_dumpit                      ip
+ 308365  308363 Ds+  rtnl_dumpit                      ip
+ 308707  308481 D    rtnl_dumpit                      ip
+ 309234  308483 D    rtnl_dumpit                      ip
