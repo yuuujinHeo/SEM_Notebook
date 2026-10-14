@@ -1,0 +1,10 @@
+Windows PowerShell에서 실행, WSL 터미널 아님
+
+wsl -d Ubuntu-22.04 -u root -e sh -c "echo w > /proc/sysrq-trigger; dmesg | tail -300 > /mnt/c/Users/admin/blocked.txt"
+
+
+
+
+
+# 확인
+Get-Content C:\Users\admin\blocked.txt -Tail 20
