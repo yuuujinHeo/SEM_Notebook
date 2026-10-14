@@ -1,0 +1,184 @@
+PS C:\Users\admin> Get-NetAdapter -Name 'Wi-Fi' | Format-List Name,Status,LinkSpeed,InterfaceDescription
+
+
+Name                 : Wi-Fi
+Status               : Up
+LinkSpeed            : 287 Mbps
+InterfaceDescription : Intel(R) Wi-Fi 6E AX210 160MHz
+
+
+
+PS C:\Users\admin> netsh wlan show interfaces
+
+시스템에 1 인터페이스가 있습니다.
+
+    이름                   : Wi-Fi
+    설명                   : Intel(R) Wi-Fi 6E AX210 160MHz
+    GUID                   : c7f7ce3b-8159-4b72-b897-598abdde9d00
+    물리적 주소            : 40:d1:33:cd:46:69
+    인터페이스 유형         : 기본
+    상태                   : 연결됨
+    SSID                   : sWave_works_shared
+    AP BSSID               : b8:3a:5a:cd:27:b1
+    밴드                   : 5GHz
+    채널                : 48
+    연결된 Akm-cipher : [ akm = 00-0f-ac:01, 암호 = 00-0f-ac:04 ]
+    네트워크 종류          : 인프라
+    송수신 장치 종류       : 802.11 ax
+    인증                   : WPA2-엔터프라이즈
+    암호                 : CCMP
+    연결 모드        : 자동 연결
+    수신 속도(Mbps)        : 229
+    전송 속도(Mbps)        : 287
+    신호                   : 83%
+    Rssi                   : -61
+    프로필                : sWave_works_shared
+
+    QoS MSCS 구성됨         : 0
+    QoS 맵 구성됨          : 0
+    정책에서 허용하는 QoS 맵    : 0
+
+PS C:\Users\admin> netsh wlan show drivers
+
+인터페이스 이름: Wi-Fi
+
+    드라이버                    : Intel(R) Wi-Fi 6E AX210 160MHz
+    공급업체                    : Intel Corporation
+    공급자                  : Intel
+    날짜                      : 2026-07-29
+    버전                   : 24.70.0.3
+    INF 파일                  : oem14.inf
+    유형                      : 기본 Wi-Fi 드라이버
+    지원되는 주파수 형식     : 802.11b 802.11g 802.11n 802.11a 802.11ac 802.11 ax
+    FIPS 140 모드 지원됨:   예
+    802.11w 관리 프레임 보호 지원됨 : 예
+    호스트된 네트워크 지원  : 아니요
+    인프라 모드에서 지원되는 인증 및 암호:
+                                오픈               없음
+                                오픈               WEP-40bit
+                                오픈               WEP-104비트
+                                오픈               WEP
+                                WPA-엔터프라이즈       TKIP
+                                WPA-엔터프라이즈       CCMP
+                                WPA-개인           TKIP
+                                WPA-개인           CCMP
+                                WPA2-엔터프라이즈      TKIP
+                                WPA2-엔터프라이즈      CCMP
+                                WPA2-개인          TKIP
+                                WPA2-개인          CCMP
+                                오픈               공급업체 정의
+                                WPA3-개인          CCMP
+                                공급업체 정의          공급업체 정의
+                                WPA3-Enterprise 192비트 GCMP-256
+                                OWE              CCMP
+                                WPA3-Enterprise  CCMP
+    지원되는 대역 수 : 3
+                                2.4GHz[ 0MHz~0MHz]
+                                5GHz[ 0MHz~0MHz]
+                                6GHz[ 0MHz~0MHz]
+    IHV 서비스 존재       : 예
+    IHV 어댑터 OUI           : [00 00 00], 유형: [00]
+    IHV 확장성 DLL 경로: C:\WINDOWS\System32\DriverStore\FileRepository\netwtw6e.inf_amd64_96d32eb1078116ad\IntelIHVRouter14.dll
+    IHV UI 확장성 ClSID: {00000000-0000-0000-0000-000000000000}
+    IHV 진단 CLSID     : {00000000-0000-0000-0000-000000000000}
+    지원되는 무선 디스플레이: 예(그래픽 드라이버: 예, Wi-Fi 드라이버: 예)
+
+PS C:\Users\admin> Get-NetIPConfiguration -InterfaceAlias 'Wi-Fi' | Format-List InterfaceAlias,IPv4Address,IPv4DefaultGateway,DNSServer
+
+
+InterfaceAlias     : Wi-Fi
+IPv4Address        : {10.249.138.60}
+IPv4DefaultGateway : {MSFT_NetRoute(InstanceID = ":8:8:8:9:55?;55;:8??C8;?B8;55;")}
+DNSServer          : {MSFT_DNSClientServerAddress(Name = "21", CreationClassName = "", SystemCreationClassName = "", Sy
+                     stemName = "23"), MSFT_DNSClientServerAddress(Name = "21", CreationClassName = "", SystemCreationC
+                     lassName = "", SystemName = "2")}
+# 2번
+
+## powrshell
+```
+PS C:\Users\admin> Find-NetRoute -RemoteIPAddress 10.244.201.165 | Format-List
+
+
+IPAddress         : 10.249.138.60
+InterfaceIndex    : 21
+InterfaceAlias    : Wi-Fi
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 24
+PrefixOrigin      : Dhcp
+SuffixOrigin      : Dhcp
+AddressState      : Preferred
+ValidLifetime     : 06:48:36
+PreferredLifetime : 06:48:36
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+
+Caption            :
+Description        :
+ElementName        :
+InstanceID         : :8:8:8:9:55<;55;:8<>C8;=B8;55;
+AdminDistance      :
+DestinationAddress :
+IsStatic           :
+RouteMetric        : 0
+TypeOfRoute        : 3
+AddressFamily      : IPv4
+CompartmentId      : 1
+DestinationPrefix  : 0.0.0.0/0
+InterfaceAlias     : Wi-Fi
+InterfaceIndex     : 21
+InterfaceMetric    : 45
+NextHop            : 10.249.138.1
+PreferredLifetime  : 08:00:00
+Protocol           : NetMgmt
+Publish            : No
+State              : Alive
+Store              : ActiveStore
+ValidLifetime      : 08:00:00
+PSComputerName     :
+ifIndex            : 21
+
+
+
+PS C:\Users\admin> Get-NetRoute -AddressFamily IPv4 | Sort-Object RouteMetric | Format-Table DestinationPrefix,NextHop,InterfaceAlias,RouteMetric
+
+DestinationPrefix  NextHop      InterfaceAlias              RouteMetric
+-----------------  -------      --------------              -----------
+0.0.0.0/0          10.249.138.1 Wi-Fi                                 0
+127.255.255.255/32 0.0.0.0      Loopback Pseudo-Interface 1         256
+127.0.0.0/8        0.0.0.0      Loopback Pseudo-Interface 1         256
+127.0.0.1/32       0.0.0.0      Loopback Pseudo-Interface 1         256
+172.25.48.0/20     0.0.0.0      vEthernet (Default Switch)          256
+192.168.0.0/24     0.0.0.0      Fastech                             256
+172.25.63.255/32   0.0.0.0      vEthernet (Default Switch)          256
+172.25.48.1/32     0.0.0.0      vEthernet (Default Switch)          256
+10.249.138.255/32  0.0.0.0      Wi-Fi                               256                                                 10.108.2.0/24      0.0.0.0      RB&Vision                           256                                                 0.0.0.0/0          192.168.0.1  Fastech                             256                                                 0.0.0.0/0          10.108.2.1   RB&Vision                           256                                                 10.108.2.101/32    0.0.0.0      RB&Vision                           256                                                 10.249.138.60/32   0.0.0.0      Wi-Fi                               256                                                 10.249.138.0/24    0.0.0.0      Wi-Fi                               256                                                 10.108.2.255/32    0.0.0.0      RB&Vision                           256                                                 255.255.255.255/32 0.0.0.0      RB&Vision                           256                                                 255.255.255.255/32 0.0.0.0      Fastech                             256                                                 224.0.0.0/4        0.0.0.0      로컬 영역 연결* 10                  256                                                 255.255.255.255/32 0.0.0.0      Loopback Pseudo-Interface 1         256                                                 255.255.255.255/32 0.0.0.0      vEthernet (Default Switch)          256                                                 255.255.255.255/32 0.0.0.0      로컬 영역 연결* 10                  256                                                 255.255.255.255/32 0.0.0.0      Wi-Fi                               256                                                 255.255.255.255/32 0.0.0.0      로컬 영역 연결* 9                   256                                                 224.0.0.0/4        0.0.0.0      Loopback Pseudo-Interface 1         256                                                 224.0.0.0/4        0.0.0.0      RB&Vision                           256                                                 192.168.0.160/32   0.0.0.0      Fastech                             256                                                 192.168.0.255/32   0.0.0.0      Fastech                             256                                                 224.0.0.0/4        0.0.0.0      로컬 영역 연결* 9                   256                                                 224.0.0.0/4        0.0.0.0      vEthernet (Default Switch)          256
+224.0.0.0/4        0.0.0.0      Fastech                             256
+224.0.0.0/4        0.0.0.0      Wi-Fi                               256
+
+
+PS C:\Users\admin> Test-NetConnection 10.244.201.165 -Port 7447 -InformationLevel Detailed
+
+
+ComputerName            : 10.244.201.165
+RemoteAddress           : 10.244.201.165
+RemotePort              : 7447
+NameResolutionResults   : 10.244.201.165
+                          DESKTOP-0QT5CQ0
+MatchingIPsecRules      :
+NetworkIsolationContext : Internet
+InterfaceAlias          : Wi-Fi
+SourceAddress           : 10.249.138.60
+NetRoute (NextHop)      : 10.249.138.1
+TcpTestSucceeded        : True
+```
+## wsl
+- 전부 무한 대기 상태로 빠짐
+```
+ip -br addr
+ip -4 route show
+ip -4 rule show
+ip -4 route get 10.244.201.165
+tracepath -n 10.244.201.165  # 설치된 경우
+```
