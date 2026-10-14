@@ -26,5 +26,5 @@ Write-Host "END"
 
 Write-Host "START"
 wsl.exe -d Ubuntu-22.04 -- /usr/bin/timeout -k 2s 5s /usr/sbin/ip -4 addr show
-Write=Host "ExitCode=$LASTEXITCODE"
+Write-Host "ExitCode=$LASTEXITCODE"
 Write-Host "END"
