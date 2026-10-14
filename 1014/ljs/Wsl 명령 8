@@ -1,0 +1,24 @@
+$start = [datetime]'2026-10-14 07:35:00'
+$end = [datetime]'2026-10-14 08:35:00'
+
+Get-WinEvent -FilterHashtable @{
+    LogName = 'Microsoft-Windows-NetworkProfile/Operational'
+    StartTime = $start
+    EndTime = $end
+} -ErrorAction SilentlyContinue |
+Select-Object TimeCreated,Id,Message |
+Format-List
+---
+Get-WinEvent -FilterHashtable @{
+    LogName = 'System'
+    StartTime = $start
+    EndTime = $end
+} -ErrorAction SilentlyContinue |
+Where-Object {
+    $_.ProviderName -match 'Netwtw|NDIS'
+} |
+Select-Object TimeCreated,ProviderName,Id,Message |
+Format-List
+
+
+
