@@ -31,3 +31,7 @@ Write-Host "END"
 
 wsl.exe -d Ubuntu-22.04 -- /usr/sbin/ip -4 addr show
 Write-Host "ExitCode=$LASTEXITCODE"
+
+rainbow@DESKTOP-19T7OTG:~$ scp -r wsl-network-diagnosis-20261014-203130 cd2354.kim@169.254.54.95:C:\Users\cd2354.kim\Desktop
+ssh: connect to host 169.254.54.95 port 22: No route to host
+lost connection
