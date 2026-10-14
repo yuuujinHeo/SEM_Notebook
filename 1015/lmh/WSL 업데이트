@@ -1,0 +1,11 @@
+Releases · microsoft/WSL
+https://github.com/microsoft/WSL/releases
+해당 링크에 wsl 최신 릴리즈가 3.0.3 입니다. msi 파일 가지고 가서 진행합시다.
+
+wsl --shutdown
+msiexec /i C:\경로\wsl.<버전>.x64.msi
+wsl --version
+
+Releases · microsoft/WSL
+https://github.com/microsoft/WSL/releases?page=2#release-2.7.8
+기존 2.7.8 버전도 원복용으로 챙겨갑시다.
