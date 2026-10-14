@@ -104,3 +104,6 @@ ps -eo pid,ppid,stat,wchan:32,comm | grep -E 'PID|ip$'
  308365  308363 Ds+  rtnl_dumpit                      ip
  308707  308481 D    rtnl_dumpit                      ip
  309234  308483 D    rtnl_dumpit                      ip
+
+WSL2 Mirrored 네트워크 환경에서 Linux 커널의 RTNETLINK 처리에 다수의 프로세스가 D 상태로 대기하는 현상이 발생했습니다.
+이것이 현재 ip 명령어가 멈추는 직접적인 원인입니다. 
