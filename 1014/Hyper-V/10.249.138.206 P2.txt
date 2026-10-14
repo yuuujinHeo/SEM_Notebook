@@ -60,3 +60,19 @@ rainbow@DESKTOP-HRM6NE5:/mnt/c/Users/admin$ ip -4 addr
 14: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
     inet 10.249.138.206/24 brd 10.249.138.255 scope global noprefixroute eth2
        valid_lft forever preferred_lft forever
+
+rainbow@DESKTOP-HRM6NE5:/mnt/c/Users/admin$ timeout 5 ip -4 route get 10.244.201.165
+10.244.201.165 via 10.249.138.1 dev eth2 src 10.249.138.206 uid 1000
+    cache
+
+rainbow@DESKTOP-HRM6NE5:/mnt/c/Users/admin$ ip neigh show
+172.17.0.5 dev docker0 lladdr 82:ac:91:3a:8e:e5 STALE
+169.254.73.152 dev loopback0 lladdr 00:11:22:33:44:55 PERMANENT
+172.17.0.4 dev docker0 lladdr 82:58:d8:f1:be:81 STALE
+10.108.2.2 dev eth0 lladdr cc:82:7f:c2:f1:9b REACHABLE
+10.249.138.1 dev eth2 lladdr 4c:ae:a3:88:be:01 REACHABLE
+172.17.0.3 dev docker0 lladdr 16:33:99:bd:12:ec STALE
+10.108.2.1 dev eth0 lladdr 00:90:e8:df:5c:84 REACHABLE
+
+rainbow@DESKTOP-HRM6NE5:/mnt/c/Users/admin$ nc -vz -w 3 10.244.201.165 7447
+Connection to 10.244.201.165 7447 port [tcp/*] succeeded!
