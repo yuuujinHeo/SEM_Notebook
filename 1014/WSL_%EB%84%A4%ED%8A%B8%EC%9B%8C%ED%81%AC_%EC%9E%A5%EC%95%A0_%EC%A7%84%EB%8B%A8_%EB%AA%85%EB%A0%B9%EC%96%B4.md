@@ -1,0 +1,65 @@
+# WSL2 네트워크 장애 — Windows 측 진단 명령어
+
+대상: Windows A / WSL Ubuntu-22.04 / 2026-10-14
+
+현재 WSL에서 `ip route`, `ip addr`, `/proc/<PID>/stack`, `dmesg` 등이 무한 대기하고 Ctrl+C로 종료되지 않는 상황입니다. 아래 명령은 **Windows PowerShell**에서 실행합니다.
+
+## 1. WSL 관련 프로세스 확인
+
+```powershell
+Get-Process -Name "vmmemWSL","wslhost","wslservice" -ErrorAction SilentlyContinue |
+    Select-Object ProcessName,Id,CPU,WorkingSet64,StartTime
+```
+
+## 2. 최근 12시간 Windows 이벤트 확인
+
+```powershell
+Get-WinEvent -FilterHashtable @{
+    LogName = 'System'
+    StartTime = (Get-Date).AddHours(-12)
+} -ErrorAction SilentlyContinue |
+Where-Object { $_.ProviderName -match 'Hyper-V|Lxss|Wsl|Netwtw|NDIS' } |
+Select-Object TimeCreated,ProviderName,Id,Message |
+Format-List
+```
+
+## 3. 결과 파일 저장
+
+```powershell
+$dir = "$env:USERPROFILE\Desktop\WSL-Diag-1014"
+New-Item -ItemType Directory -Path $dir -Force | Out-Null
+
+Get-Process -Name "vmmemWSL","wslhost","wslservice" -ErrorAction SilentlyContinue |
+    Select-Object ProcessName,Id,CPU,WorkingSet64,StartTime |
+    Out-File "$dir\wsl-processes.txt" -Encoding utf8
+
+Get-WinEvent -FilterHashtable @{
+    LogName = 'System'
+    StartTime = (Get-Date).AddHours(-12)
+} -ErrorAction SilentlyContinue |
+Where-Object { $_.ProviderName -match 'Hyper-V|Lxss|Wsl|Netwtw|NDIS' } |
+Select-Object TimeCreated,ProviderName,Id,Message |
+Format-List |
+Out-File "$dir\system-network-events.txt" -Encoding utf8
+
+Get-NetAdapter -IncludeHidden |
+    Format-Table Name,InterfaceDescription,Status -AutoSize |
+    Out-File "$dir\network-adapters.txt" -Encoding utf8
+
+wsl --version > "$dir\wsl-version.txt" 2>&1
+if (Test-Path "$env:USERPROFILE\.wslconfig") {
+    Copy-Item "$env:USERPROFILE\.wslconfig" "$dir\wslconfig.txt"
+}
+```
+
+## 4. 주의 사항
+
+- 운영 중인 Docker 서비스가 있다면 로그 확보 전 `wsl --shutdown`을 실행하지 마세요. 모든 WSL 서비스가 중단됩니다.
+- D 상태 프로세스는 Ctrl+C 또는 `timeout`으로도 즉시 종료되지 않을 수 있습니다. 멈추는 진단 명령을 반복 실행하지 마세요.
+- `/proc/locks`는 일반 파일 잠금 목록으로, RTNL 잠금 소유자를 보여주지 않습니다.
+- Windows 이벤트가 없다고 WSL 커널 문제가 없다는 뜻은 아닙니다.
+- 결과에 내부 IP와 호스트 정보가 포함될 수 있으므로 공개 전에 검토하세요.
+
+## 5. 추가 관찰
+
+Windows B에서 Windows A의 WSL/Docker 서비스에 접속할 때 기존 연결 유지, 신규 연결만 실패, 모든 연결 실패 중 어느 경우인지 기록하세요.
