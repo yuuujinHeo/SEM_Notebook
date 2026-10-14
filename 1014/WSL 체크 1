@@ -1,0 +1,115 @@
+
+WSL에서 ip route와 ifconfig가 모두 무한 대기한다면, 단순한 게이트웨이 설정 오류보다 WSL 내부 네트워크 인터페이스 조회가 멈추는 문제를 우선 의심해야 합니다.
+
+특히 현재 사용 중인 WSL2 networkingMode=mirrored와 관련이 있는지 확인할 필요가 있습니다.
+
+두 명령어는 일반적으로 즉시 결과가 나옵니다.
+
+ip route: Linux 커널에 라우팅 테이블 요청(Netlink)
+
+ifconfig: 네트워크 인터페이스 정보 조회(ioctl 등)
+
+둘 다 멈춘다는 것은 네트워크 상태 조회 과정에서 문제가 발생했을 가능성이 있다는 뜻입니다. 다만 이것만으로 WSL 커널 문제라고 확정할 수는 없습니다.
+
+1. 재시작하지 말고 먼저 확인
+WSL Bash에서 실행하세요.
+
+timeout 5 ip -4 route show
+echo "ip route exit=$?"
+
+timeout 5 ip -br link
+echo "ip link exit=$?"
+
+timeout 5 ip -4 addr show
+echo "ip addr exit=$?"
+
+timeout 5 cat /proc/net/route
+echo "proc route exit=$?"
+
+예상 결과와 의미:
+
+결과
+
+해석
+
+exit=0
+
+정상 완료
+
+exit=124
+
+5초 안에 완료되지 않아 timeout 발생
+
+/proc/net/route 정상, ip route만 멈춤
+
+Netlink 요청·응답 경로 또는 ip 실행 문제 조사
+
+ip route, ip link, ip addr 모두 멈춤
+
+인터페이스 상태 조회 경로 전반의 문제 가능성
+
+/proc/net/route도 멈춤
+
+커널 네트워크 상태 조회 문제 가능성이 더 커짐
+
+timeout으로도 프로세스가 종료되지 않는 경우에는 커널 내부에서 중단 불가능한 대기 상태인지 추가 확인해야 합니다.
+
+2. 프로세스가 어디에서 멈추는지 확인
+WSL Bash:
+
+command -v strace
+
+strace가 설치되어 있다면:
+
+timeout 8 strace -f -tt -o /tmp/ip-route.strace ip -4 route show
+echo "exit=$?"
+
+tail -n 30 /tmp/ip-route.strace
+
+여기서 중요한 것은 마지막 시스템 호출입니다.
+
+예를 들어:
+
+sendmsg(... NETLINK_ROUTE ...) = ...
+recvmsg(...
+recvmsg에서 멈춘 상태라면 커널의 Netlink 응답을 기다리고 있다는 직접적인 근거가 됩니다.
+
+반대로 openat, read, futex 등에서 멈춘다면 다른 경로를 조사해야 합니다.
+
+3. Windows에서 WSL 상태도 확인
+별도 Windows PowerShell을 열어 실행합니다.
+
+wsl.exe -l -v
+wsl.exe --status
+
+Get-Content "$env:USERPROFILE\.wslconfig" -ErrorAction SilentlyContinue
+
+Get-NetAdapter |
+    Format-Table Name,Status,InterfaceDescription -AutoSize
+
+이후 WSL 명령 실행 자체가 정상인지도 확인합니다.
+
+wsl.exe -d Ubuntu-22.04 -- /bin/echo WSL_OK
+
+WSL_OK가 바로 나오는데 ip route만 멈춘다면 WSL 전체가 정지한 것은 아니고 네트워크 정보 조회 경로에서 발생하는 문제로 범위를 좁힐 수 있습니다.
+
+4. 현재 장애와의 연관성
+지금까지 확인한 결과를 합치면:
+
+Windows → 127.0.0.1:7447: 성공
+
+Windows → localhost:3000/common/docs: HTTP 200
+
+WSL → localhost:3000/common/docs: HTTP 200
+
+WSL → ip route: 무한 대기
+
+WSL → ifconfig: 무한 대기
+
+따라서 로컬 TCP/HTTP 통신은 가능하지만, WSL 네트워크 상태 조회가 비정상인 상황입니다.
+
+이는 앞서 의심했던 WSL Mirrored 네트워크 문제와 연관될 수 있는 중요한 증거입니다. 그러나 FRS 외부 통신 장애와 동일한 원인인지는 아직 확인되지 않았습니다.
+
+우선 위 1번 명령어의 결과만 알려주세요. 특히 ip -br link와 cat /proc/net/route가 정상적으로 끝나는지가 핵심입니다.
+
+지금은 wsl --shutdown이나 Docker 재시작을 하지 않는 것이 좋습니다. 장애 당시의 커널·네트워크 상태를 확인할 기회가 사라집니다.
