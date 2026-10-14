@@ -1,0 +1,1 @@
+Select-String -Path C:\Users\admin\blocked_full.txt -Pattern 'task:' | % { ($_.Line -split 'task:')[1] -replace ' stack:.*','' } | Group-Object | Sort-Object Count -Descending | Format-Table Count,Name -AutoSize
