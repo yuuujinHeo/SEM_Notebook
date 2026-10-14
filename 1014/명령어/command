@@ -1,0 +1,16 @@
+timeout 5 ip -4 route get 10.244.201.165
+echo "route_exit=$?"
+
+timeout 5 ip -4 route show
+echo "route_table_exit=$?"
+
+timeout 5 cat /proc/net/route
+echo "proc_route_exit=$?"
+
+timeout 5 ip -br link
+echo "link_exit=$?"
+
+===========================================
+
+# ip route 안된다는 내용 머라고 뜨는지 확인 요청
+ip route get 10.244.201.165
