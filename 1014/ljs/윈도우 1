@@ -1,0 +1,26 @@
+$start = [datetime]'2026-10-14 07:35:00'
+$end = [datetime]'2026-10-14 08:45:00'
+
+Get-WinEvent -FilterHashtable @{
+    LogName = 'Microsoft-Windows-WLAN-AutoConfig/Operational'
+    StartTime = $start
+    EndTime = $end
+    Id = 8003
+} | ForEach-Object {
+    $_.ToXml()
+} | Out-File "C:\Temp\wifi-disconnect-xml.txt" -Encoding utf8
+
+
+
+
+Get-WinEvent -FilterHashtable @{
+    LogName = 'System'
+    StartTime = $start
+    EndTime = $end
+} |
+Where-Object {
+    $_.ProviderName -match 'Netwtw'
+} |
+ForEach-Object {
+    $_.ToXml()
+} | Out-File "C:\Temp\wifi-driver-xml.txt" -Encoding utf8
