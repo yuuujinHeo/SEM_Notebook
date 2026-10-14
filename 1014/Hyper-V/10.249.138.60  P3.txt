@@ -26,3 +26,17 @@ Windows 버전: 10.0.26100.7462
 admin@DESKTOP-19T7OTG C:\Users\admin>wsl --status
 기본 배포: Ubuntu-22.04
 기본 버전: 2
+
+PS C:\Users\admin> Get-NetIPConfiguration -InterfaceAlias "Wi-Fi"
+
+
+InterfaceAlias       : Wi-Fi
+InterfaceIndex       : 21
+InterfaceDescription : Intel(R) Wi-Fi 6E AX210 160MHz
+NetProfile.Name      : sWave_works_shared
+IPv4Address          : 10.249.138.60
+IPv6DefaultGateway   :
+IPv4DefaultGateway   : 10.249.138.1
+DNSServer            : 10.41.128.98
+                       10.41.128.99
+
