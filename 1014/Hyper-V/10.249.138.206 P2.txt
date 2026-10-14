@@ -42,3 +42,21 @@ IPv4DefaultGateway   : 10.249.138.1
 DNSServer            : 10.41.128.98
                        10.41.128.99
 
+rainbow@DESKTOP-HRM6NE5:/mnt/c/Users/admin$ ip -4 addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    inet 10.108.2.101/24 brd 10.108.2.255 scope global noprefixroute eth0
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    inet 192.168.0.200/24 brd 192.168.0.255 scope global noprefixroute eth1
+       valid_lft forever preferred_lft forever
+6: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+14: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    inet 10.249.138.206/24 brd 10.249.138.255 scope global noprefixroute eth2
+       valid_lft forever preferred_lft forever
