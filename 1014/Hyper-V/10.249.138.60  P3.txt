@@ -60,3 +60,8 @@ eth2    018AF90A        00000000        0005    0       0       60      FFFFFFFF
 docker0 000011AC        00000000        0001    0       0       0       0000FFFF        0       0       0
 eth1    0000A8C0        00000000        0001    0       0       291     00FFFFFF        0       0       0
 eth1    0100A8C0        00000000        0005    0       0       291     FFFFFFFF        0       0       0
+
+PS C:\Users\admin> wsl -d Ubuntu-22.04
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ timeout -k 2s 5s /usr/sbin/ip -4 addr show; echo "ExitCode=$?"
+Killed
+ExitCode=137
