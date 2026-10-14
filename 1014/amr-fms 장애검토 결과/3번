@@ -1,0 +1,28 @@
+# 3번
+
+
+PS C:\Users\admin> wsl.exe -l -v
+  NAME            STATE           VERSION
+* Ubuntu-22.04    Running         2
+PS C:\Users\admin> wsl.exe --status
+기본 배포: Ubuntu-22.04
+기본 버전: 2
+PS C:\Users\admin> Get-Content "$env:USERPROFILE\.wslconfig" -ErrorAction SilentlyContinue
+[wsl2]
+networkingMode=mirrored
+dnsTunneling=true
+firewall=false
+PS C:\Users\admin> Get-NetAdapter |
+>>     Format-Table Name,Status,InterfaceDescription -AutoSize
+
+Name                       Status InterfaceDescription
+----                       ------ --------------------
+RB&Vision                  Up     Realtek PCIe GbE Family Controller
+Wi-Fi                      Up     Intel(R) Wi-Fi 6E AX210 160MHz
+Fastech                    Up     ASIX AX88179 USB 3.0 to Gigabit Ethernet Adapter #2
+vEthernet (Default Switch) Up     Hyper-V Virtual Ethernet Adapter
+vEthernet (FSE HostVnic)   Up     Hyper-V Virtual Ethernet Container Adapter
+
+
+PS C:\Users\admin> wsl.exe -d Ubuntu-22.04 -- /bin/echo WSL_OK
+WSL_OK
