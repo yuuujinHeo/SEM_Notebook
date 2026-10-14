@@ -40,11 +40,11 @@ IPv4DefaultGateway   : 10.249.138.1
 DNSServer            : 10.41.128.98
                        10.41.128.99
 
-PS C:\Users\admin> wsl -d Ubuntu-22.04 -- timeout 5 ip link show Write-Host "ExitCode=$LASTEXITCODE"
+PS C:\Users\admin> wsl -d Ubuntu-22.04 -- timeout 5 ip link show; Write-Host "ExitCode=$LASTEXITCODE"
 Error: either "dev" is duplicate, or "ExitCode=0" is a garbage.
-PS C:\Users\admin> wsl -d Ubuntu-22.04 -- timeout 5 ip route show Write-Host "ExitCode=$LASTEXITCODE"
+PS C:\Users\admin> wsl -d Ubuntu-22.04 -- timeout 5 ip route show; Write-Host "ExitCode=$LASTEXITCODE"
 Error: any valid prefix is expected rather than "Write-Host".
-PS C:\Users\admin> wsl -d Ubuntu-22.04 -- timeout 5 ip neigh show Write-Host "ExitCode=$LASTEXITCODE"
+PS C:\Users\admin> wsl -d Ubuntu-22.04 -- timeout 5 ip neigh show; Write-Host "ExitCode=$LASTEXITCODE"
 Error: any valid prefix is expected rather than "Write-Host".
 
 PS C:\Users\admin> wsl -d Ubuntu-22.04 -- cat /proc/net/route
