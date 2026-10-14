@@ -1,0 +1,6 @@
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /proc/sys/kernel/sysrq
+176
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /proc/sys
+sys/           sysrq-trigger  sysvipc/
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /proc/sys/kernel/hung_task_timeout_secs
+0
