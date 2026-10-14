@@ -1,1 +1,16 @@
+WSL 전용 정책 조회:
+Get-NetFirewallHyperVVMSetting `
+  -Name "{40E0AC32-46A5-438A-A0B4-9D82E3B2A0A1}" `
+  -PolicyStore ActiveStore
 
+
+여기서 확인할 항목은 다음과 같습니다.
+Enabled
+DefaultInboundAction
+DefaultOutboundAction
+AllowHostPolicyMerge
+특히 WSL → FRS 통신은 Outbound 방향이므로 DefaultOutboundAction과 해당 포트에 적용되는 명시적 규칙이 중요합니다.
+추가로 규칙을 확인할 수 있습니다.
+
+Get-NetFirewallHyperVRule -PolicyStore ActiveStore |
+    Format-Table Name,DisplayName,Direction,Action,Enabled
