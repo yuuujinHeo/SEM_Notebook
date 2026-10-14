@@ -1,0 +1,156 @@
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ timeout 5 cat /proc/net/route
+Iface   Destination     Gateway         Flags   RefCnt  Use     Metric  Mask            MTU     WindowIRTT
+eth2    00000000        018AF90A        0003    0       0       60      00000000        0       0    0
+eth0    00000000        01026C0A        0003    0       0       281     00000000        0       0    0
+eth1    00000000        0100A8C0        0003    0       0       291     00000000        0       0    0
+eth0    00026C0A        00000000        0001    0       0       281     00FFFFFF        0       0    0
+eth0    01026C0A        00000000        0005    0       0       281     FFFFFFFF        0       0    0
+eth2    008AF90A        00000000        0001    0       0       316     00FFFFFF        0       0    0
+eth2    018AF90A        00000000        0005    0       0       60      FFFFFFFF        0       0    0
+docker0 000011AC        00000000        0001    0       0       0       0000FFFF        0       0    0
+eth1    0000A8C0        00000000        0001    0       0       291     00FFFFFF        0       0    0
+eth1    0100A8C0        00000000        0005    0       0       291     FFFFFFFF        0       0    0
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ timeout 5 cat /proc/net/dev
+Inter-|   Receive                                                |  Transmit
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+    lo: 95829815 1717588    0    0    0     0          0         0 95829815 1717588    0    0    0     0       0          0
+  eth0: 3943977578 3718124    0    0    0     0          0        42 111919166 1583735    0    0    0     0       0          0
+  eth1:  559937    5922    0    0    0     0          0         9  5651574   16206    0    0    0     0       0          0
+loopback0: 7939291615 11833210    0    0    0     0          0         9 9230036899 7728240    0    0    0     0       0          0
+docker0:  200810    1115    0    0    0     0          0         0  2943689    9534    0    7    0     0       0          0
+veth25ad9b2:     126       3    0    0    0     0          0         0  2652508    8118    0    0    0     0       0          0
+veth280046b:    3305      23    0    0    0     0          0         0  2654296    8137    0    0    0     0       0          0
+vethddc994e:  212863    1086    0    0    0     0          0         0  2941973    9519    0    0    0     0       0          0
+veth06cd98a:     126       3    0    0    0     0          0         0  2652292    8114    0    0    0     0       0          0
+  eth2: 5780167   88236    0    0    0     0          0         0 108431385   97143    0 20961    0     0       0          0
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ dmesg -T | tail -100
+[Wed Oct 14 08:13:00 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:13:00 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:21:06 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:21:11 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:21:11 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:21:21 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:21:26 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:21:26 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:21:36 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:21:41 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:21:41 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:22:40 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:22:45 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:22:45 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:23:01 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:23:06 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:23:06 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:23:16 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:23:21 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:23:21 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:24:05 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:24:10 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:24:10 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:24:25 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:24:30 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:24:30 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:26:59 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:27:04 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:27:04 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:27:26 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:27:31 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:27:31 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:27:41 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:27:46 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:27:46 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:28:26 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:28:31 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:28:31 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:29:17 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:29:22 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:29:22 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:29:32 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:29:37 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:29:38 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:36:06 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:36:11 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:36:11 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:36:21 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:36:26 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:36:26 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:38:10 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:38:15 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:38:15 2026] WSL (192) ERROR: CheckConnection: getaddrinfo() failed: -5
+[Wed Oct 14 08:44:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 08:45:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 08:46:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 08:47:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 08:48:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 08:49:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 08:50:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 08:51:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 08:54:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 08:56:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 08:57:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 08:59:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:00:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:01:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:02:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:10:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:11:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:12:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:13:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:14:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:15:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:16:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:17:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:18:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:19:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:20:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:21:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:22:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:32:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:34:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:35:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 09:36:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 10:09:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 10:41:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 10:42:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 10:44:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 10:45:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 10:46:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 10:47:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 10:48:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 11:00:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 11:01:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 11:02:03 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 11:03:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 11:07:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 11:08:33 2026] mini_init (175): drop_caches: 1
+[Wed Oct 14 11:09:33 2026] mini_init (175): drop_caches: 1
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ exit
+logout
+PS C:\Users\admin> wsl --list --verbose
+  NAME            STATE           VERSION
+* Ubuntu-22.04    Running         2
+PS C:\Users\admin> Get-NetAdapter -IncludeHidden | format-Table Name, InterfaceDescription, Status
+
+Name                                  InterfaceDescription                                Status
+----                                  --------------------                                ------
+이더넷(커널 디버거)                   Microsoft Kernel Debug Network Adapter              Not Present
+로컬 영역 연결* 6                     WAN Miniport (IP)                                   Up
+vSwitch (FSE Switch)                  Hyper-V Virtual Switch Extension Adapter #2         Up
+RB&Vision                             Realtek PCIe GbE Family Controller                  Up
+Wi-Fi                                 Intel(R) Wi-Fi 6E AX210 160MHz                      Up
+Fastech                               ASIX AX88179 USB 3.0 to Gigabit Ethernet Adapter #2 Up
+로컬 영역 연결* 3                     WAN Miniport (L2TP)                                 Disconnected
+Teredo Tunneling Pseudo-Interface                                                         Not Present
+로컬 영역 연결* 2                     WAN Miniport (IKEv2)                                Disconnected
+로컬 영역 연결* 8                     WAN Miniport (Network Monitor)                      Up
+로컬 영역 연결* 5                     WAN Miniport (PPPOE)                                Disconnected
+로컬 영역 연결* 1                     WAN Miniport (SSTP)                                 Disconnected
+로컬 영역 연결* 4                     WAN Miniport (PPTP)                                 Disconnected
+로컬 영역 연결* 10                    Microsoft Wi-Fi Direct Virtual Adapter #2           Disconnected
+vSwitch (Default Switch)              Hyper-V Virtual Switch Extension Adapter            Up
+Microsoft IP-HTTPS Platform Interface                                                     Not Present
+vEthernet (Default Switch)            Hyper-V Virtual Ethernet Adapter                    Up
+로컬 영역 연결* 7                     WAN Miniport (IPv6)                                 Up
+6to4 Adapter                                                                              Not Present
+vEthernet (FSE HostVnic)              Hyper-V Virtual Ethernet Container Adapter          Up
+로컬 영역 연결* 9                     Microsoft Wi-Fi Direct Virtual Adapter              Disconnected
