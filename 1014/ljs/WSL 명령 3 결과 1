@@ -1,0 +1,37 @@
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ ps -eo pid,ppid,stat,wchan:32,comm | awk '$3 ~ /D/ || $5 ~ /ip|network|dockerd|systemd-networkd/
+'
+    269       1 Ss   -                                networkd-dispat
+    398       1 Ssl  -                                dockerd
+  30341     314 D    rtnl_dumpit                      ip
+ 118545  118525 D    -                                wget
+ 146228  146219 D    -                                http
+ 146229  146219 D    -                                http
+ 237456  237329 D+   rtnetlink_rcv_msg                ip
+ 238471  238456 D+   rtnl_lock                        ifconfig
+ 242289  242274 D+   rtnl_dumpit                      ip
+ 243136  243091 D+   rtnetlink_rcv_msg                ip
+ 246097  246096 D+   rtnetlink_rcv_msg                ip
+ 246618  246617 D+   rtnetlink_rcv_msg                ip
+ 246989  246988 D+   rtnl_dumpit                      ip
+ 247218  247217 D+   rtnl_dumpit                      ip
+ 248745  248742 D+   rtnetlink_rcv_msg                ip
+ 258956  258884 D+   rtnl_dumpit                      hostname
+ 259259  259258 D+   rtnetlink_rcv_msg                ip
+ 260711  260710 D+   rtnl_dumpit                      ip
+ 264182  258191 D+   rtnetlink_rcv_msg                ip
+ 264612  264542 D+   rtnetlink_rcv_msg                ip
+ 264825  264809 D+   rtnl_dumpit                      ip
+ 264956  264941 D+   rtnl_dumpit                      ip
+ 265414  261882 D+   -                                sudo
+ 265669  265531 D+   -                                sudo
+ 266342  266341 D+   -                                sudo
+ 266631  266630 D+   -                                sudo
+ 269817  269612 D+   rtnetlink_rcv_msg                ip
+ 271060  271020 D+   -                                sudo
+ 273842  273741 D+   -                                sudo
+ 289839  289666 D+   -                                sudo
+ 290035  289908 D+   -                                sudo
+ 291837  291763 D+   -                                sudo
+ 292077  291953 D+   -                                sudo
+ 300472  300402 D+   rtnl_dumpit                      ip
+ 301291  300782 D+   p9_client_rpc                    bash
