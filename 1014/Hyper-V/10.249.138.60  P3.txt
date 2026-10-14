@@ -40,12 +40,13 @@ IPv4DefaultGateway   : 10.249.138.1
 DNSServer            : 10.41.128.98
                        10.41.128.99
 
+아래 3개 안나옴 -> WSL 내부의 네트워크 상태조회 멈춤
 PS C:\Users\admin> wsl -d Ubuntu-22.04 -- timeout 5 ip link show; Write-Host "ExitCode=$LASTEXITCODE"
-Error: either "dev" is duplicate, or "ExitCode=0" is a garbage.
+
 PS C:\Users\admin> wsl -d Ubuntu-22.04 -- timeout 5 ip route show; Write-Host "ExitCode=$LASTEXITCODE"
-Error: any valid prefix is expected rather than "Write-Host".
+
 PS C:\Users\admin> wsl -d Ubuntu-22.04 -- timeout 5 ip neigh show; Write-Host "ExitCode=$LASTEXITCODE"
-Error: any valid prefix is expected rather than "Write-Host".
+
 
 PS C:\Users\admin> wsl -d Ubuntu-22.04 -- cat /proc/net/route
 Iface   Destination     Gateway         Flags   RefCnt  Use     Metric  Mask            MTU     Window  IRTT
