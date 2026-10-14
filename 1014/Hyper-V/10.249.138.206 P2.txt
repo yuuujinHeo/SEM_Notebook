@@ -15,3 +15,18 @@ PS C:\Users\admin> Get-Content "$env:USERPROFILE\.wslconfig"
 networkingMode=mirrored
 dnsTunneling=true
 firewall=false
+
+PS C:\Users\admin> wsl --version
+WSL 버전: 2.7.13.0
+커널 버전: 6.18.33.2-2
+WSLg 버전: 1.0.73.2
+MSRDC 버전: 1.2.7214
+Direct3D 버전: 1.611.1-81528511
+DXCore 버전: 10.0.26100.1-240331-1435.ge-release
+Windows 버전: 10.0.26100.3775
+
+PS C:\Users\admin> wsl --status
+기본 배포: Ubuntu-22.04
+기본 버전: 2
+현재 컴퓨터 구성에서는 WSL1이 지원되지 않습니다.
+WSL1을 사용하려면 "Windows Subsystem for Linux” 선택적 구성 요소를 사용하세요.
