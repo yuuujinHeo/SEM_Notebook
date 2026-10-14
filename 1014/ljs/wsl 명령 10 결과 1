@@ -1,0 +1,47 @@
+PS C:\Users\admin> Get-HnsNetwork | Where-Object { $_.Name -eq 'FSE Switch (Wi-Fi)' } | Format-List *
+
+
+ActivityId                  : 4ECE9E18-BA11-4E13-87DA-D86E825D8C6F
+AdditionalParams            :
+AddressFamily               : 0
+CurrentEndpointCount        : 0
+DNSDomain                   :
+DNSServerList               : 10.41.128.98,10.41.128.99
+DNSSuffix                   :
+Extensions                  : {@{Id=E7C3B2F0-F3C5-48DF-AF2B-10FED6D72E7A; IsEnabled=False; Name=Microsoft Windows 필터링 플랫폼}, @{Id=F74F
+                              241B-440F-4433-BB28-00F89EAD20D8; IsEnabled=True; Name=Microsoft Azure VFP Switch Filter Extension}, @{Id=430
+                              BDADD-BAB0-41AB-A369-94B67FA5BE0A; IsEnabled=True; Name=Microsoft NDIS 캡처}}
+ExternalInterfaceConstraint : Wi-Fi
+Flags                       : 328
+Health                      : @{AddressNotificationMissedCount=0; AddressNotificationSequenceNumber=133; DHCPNotificationMissedCount=0; DNS
+                              CacheNotificationMissedCount=0; DNSCacheNotificationSequenceNumber=0; DNSNotificationMissedCount=0; DNSNotifi
+                              cationSequenceNumber=341; InterfaceNotificationMissedCount=0; InterfaceNotificationSequenceNumber=266; LastEr
+                              rorCode=0; LastUpdateTime=134364537207194158; MacAddressNotificationMissedCount=0; MacAddressNotificationSequ
+                              enceNumber=0; NeighborNotificationMissedCount=0; NeighborNotificationSequenceNumber=76; RouteNotificationMiss
+                              edCount=0; RouteNotificationSequenceNumber=4; XlatNotificationMissedCount=0; XlatNotificationSequenceNumber=0
+                              }
+ID                          : C7F7CE3B-8159-4B72-B897-598ABDDE9D01
+IPv6                        : False
+InterfaceConstraint         : @{Connected=True; InterfaceAlias=Wi-Fi; InterfaceDescription=Intel(R) Wi-Fi 6E AX210 160MHz; InterfaceGuid=C7
+                              F7CE3B-8159-4B72-B897-598ABDDE9D00; InterfaceIndex=21; InterfaceLuid=19985273102270464; InterfaceMediaType=71
+                              }
+IsLoopback                  : False
+LayeredOn                   : C4ADBF62-C4A3-46FC-BC5D-EC97666D5456
+MacAddress                  : 40-D1-33-CD-46-69
+MaxConcurrentEndpoints      : 0
+Name                        : FSE Switch (Wi-Fi)
+Policies                    : {}
+State                       : 1
+SwitchGuid                  : 30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0
+SwitchName                  : FSE Switch
+TotalEndpoints              : 0
+Type                        : Mirrored
+Version                     : 68719476736
+Resources                   : @{AdditionalParams=; AllocationOrder=0; CompartmentOperationTime=0; Flags=0; Health=; ID=4ECE9E18-BA11-4E13-8
+                              7DA-D86E825D8C6F; PortOperationTime=0; State=1; SwitchOperationTime=0; VfpOperationTime=0; parentId=9C5874B2-
+                              51DA-4380-851B-05D1417F1217}
+
+
+
+PS C:\Users\admin> Get-HnsEndpoint | Where-Object { $_.AdditionalParams.VmSwitchNicName -match 'C7F7CE3B' } | Format-List *
+PS C:\Users\admin>
