@@ -1,0 +1,16 @@
+Get-VMNetworkAdapter -All |
+Select-Object VMName,Name,SwitchName,MacAddress,Status |
+Format-Table -AutoSize
+
+
+
+
+Get-WinEvent -FilterHashtable @{
+    LogName = 'Microsoft-Windows-Hyper-V-VmSwitch-Operational'
+    StartTime = [datetime]'2026-10-14 07:35:00'
+} -ErrorAction SilentlyContinue |
+Where-Object {
+    $_.Message -match 'NIC|port|endpoint'
+} |
+Select-Object -First 50 TimeCreated,Id,Message |
+Format-List
