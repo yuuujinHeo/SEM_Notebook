@@ -1,0 +1,23 @@
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /proc/net/arp
+IP address       HW type     Flags       HW address            Mask     Device
+172.17.0.3       0x1         0x2         e6:93:ce:54:a3:dd     *        docker0
+10.249.138.1     0x1         0x0         4c:ae:a3:88:be:01     *        eth2
+172.17.0.4       0x1         0x2         32:4d:26:9a:d0:65     *        docker0
+169.254.73.152   0x1         0x6         00:11:22:33:44:55     *        loopback0
+10.108.2.2       0x1         0x2         cc:82:7f:a7:68:d3     *        eth0
+10.108.2.1       0x1         0x2         00:90:e8:de:d8:01     *        eth0
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /proc/net/dev
+Inter-|   Receive                                                |  Transmit
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+    lo: 97737351 1742643    0    0    0     0          0         0 97737351 1742643    0    0    0     0       0          0
+  eth0: 3993899382 3772851    0    0    0     0          0        48 115081808 1614179    0    0    0     0       0          0
+  eth1:  713508    7518    0    0    0     0          0         9  7016652   20114    0    0    0     0       0          0
+loopback0: 8056796633 12018094    0    0    0     0          0         9 9364579510 7851374    0    0    0     0       0          0
+docker0:  202740    1148    0    0    0     0          0         0  3587053   11523    0    7    0     0       0          0
+veth25ad9b2:     126       3    0    0    0     0          0         0  3293241   10073    0    0    0     0       0          0
+veth280046b:    3305      23    0    0    0     0          0         0  3295029   10092    0    0    0     0       0          0
+vethddc994e:  215255    1119    0    0    0     0          0         0  3585337   11508    0    0    0     0       0          0
+veth06cd98a:     126       3    0    0    0     0          0         0  3293025   10069    0    0    0     0       0          0
+  eth2: 5780167   88236    0    0    0     0          0         0 108431385   97143    0 25118    0     0       0          0
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ nc -n -vz -w 3 10.244.201.165 7447
+nc: connect to 10.244.201.165 port 7447 (tcp) timed out: Operation now in progress
