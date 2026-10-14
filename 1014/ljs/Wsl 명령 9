@@ -1,0 +1,7 @@
+Get-WinEvent -FilterHashtable @{
+    LogName = 'Microsoft-Windows-Hyper-V-Compute-Admin'
+    StartTime = [datetime]'2026-10-14 07:30:00'
+} -ErrorAction SilentlyContinue |
+Select-Object TimeCreated,Id,LevelDisplayName,Message |
+Format-List |
+Out-File C:\Temp\hyperv-compute-admin.txt -Encoding utf8
