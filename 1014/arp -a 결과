@@ -55,3 +55,33 @@ rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ arp -a
 ? (10.108.2.2) at cc:82:7f:a7:68:d3 [ether] on eth0
 ? (10.108.2.1) at 00:90:e8:de:d8:01 [ether] on eth0
 ```
+
+
+# P4
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ arp -a
+? (169.254.73.152) at 00:11:22:33:44:55 [ether] PERM on loopback0
+? (172.17.0.3) at 6e:f9:d4:81:98:ff [ether] on docker0
+? (10.249.138.1) at 4c:ae:a3:88:be:01 [ether] on eth2
+? (10.108.2.2) at cc:82:7f:c2:f1:76 [ether] on eth0
+? (172.17.0.2) at 72:2f:72:b7:e3:48 [ether] on docker0
+
+
+
+# L1 
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ arp -a
+? (169.254.73.152) at 00:11:22:33:44:55 [ether] PERM on loopback0
+? (172.17.0.3) at 46:96:54:1c:eb:6d [ether] on docker0
+? (10.108.2.2) at cc:82:7f:a7:69:0e [ether] on eth0
+? (172.17.0.4) at 8e:62:80:d0:d3:fd [ether] on docker0
+? (10.249.138.1) at 4c:ae:a3:88:be:01 [ether] on eth2
+? (172.17.0.5) at ee:e2:74:a3:46:20 [ether] on docker0
+
+
+# L2
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ arp -a
+? (169.254.73.152) at 00:11:22:33:44:55 [ether] PERM on loopback0
+? (172.17.0.4) at 16:d4:c7:76:9e:cc [ether] on docker0
+? (172.17.0.3) at ce:54:1d:e0:e3:bc [ether] on docker0
+? (172.17.0.2) at 66:8d:d9:89:d9:c9 [ether] on docker0
+? (10.249.138.1) at 4c:ae:a3:88:be:01 [ether] on eth2
+? (10.108.2.2) at cc:82:7f:c2:f2:21 [ether] on eth0
