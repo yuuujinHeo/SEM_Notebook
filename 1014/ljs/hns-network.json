@@ -1,0 +1,559 @@
+﻿[
+    {
+        "ActivityId":  "0EE01A88-DC53-4B57-98CE-24CBF2DA24EC",
+        "AdditionalParams":  {
+
+                             },
+        "AddressFamily":  0,
+        "CurrentEndpointCount":  1,
+        "DNSDomain":  "",
+        "DNSServerList":  "168.126.63.1,168.126.63.2",
+        "DNSSuffix":  "",
+        "Extensions":  [
+                           {
+                               "Id":  "E7C3B2F0-F3C5-48DF-AF2B-10FED6D72E7A",
+                               "IsEnabled":  false,
+                               "Name":  "Microsoft Windows 필터링 플랫폼"
+                           },
+                           {
+                               "Id":  "F74F241B-440F-4433-BB28-00F89EAD20D8",
+                               "IsEnabled":  true,
+                               "Name":  "Microsoft Azure VFP Switch Filter Extension"
+                           },
+                           {
+                               "Id":  "430BDADD-BAB0-41AB-A369-94B67FA5BE0A",
+                               "IsEnabled":  true,
+                               "Name":  "Microsoft NDIS 캡처"
+                           }
+                       ],
+        "ExternalInterfaceConstraint":  "Fastech",
+        "Flags":  328,
+        "Health":  {
+                       "AddressNotificationMissedCount":  0,
+                       "AddressNotificationSequenceNumber":  0,
+                       "DHCPNotificationMissedCount":  0,
+                       "DNSCacheNotificationMissedCount":  0,
+                       "DNSCacheNotificationSequenceNumber":  0,
+                       "DNSNotificationMissedCount":  0,
+                       "DNSNotificationSequenceNumber":  0,
+                       "InterfaceNotificationMissedCount":  0,
+                       "InterfaceNotificationSequenceNumber":  0,
+                       "LastErrorCode":  0,
+                       "LastUpdateTime":  134364045439549976,
+                       "MacAddressNotificationMissedCount":  0,
+                       "MacAddressNotificationSequenceNumber":  0,
+                       "NeighborNotificationMissedCount":  0,
+                       "NeighborNotificationSequenceNumber":  1,
+                       "RouteNotificationMissedCount":  0,
+                       "RouteNotificationSequenceNumber":  0,
+                       "XlatNotificationMissedCount":  0,
+                       "XlatNotificationSequenceNumber":  0
+                   },
+        "ID":  "C6A72C4C-68D4-4075-BD7C-16FA670BFB26",
+        "IPv6":  false,
+        "InterfaceConstraint":  {
+                                    "Connected":  true,
+                                    "InterfaceAlias":  "Fastech",
+                                    "InterfaceDescription":  "ASIX AX88179 USB 3.0 to Gigabit Ethernet Adapter #2",
+                                    "InterfaceGuid":  "C6A72C4C-68D4-4075-BD7C-16FA670BFB27",
+                                    "InterfaceIndex":  20,
+                                    "InterfaceLuid":  1689399733518336,
+                                    "InterfaceMediaType":  6
+                                },
+        "IsLoopback":  false,
+        "LayeredOn":  "C4ADBF62-C4A3-46FC-BC5D-EC97666D5456",
+        "MacAddress":  "00-24-9B-89-8D-7B",
+        "MaxConcurrentEndpoints":  1,
+        "Name":  "FSE Switch (Fastech)",
+        "Policies":  [
+
+                     ],
+        "State":  1,
+        "SwitchGuid":  "30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0",
+        "SwitchName":  "FSE Switch",
+        "TotalEndpoints":  1,
+        "Type":  "Mirrored",
+        "Version":  68719476736,
+        "Resources":  {
+                          "AdditionalParams":  {
+
+                                               },
+                          "AllocationOrder":  0,
+                          "CompartmentOperationTime":  0,
+                          "Flags":  0,
+                          "Health":  {
+                                         "LastErrorCode":  0,
+                                         "LastUpdateTime":  134364045337990131
+                                     },
+                          "ID":  "0EE01A88-DC53-4B57-98CE-24CBF2DA24EC",
+                          "PortOperationTime":  0,
+                          "State":  1,
+                          "SwitchOperationTime":  0,
+                          "VfpOperationTime":  0,
+                          "parentId":  "9C5874B2-51DA-4380-851B-05D1417F1217"
+                      }
+    },
+    {
+        "ActivityId":  "7A07E751-6908-46C8-A8BA-9FB8CB1B60DF",
+        "AdditionalParams":  {
+
+                             },
+        "AddressFamily":  0,
+        "CurrentEndpointCount":  1,
+        "DNSDomain":  "",
+        "DNSServerList":  "168.126.63.1,168.126.63.2",
+        "DNSSuffix":  "",
+        "Extensions":  [
+                           {
+                               "Id":  "E7C3B2F0-F3C5-48DF-AF2B-10FED6D72E7A",
+                               "IsEnabled":  false,
+                               "Name":  "Microsoft Windows 필터링 플랫폼"
+                           },
+                           {
+                               "Id":  "F74F241B-440F-4433-BB28-00F89EAD20D8",
+                               "IsEnabled":  true,
+                               "Name":  "Microsoft Azure VFP Switch Filter Extension"
+                           },
+                           {
+                               "Id":  "430BDADD-BAB0-41AB-A369-94B67FA5BE0A",
+                               "IsEnabled":  true,
+                               "Name":  "Microsoft NDIS 캡처"
+                           }
+                       ],
+        "ExternalInterfaceConstraint":  "RB\u0026Vision",
+        "Flags":  328,
+        "Health":  {
+                       "AddressNotificationMissedCount":  0,
+                       "AddressNotificationSequenceNumber":  0,
+                       "DHCPNotificationMissedCount":  0,
+                       "DNSCacheNotificationMissedCount":  0,
+                       "DNSCacheNotificationSequenceNumber":  0,
+                       "DNSNotificationMissedCount":  0,
+                       "DNSNotificationSequenceNumber":  0,
+                       "InterfaceNotificationMissedCount":  0,
+                       "InterfaceNotificationSequenceNumber":  2,
+                       "LastErrorCode":  0,
+                       "LastUpdateTime":  134364475666320814,
+                       "MacAddressNotificationMissedCount":  0,
+                       "MacAddressNotificationSequenceNumber":  0,
+                       "NeighborNotificationMissedCount":  0,
+                       "NeighborNotificationSequenceNumber":  1,
+                       "RouteNotificationMissedCount":  0,
+                       "RouteNotificationSequenceNumber":  14,
+                       "XlatNotificationMissedCount":  0,
+                       "XlatNotificationSequenceNumber":  0
+                   },
+        "ID":  "E0E2889F-A037-464D-8110-7438F3064C0D",
+        "IPv6":  false,
+        "InterfaceConstraint":  {
+                                    "Connected":  true,
+                                    "InterfaceAlias":  "RB\u0026Vision",
+                                    "InterfaceDescription":  "Realtek PCIe GbE Family Controller",
+                                    "InterfaceGuid":  "E0E2889F-A037-464D-8110-7438F3064C0C",
+                                    "InterfaceIndex":  23,
+                                    "InterfaceLuid":  1689399616077824,
+                                    "InterfaceMediaType":  6
+                                },
+        "IsLoopback":  false,
+        "LayeredOn":  "C4ADBF62-C4A3-46FC-BC5D-EC97666D5456",
+        "MacAddress":  "8C-C5-8C-10-B3-C0",
+        "MaxConcurrentEndpoints":  1,
+        "Name":  "FSE Switch (RB\u0026Vision)",
+        "Policies":  [
+
+                     ],
+        "State":  1,
+        "SwitchGuid":  "30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0",
+        "SwitchName":  "FSE Switch",
+        "TotalEndpoints":  1,
+        "Type":  "Mirrored",
+        "Version":  68719476736,
+        "Resources":  {
+                          "AdditionalParams":  {
+
+                                               },
+                          "AllocationOrder":  0,
+                          "CompartmentOperationTime":  0,
+                          "Flags":  0,
+                          "Health":  {
+                                         "LastErrorCode":  0,
+                                         "LastUpdateTime":  134364045337676927
+                                     },
+                          "ID":  "7A07E751-6908-46C8-A8BA-9FB8CB1B60DF",
+                          "PortOperationTime":  0,
+                          "State":  1,
+                          "SwitchOperationTime":  0,
+                          "VfpOperationTime":  0,
+                          "parentId":  "9C5874B2-51DA-4380-851B-05D1417F1217"
+                      }
+    },
+    {
+        "ActivityId":  "3E4596AA-C49B-431E-BBF9-BA4D3A045179",
+        "AdditionalParams":  {
+
+                             },
+        "AddressFamily":  0,
+        "CurrentEndpointCount":  1,
+        "DNSDomain":  "",
+        "DNSServerList":  "",
+        "DNSSuffix":  "",
+        "Extensions":  [
+                           {
+                               "Id":  "E7C3B2F0-F3C5-48DF-AF2B-10FED6D72E7A",
+                               "IsEnabled":  false,
+                               "Name":  "Microsoft Windows 필터링 플랫폼"
+                           },
+                           {
+                               "Id":  "F74F241B-440F-4433-BB28-00F89EAD20D8",
+                               "IsEnabled":  true,
+                               "Name":  "Microsoft Azure VFP Switch Filter Extension"
+                           },
+                           {
+                               "Id":  "430BDADD-BAB0-41AB-A369-94B67FA5BE0A",
+                               "IsEnabled":  true,
+                               "Name":  "Microsoft NDIS 캡처"
+                           }
+                       ],
+        "ExternalInterfaceConstraint":  "Loopback Pseudo-Interface 1",
+        "Flags":  328,
+        "Health":  {
+                       "LastErrorCode":  0,
+                       "LastUpdateTime":  134364045337990131
+                   },
+        "ID":  "D57EA395-E79F-11F0-BA48-806E6F6E6962",
+        "IPv6":  false,
+        "InterfaceConstraint":  {
+                                    "Connected":  true,
+                                    "InterfaceAlias":  "Loopback Pseudo-Interface 1",
+                                    "InterfaceDescription":  "Software Loopback Interface 1",
+                                    "InterfaceGuid":  "D57EA395-E79F-11F0-BA48-806E6F6E6963",
+                                    "InterfaceIndex":  1,
+                                    "InterfaceLuid":  6755399441055744,
+                                    "InterfaceMediaType":  24
+                                },
+        "IsLoopback":  true,
+        "LayeredOn":  "C4ADBF62-C4A3-46FC-BC5D-EC97666D5456",
+        "MacAddress":  "00-15-5D-EA-E8-F7",
+        "MacPools":  [
+                         {
+                             "EndMacAddress":  "00-15-5D-EA-EF-FF",
+                             "StartMacAddress":  "00-15-5D-EA-E0-00"
+                         }
+                     ],
+        "MaxConcurrentEndpoints":  1,
+        "Name":  "FSE Switch (Loopback Pseudo-Interface 1)",
+        "Policies":  [
+
+                     ],
+        "State":  1,
+        "SwitchGuid":  "30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0",
+        "SwitchName":  "FSE Switch",
+        "TotalEndpoints":  1,
+        "Type":  "Mirrored",
+        "Version":  68719476736,
+        "Resources":  {
+                          "AdditionalParams":  {
+
+                                               },
+                          "AllocationOrder":  0,
+                          "CompartmentOperationTime":  0,
+                          "Flags":  0,
+                          "Health":  {
+                                         "LastErrorCode":  0,
+                                         "LastUpdateTime":  134364045338307542
+                                     },
+                          "ID":  "3E4596AA-C49B-431E-BBF9-BA4D3A045179",
+                          "PortOperationTime":  0,
+                          "State":  1,
+                          "SwitchOperationTime":  0,
+                          "VfpOperationTime":  0,
+                          "parentId":  "9C5874B2-51DA-4380-851B-05D1417F1217"
+                      }
+    },
+    {
+        "ActivityId":  "B05F2370-BC5A-4218-9846-B9ED46940171",
+        "AdditionalParams":  {
+
+                             },
+        "CurrentEndpointCount":  0,
+        "Extensions":  [
+                           {
+                               "Id":  "F74F241B-440F-4433-BB28-00F89EAD20D8",
+                               "IsEnabled":  false,
+                               "Name":  "Microsoft Azure VFP Switch Filter Extension"
+                           },
+                           {
+                               "Id":  "E7C3B2F0-F3C5-48DF-AF2B-10FED6D72E7A",
+                               "IsEnabled":  false,
+                               "Name":  "Microsoft Windows 필터링 플랫폼"
+                           },
+                           {
+                               "Id":  "430BDADD-BAB0-41AB-A369-94B67FA5BE0A",
+                               "IsEnabled":  true,
+                               "Name":  "Microsoft NDIS 캡처"
+                           }
+                       ],
+        "Flags":  11,
+        "GatewayMac":  "00-15-5D-C9-4A-00",
+        "Health":  {
+                       "AddressNotificationMissedCount":  0,
+                       "AddressNotificationSequenceNumber":  10,
+                       "DHCPNotificationMissedCount":  0,
+                       "DNSCacheNotificationMissedCount":  0,
+                       "DNSCacheNotificationSequenceNumber":  0,
+                       "DNSNotificationMissedCount":  0,
+                       "DNSNotificationSequenceNumber":  0,
+                       "InterfaceNotificationMissedCount":  0,
+                       "InterfaceNotificationSequenceNumber":  0,
+                       "LastErrorCode":  0,
+                       "LastUpdateTime":  134364483090231596,
+                       "MacAddressNotificationMissedCount":  0,
+                       "MacAddressNotificationSequenceNumber":  0,
+                       "NeighborNotificationMissedCount":  0,
+                       "NeighborNotificationSequenceNumber":  0,
+                       "RouteNotificationMissedCount":  0,
+                       "RouteNotificationSequenceNumber":  0,
+                       "XlatNotificationMissedCount":  0,
+                       "XlatNotificationSequenceNumber":  0
+                   },
+        "ID":  "C08CB7B8-9B3C-408E-8E30-5E16A3AEB444",
+        "IPv6":  false,
+        "LayeredOn":  "BB71175A-675B-43AC-B28E-D7DB1763FB1A",
+        "MacPools":  [
+                         {
+                             "EndMacAddress":  "00-15-5D-16-5F-FF",
+                             "StartMacAddress":  "00-15-5D-16-50-00"
+                         }
+                     ],
+        "MaxConcurrentEndpoints":  0,
+        "Name":  "Default Switch",
+        "NatName":  "ICS2A37BED3-A5E9-4D5A-A5E3-2CCB3D759F46",
+        "Policies":  [
+
+                     ],
+        "State":  1,
+        "Subnets":  [
+                        {
+                            "AdditionalParams":  {
+
+                                                 },
+                            "AddressPrefix":  "172.25.48.0/20",
+                            "Flags":  0,
+                            "GatewayAddress":  "172.25.48.1",
+                            "Health":  {
+                                           "LastErrorCode":  0,
+                                           "LastUpdateTime":  134364045332630881
+                                       },
+                            "ID":  "62E0E746-1E29-4173-BF20-F22D76129640",
+                            "IpSubnets":  [
+                                              {
+                                                  "AdditionalParams":  {
+
+                                                                       },
+                                                  "Flags":  3,
+                                                  "Health":  {
+                                                                 "LastErrorCode":  0,
+                                                                 "LastUpdateTime":  134364045332630881
+                                                             },
+                                                  "ID":  "6B4934B3-51EA-4CBC-8476-ACE849332460",
+                                                  "IpAddressPrefix":  "172.25.48.0/20",
+                                                  "ObjectType":  6,
+                                                  "Policies":  [
+
+                                                               ],
+                                                  "State":  0
+                                              }
+                                          ],
+                            "ObjectType":  5,
+                            "Policies":  [
+
+                                         ],
+                            "State":  0
+                        }
+                    ],
+        "SwitchGuid":  "C08CB7B8-9B3C-408E-8E30-5E16A3AEB444",
+        "SwitchName":  "Default Switch",
+        "TotalEndpoints":  0,
+        "Type":  "ICS",
+        "Version":  68719476736,
+        "Resources":  {
+                          "AdditionalParams":  {
+
+                                               },
+                          "AllocationOrder":  2,
+                          "Allocators":  [
+                                             {
+                                                 "AdapterNetCfgInstanceId":  "{2A37BED3-A5E9-4D5A-A5E3-2CCB3D759F46}",
+                                                 "AdditionalParams":  {
+
+                                                                      },
+                                                 "AllocationOrder":  0,
+                                                 "CompartmendId":  0,
+                                                 "Connected":  true,
+                                                 "DNSFirewallRules":  true,
+                                                 "DeviceInstanceID":  "",
+                                                 "DevicelessNic":  true,
+                                                 "DhcpDisabled":  true,
+                                                 "EndpointNicGuid":  "C08CB7B8-9B3C-408E-8E30-5E16A3AEB445",
+                                                 "EndpointPortGuid":  "C08CB7B8-9B3C-408E-8E30-5E16A3AEB445",
+                                                 "Flags":  0,
+                                                 "Health":  {
+                                                                "LastErrorCode":  0,
+                                                                "LastUpdateTime":  134364045408007474
+                                                            },
+                                                 "ID":  "041AAB6B-DB5A-49F8-A66D-5FD258984035",
+                                                 "InterfaceGuid":  "2A37BED3-A5E9-4D5A-A5E3-2CCB3D759F46",
+                                                 "IsPolicy":  false,
+                                                 "IsolationId":  0,
+                                                 "MacAddress":  "00-15-5D-9F-2C-00",
+                                                 "ManagementPort":  true,
+                                                 "NcfHidden":  false,
+                                                 "NetworkId":  "C08CB7B8-9B3C-408E-8E30-5E16A3AEB444",
+                                                 "NicFriendlyName":  "Default Switch",
+                                                 "NlmHidden":  true,
+                                                 "PortFriendlyNamePrefix":  "Host Vnic",
+                                                 "PreferredPortFriendlyName":  "Host Vnic C08CB7B8-9B3C-408E-8E30-5E16A3AEB444",
+                                                 "State":  3,
+                                                 "SwitchId":  "C08CB7B8-9B3C-408E-8E30-5E16A3AEB444",
+                                                 "Tag":  "Host Vnic",
+                                                 "VmPort":  false,
+                                                 "WaitForIpv6Interface":  false,
+                                                 "nonPersistentPort":  false
+                                             },
+                                             {
+                                                 "AdditionalParams":  {
+
+                                                                      },
+                                                 "AllocationOrder":  1,
+                                                 "Dhcp":  true,
+                                                 "DisableSharing":  false,
+                                                 "Dns":  true,
+                                                 "ExternalInterfaceConstraint":  0,
+                                                 "Flags":  0,
+                                                 "Health":  {
+                                                                "DHCPState":  2,
+                                                                "DNSState":  2,
+                                                                "ICSState":  2,
+                                                                "LastErrorCode":  0,
+                                                                "LastUpdateTime":  134364483090231596
+                                                            },
+                                                 "ICSDHCPFlags":  0,
+                                                 "ICSFlags":  0,
+                                                 "ID":  "B9DB785E-D0C2-40E1-9FBC-9DAEBFF233FA",
+                                                 "IsPolicy":  false,
+                                                 "Prefix":  20,
+                                                 "PrivateInterfaceGUID":  "2A37BED3-A5E9-4D5A-A5E3-2CCB3D759F46",
+                                                 "State":  3,
+                                                 "SubnetIPAddress":  "172.25.48.0",
+                                                 "Tag":  "ICS"
+                                             }
+                                         ],
+                          "CompartmentOperationTime":  0,
+                          "Flags":  0,
+                          "Health":  {
+                                         "LastErrorCode":  0,
+                                         "LastUpdateTime":  134364045334497906
+                                     },
+                          "ID":  "B05F2370-BC5A-4218-9846-B9ED46940171",
+                          "PortOperationTime":  0,
+                          "State":  1,
+                          "SwitchOperationTime":  0,
+                          "VfpOperationTime":  0,
+                          "parentId":  "D3D0BA0C-958B-4FB3-AB45-89BD6D3A712F"
+                      }
+    },
+    {
+        "ActivityId":  "4ECE9E18-BA11-4E13-87DA-D86E825D8C6F",
+        "AdditionalParams":  {
+
+                             },
+        "AddressFamily":  0,
+        "CurrentEndpointCount":  0,
+        "DNSDomain":  "",
+        "DNSServerList":  "10.41.128.98,10.41.128.99",
+        "DNSSuffix":  "",
+        "Extensions":  [
+                           {
+                               "Id":  "E7C3B2F0-F3C5-48DF-AF2B-10FED6D72E7A",
+                               "IsEnabled":  false,
+                               "Name":  "Microsoft Windows 필터링 플랫폼"
+                           },
+                           {
+                               "Id":  "F74F241B-440F-4433-BB28-00F89EAD20D8",
+                               "IsEnabled":  true,
+                               "Name":  "Microsoft Azure VFP Switch Filter Extension"
+                           },
+                           {
+                               "Id":  "430BDADD-BAB0-41AB-A369-94B67FA5BE0A",
+                               "IsEnabled":  true,
+                               "Name":  "Microsoft NDIS 캡처"
+                           }
+                       ],
+        "ExternalInterfaceConstraint":  "Wi-Fi",
+        "Flags":  328,
+        "Health":  {
+                       "AddressNotificationMissedCount":  0,
+                       "AddressNotificationSequenceNumber":  133,
+                       "DHCPNotificationMissedCount":  0,
+                       "DNSCacheNotificationMissedCount":  0,
+                       "DNSCacheNotificationSequenceNumber":  0,
+                       "DNSNotificationMissedCount":  0,
+                       "DNSNotificationSequenceNumber":  341,
+                       "InterfaceNotificationMissedCount":  0,
+                       "InterfaceNotificationSequenceNumber":  250,
+                       "LastErrorCode":  0,
+                       "LastUpdateTime":  134364512886686762,
+                       "MacAddressNotificationMissedCount":  0,
+                       "MacAddressNotificationSequenceNumber":  0,
+                       "NeighborNotificationMissedCount":  0,
+                       "NeighborNotificationSequenceNumber":  76,
+                       "RouteNotificationMissedCount":  0,
+                       "RouteNotificationSequenceNumber":  4,
+                       "XlatNotificationMissedCount":  0,
+                       "XlatNotificationSequenceNumber":  0
+                   },
+        "ID":  "C7F7CE3B-8159-4B72-B897-598ABDDE9D01",
+        "IPv6":  false,
+        "InterfaceConstraint":  {
+                                    "Connected":  true,
+                                    "InterfaceAlias":  "Wi-Fi",
+                                    "InterfaceDescription":  "Intel(R) Wi-Fi 6E AX210 160MHz",
+                                    "InterfaceGuid":  "C7F7CE3B-8159-4B72-B897-598ABDDE9D00",
+                                    "InterfaceIndex":  21,
+                                    "InterfaceLuid":  19985273102270464,
+                                    "InterfaceMediaType":  71
+                                },
+        "IsLoopback":  false,
+        "LayeredOn":  "C4ADBF62-C4A3-46FC-BC5D-EC97666D5456",
+        "MacAddress":  "40-D1-33-CD-46-69",
+        "MaxConcurrentEndpoints":  0,
+        "Name":  "FSE Switch (Wi-Fi)",
+        "Policies":  [
+
+                     ],
+        "State":  1,
+        "SwitchGuid":  "30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0",
+        "SwitchName":  "FSE Switch",
+        "TotalEndpoints":  0,
+        "Type":  "Mirrored",
+        "Version":  68719476736,
+        "Resources":  {
+                          "AdditionalParams":  {
+
+                                               },
+                          "AllocationOrder":  0,
+                          "CompartmentOperationTime":  0,
+                          "Flags":  0,
+                          "Health":  {
+                                         "LastErrorCode":  0,
+                                         "LastUpdateTime":  134364482997816861
+                                     },
+                          "ID":  "4ECE9E18-BA11-4E13-87DA-D86E825D8C6F",
+                          "PortOperationTime":  0,
+                          "State":  1,
+                          "SwitchOperationTime":  0,
+                          "VfpOperationTime":  0,
+                          "parentId":  "9C5874B2-51DA-4380-851B-05D1417F1217"
+                      }
+    }
+]

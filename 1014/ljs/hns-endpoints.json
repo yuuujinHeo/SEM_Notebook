@@ -1,0 +1,511 @@
+﻿[
+    {
+        "ID":  "eedf5449-bf41-4dce-86c4-fb36fdacaea4",
+        "Name":  "Ethernet",
+        "Version":  68719476736,
+        "AdditionalParams":  {
+                                 "SwitchId":  "30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0",
+                                 "SwitchPortId":  "EEDF5449-BF41-4DCE-86C4-FB36FDACAEA4",
+                                 "VmSwitchNicName":  "4AD59F17-FF09-481E-AFA6-2CEA8182AC90--C6A72C4C-68D4-4075-BD7C-16FA670BFB27"
+                             },
+        "Resources":  {
+                          "AdditionalParams":  {
+
+                                               },
+                          "AllocationOrder":  4,
+                          "Allocators":  [
+                                             {
+                                                 "AdditionalParams":  {
+
+                                                                      },
+                                                 "AllocationOrder":  0,
+                                                 "Connected":  true,
+                                                 "EndpointId":  "EEDF5449-BF41-4DCE-86C4-FB36FDACAEA4",
+                                                 "EndpointPortGuid":  "EEDF5449-BF41-4DCE-86C4-FB36FDACAEA4",
+                                                 "Flags":  0,
+                                                 "Health":  {
+                                                                "LastErrorCode":  0,
+                                                                "LastUpdateTime":  134364045339962897
+                                                            },
+                                                 "ID":  "C65C0785-C50E-4D3E-A9CC-142B8BCA5961",
+                                                 "IsPolicy":  false,
+                                                 "IsolationId":  2,
+                                                 "MacAddress":  "00-24-9B-89-8D-7B",
+                                                 "ManagementPort":  false,
+                                                 "NetworkId":  "C6A72C4C-68D4-4075-BD7C-16FA670BFB26",
+                                                 "NicId":  "4AD59F17-FF09-481E-AFA6-2CEA8182AC90--C6A72C4C-68D4-4075-BD7C-16FA670BFB27",
+                                                 "PortFriendlyNamePrefix":  "Endpoint Port",
+                                                 "PortId":  "EEDF5449-BF41-4DCE-86C4-FB36FDACAEA4",
+                                                 "PreferredPortFriendlyName":  "EEDF5449-BF41-4DCE-86C4-FB36FDACAEA4",
+                                                 "State":  3,
+                                                 "SwitchId":  "30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0",
+                                                 "Tag":  "VM Port",
+                                                 "VmPort":  true,
+                                                 "nonPersistentPort":  true
+                                             },
+                                             {
+                                                 "AdditionalParams":  {
+
+                                                                      },
+                                                 "AllocationOrder":  1,
+                                                 "Flags":  0,
+                                                 "Health":  {
+                                                                "LastErrorCode":  0,
+                                                                "LastUpdateTime":  134364045340099875
+                                                            },
+                                                 "ID":  "CF53A0C1-9860-4B13-B74E-4275CC425263",
+                                                 "InDefaultIsolation":  false,
+                                                 "IsPolicy":  true,
+                                                 "IsolationID":  2,
+                                                 "IsolationType":  3,
+                                                 "State":  3,
+                                                 "Tag":  "Isolation Policy"
+                                             },
+                                             {
+                                                 "AdditionalParams":  {
+
+                                                                      },
+                                                 "AllocationOrder":  2,
+                                                 "Flags":  0,
+                                                 "Health":  {
+                                                                "LastErrorCode":  0,
+                                                                "LastUpdateTime":  134364045340099875
+                                                            },
+                                                 "ID":  "3EFAF966-3C5C-4927-8628-7AA93256D512",
+                                                 "IsNetworkACL":  false,
+                                                 "IsPolicy":  true,
+                                                 "Rules":  [
+                                                               {
+                                                                   "Action":  "Allow",
+                                                                   "Direction":  "In",
+                                                                   "Flags":  1,
+                                                                   "Priority":  65500,
+                                                                   "RemoteAddresses":  "0.0.0.0/0",
+                                                                   "Type":  "ACL"
+                                                               },
+                                                               {
+                                                                   "Action":  "Allow",
+                                                                   "Direction":  "Out",
+                                                                   "Flags":  1,
+                                                                   "Priority":  65500,
+                                                                   "RemoteAddresses":  "0.0.0.0/0",
+                                                                   "Type":  "ACL"
+                                                               }
+                                                           ],
+                                                 "State":  2,
+                                                 "Tag":  "ACL Policy"
+                                             },
+                                             {
+                                                 "AdditionalParams":  {
+
+                                                                      },
+                                                 "AllocationOrder":  3,
+                                                 "EndpointGuid":  "EEDF5449-BF41-4DCE-86C4-FB36FDACAEA4",
+                                                 "Flags":  0,
+                                                 "Health":  {
+                                                                "LastErrorCode":  0,
+                                                                "LastUpdateTime":  134364045340099875
+                                                            },
+                                                 "ID":  "FEEE3FD5-D5CA-4ACD-80E6-DED94A1DFD7D",
+                                                 "InterfaceGuid":  "C6A72C4C-68D4-4075-BD7C-16FA670BFB27",
+                                                 "IsPolicy":  true,
+                                                 "PolicyFlags":  0,
+                                                 "PortFriendlyName":  "EEDF5449-BF41-4DCE-86C4-FB36FDACAEA4",
+                                                 "Rules":  [
+                                                               {
+                                                                   "PolicyFlags":  0,
+                                                                   "Type":  "Firewall",
+                                                                   "VmCreatorId":  "40e0ac32-46a5-438a-a0b2-2b479e8f2e90"
+                                                               }
+                                                           ],
+                                                 "State":  3,
+                                                 "SwitchId":  "30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0",
+                                                 "Tag":  "Firewall Policy",
+                                                 "VirtualMachineId":  "4AD59F17-FF09-481E-AFA6-2CEA8182AC90",
+                                                 "VmCreatorId":  "40E0AC32-46A5-438A-A0B2-2B479E8F2E90"
+                                             }
+                                         ],
+                          "CompartmentOperationTime":  0,
+                          "Flags":  0,
+                          "Health":  {
+                                         "LastErrorCode":  0,
+                                         "LastUpdateTime":  134364045339962897
+                                     },
+                          "ID":  "3D6A6745-9E8A-45A9-8461-05159FD27749",
+                          "PortOperationTime":  0,
+                          "State":  1,
+                          "SwitchOperationTime":  0,
+                          "VfpOperationTime":  0,
+                          "parentId":  "0EE01A88-DC53-4B57-98CE-24CBF2DA24EC"
+                      },
+        "State":  2,
+        "VirtualNetwork":  "c6a72c4c-68d4-4075-bd7c-16fa670bfb26",
+        "VirtualNetworkName":  "FSE Switch (Fastech)",
+        "Policies":  [
+                         {
+                             "PolicyFlags":  0,
+                             "Type":  "Firewall",
+                             "VmCreatorId":  "40e0ac32-46a5-438a-a0b2-2b479e8f2e90"
+                         },
+                         {
+                             "Type":  "VLAN",
+                             "VLAN":  2
+                         }
+                     ],
+        "MacAddress":  "00-24-9B-89-8D-7B",
+        "GatewayAddress":  "192.168.0.1",
+        "DNSServerList":  "168.126.63.1,168.126.63.2",
+        "InterfaceConstraint":  {
+                                    "InterfaceGuid":  "c6a72c4c-68d4-4075-bd7c-16fa670bfb27",
+                                    "InterfaceLuid":  1689399733518336,
+                                    "InterfaceIndex":  20,
+                                    "InterfaceMediaType":  6,
+                                    "InterfaceAlias":  "Fastech",
+                                    "InterfaceDescription":  "ASIX AX88179 USB 3.0 to Gigabit Ethernet Adapter #2"
+                                },
+        "Flags":  4,
+        "SharedContainers":  [
+
+                             ],
+        "VirtualMachine":  "4AD59F17-FF09-481E-AFA6-2CEA8182AC90",
+        "MirrorState":  2
+    },
+    {
+        "ID":  "2e0af794-11ac-4430-bee1-1ba6f0552320",
+        "Name":  "Ethernet",
+        "Version":  68719476736,
+        "AdditionalParams":  {
+                                 "SwitchId":  "30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0",
+                                 "SwitchPortId":  "2E0AF794-11AC-4430-BEE1-1BA6F0552320",
+                                 "VmSwitchNicName":  "4AD59F17-FF09-481E-AFA6-2CEA8182AC90--E0E2889F-A037-464D-8110-7438F3064C0C"
+                             },
+        "Resources":  {
+                          "AdditionalParams":  {
+
+                                               },
+                          "AllocationOrder":  4,
+                          "Allocators":  [
+                                             {
+                                                 "AdditionalParams":  {
+
+                                                                      },
+                                                 "AllocationOrder":  0,
+                                                 "Connected":  true,
+                                                 "EndpointId":  "2E0AF794-11AC-4430-BEE1-1BA6F0552320",
+                                                 "EndpointPortGuid":  "2E0AF794-11AC-4430-BEE1-1BA6F0552320",
+                                                 "Flags":  0,
+                                                 "Health":  {
+                                                                "LastErrorCode":  0,
+                                                                "LastUpdateTime":  134364045338307542
+                                                            },
+                                                 "ID":  "FD40E3B4-105A-4C80-AA4F-012A95A69EB5",
+                                                 "IsPolicy":  false,
+                                                 "IsolationId":  1,
+                                                 "MacAddress":  "8C-C5-8C-10-B3-C0",
+                                                 "ManagementPort":  false,
+                                                 "NetworkId":  "E0E2889F-A037-464D-8110-7438F3064C0D",
+                                                 "NicId":  "4AD59F17-FF09-481E-AFA6-2CEA8182AC90--E0E2889F-A037-464D-8110-7438F3064C0C",
+                                                 "PortFriendlyNamePrefix":  "Endpoint Port",
+                                                 "PortId":  "2E0AF794-11AC-4430-BEE1-1BA6F0552320",
+                                                 "PreferredPortFriendlyName":  "2E0AF794-11AC-4430-BEE1-1BA6F0552320",
+                                                 "State":  3,
+                                                 "SwitchId":  "30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0",
+                                                 "Tag":  "VM Port",
+                                                 "VmPort":  true,
+                                                 "nonPersistentPort":  true
+                                             },
+                                             {
+                                                 "AdditionalParams":  {
+
+                                                                      },
+                                                 "AllocationOrder":  1,
+                                                 "Flags":  0,
+                                                 "Health":  {
+                                                                "LastErrorCode":  0,
+                                                                "LastUpdateTime":  134364045338622071
+                                                            },
+                                                 "ID":  "601B6C99-D1E5-4C30-96F9-3E288D57A82C",
+                                                 "InDefaultIsolation":  false,
+                                                 "IsPolicy":  true,
+                                                 "IsolationID":  1,
+                                                 "IsolationType":  3,
+                                                 "State":  3,
+                                                 "Tag":  "Isolation Policy"
+                                             },
+                                             {
+                                                 "AdditionalParams":  {
+
+                                                                      },
+                                                 "AllocationOrder":  2,
+                                                 "Flags":  0,
+                                                 "Health":  {
+                                                                "LastErrorCode":  0,
+                                                                "LastUpdateTime":  134364045338678756
+                                                            },
+                                                 "ID":  "B750AA8E-5C0F-4D0D-BCD3-0131AF97C409",
+                                                 "IsNetworkACL":  false,
+                                                 "IsPolicy":  true,
+                                                 "Rules":  [
+                                                               {
+                                                                   "Action":  "Allow",
+                                                                   "Direction":  "In",
+                                                                   "Flags":  1,
+                                                                   "Priority":  65500,
+                                                                   "RemoteAddresses":  "0.0.0.0/0",
+                                                                   "Type":  "ACL"
+                                                               },
+                                                               {
+                                                                   "Action":  "Allow",
+                                                                   "Direction":  "Out",
+                                                                   "Flags":  1,
+                                                                   "Priority":  65500,
+                                                                   "RemoteAddresses":  "0.0.0.0/0",
+                                                                   "Type":  "ACL"
+                                                               }
+                                                           ],
+                                                 "State":  2,
+                                                 "Tag":  "ACL Policy"
+                                             },
+                                             {
+                                                 "AdditionalParams":  {
+
+                                                                      },
+                                                 "AllocationOrder":  3,
+                                                 "EndpointGuid":  "2E0AF794-11AC-4430-BEE1-1BA6F0552320",
+                                                 "Flags":  0,
+                                                 "Health":  {
+                                                                "LastErrorCode":  0,
+                                                                "LastUpdateTime":  134364045338678756
+                                                            },
+                                                 "ID":  "1DE790DD-D61D-4015-88CA-B30C6EC57352",
+                                                 "InterfaceGuid":  "E0E2889F-A037-464D-8110-7438F3064C0C",
+                                                 "IsPolicy":  true,
+                                                 "PolicyFlags":  0,
+                                                 "PortFriendlyName":  "2E0AF794-11AC-4430-BEE1-1BA6F0552320",
+                                                 "Rules":  [
+                                                               {
+                                                                   "PolicyFlags":  0,
+                                                                   "Type":  "Firewall",
+                                                                   "VmCreatorId":  "40e0ac32-46a5-438a-a0b2-2b479e8f2e90"
+                                                               }
+                                                           ],
+                                                 "State":  3,
+                                                 "SwitchId":  "30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0",
+                                                 "Tag":  "Firewall Policy",
+                                                 "VirtualMachineId":  "4AD59F17-FF09-481E-AFA6-2CEA8182AC90",
+                                                 "VmCreatorId":  "40E0AC32-46A5-438A-A0B2-2B479E8F2E90"
+                                             }
+                                         ],
+                          "CompartmentOperationTime":  0,
+                          "Flags":  0,
+                          "Health":  {
+                                         "LastErrorCode":  0,
+                                         "LastUpdateTime":  134364045338307542
+                                     },
+                          "ID":  "3B76E1DD-480F-4469-BCD3-D5DE7B128996",
+                          "PortOperationTime":  0,
+                          "State":  1,
+                          "SwitchOperationTime":  0,
+                          "VfpOperationTime":  0,
+                          "parentId":  "7A07E751-6908-46C8-A8BA-9FB8CB1B60DF"
+                      },
+        "State":  2,
+        "VirtualNetwork":  "e0e2889f-a037-464d-8110-7438f3064c0d",
+        "VirtualNetworkName":  "FSE Switch (RB\u0026Vision)",
+        "Policies":  [
+                         {
+                             "PolicyFlags":  0,
+                             "Type":  "Firewall",
+                             "VmCreatorId":  "40e0ac32-46a5-438a-a0b2-2b479e8f2e90"
+                         },
+                         {
+                             "Type":  "VLAN",
+                             "VLAN":  1
+                         }
+                     ],
+        "MacAddress":  "8C-C5-8C-10-B3-C0",
+        "GatewayAddress":  "10.108.2.1",
+        "DNSServerList":  "168.126.63.1,168.126.63.2",
+        "InterfaceConstraint":  {
+                                    "InterfaceGuid":  "e0e2889f-a037-464d-8110-7438f3064c0c",
+                                    "InterfaceLuid":  1689399616077824,
+                                    "InterfaceIndex":  23,
+                                    "InterfaceMediaType":  6,
+                                    "InterfaceAlias":  "RB\u0026Vision",
+                                    "InterfaceDescription":  "Realtek PCIe GbE Family Controller"
+                                },
+        "Flags":  4,
+        "SharedContainers":  [
+
+                             ],
+        "VirtualMachine":  "4AD59F17-FF09-481E-AFA6-2CEA8182AC90",
+        "MirrorState":  2
+    },
+    {
+        "ID":  "79a72c58-d790-4e21-af1b-874bbad59ada",
+        "Name":  "Ethernet",
+        "Version":  68719476736,
+        "AdditionalParams":  {
+                                 "SwitchId":  "30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0",
+                                 "SwitchPortId":  "79A72C58-D790-4E21-AF1B-874BBAD59ADA",
+                                 "VmSwitchNicName":  "4AD59F17-FF09-481E-AFA6-2CEA8182AC90--FC232FD7-4443-4791-A539-DEEF713EC4D4"
+                             },
+        "Resources":  {
+                          "AdditionalParams":  {
+
+                                               },
+                          "AllocationOrder":  4,
+                          "Allocators":  [
+                                             {
+                                                 "AdditionalParams":  {
+
+                                                                      },
+                                                 "AllocationOrder":  0,
+                                                 "Connected":  true,
+                                                 "EndpointId":  "79A72C58-D790-4E21-AF1B-874BBAD59ADA",
+                                                 "EndpointPortGuid":  "79A72C58-D790-4E21-AF1B-874BBAD59ADA",
+                                                 "Flags":  0,
+                                                 "Health":  {
+                                                                "LastErrorCode":  0,
+                                                                "LastUpdateTime":  134364045341793978
+                                                            },
+                                                 "ID":  "53D6F0FA-CF6E-44BC-A48B-6701D6C5562F",
+                                                 "IsPolicy":  false,
+                                                 "IsolationId":  3,
+                                                 "MacAddress":  "00-15-5D-EA-E8-F7",
+                                                 "ManagementPort":  false,
+                                                 "NetworkId":  "D57EA395-E79F-11F0-BA48-806E6F6E6962",
+                                                 "NicId":  "4AD59F17-FF09-481E-AFA6-2CEA8182AC90--FC232FD7-4443-4791-A539-DEEF713EC4D4",
+                                                 "PortFriendlyNamePrefix":  "Endpoint Port",
+                                                 "PortId":  "79A72C58-D790-4E21-AF1B-874BBAD59ADA",
+                                                 "PreferredPortFriendlyName":  "79A72C58-D790-4E21-AF1B-874BBAD59ADA",
+                                                 "State":  3,
+                                                 "SwitchId":  "30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0",
+                                                 "Tag":  "VM Port",
+                                                 "VmPort":  true,
+                                                 "nonPersistentPort":  true
+                                             },
+                                             {
+                                                 "AdditionalParams":  {
+
+                                                                      },
+                                                 "AllocationOrder":  1,
+                                                 "Flags":  0,
+                                                 "Health":  {
+                                                                "LastErrorCode":  0,
+                                                                "LastUpdateTime":  134364045341819444
+                                                            },
+                                                 "ID":  "A2D2FF85-FD2E-4405-8537-AFA711B2882A",
+                                                 "InDefaultIsolation":  false,
+                                                 "IsPolicy":  true,
+                                                 "IsolationID":  3,
+                                                 "IsolationType":  3,
+                                                 "State":  3,
+                                                 "Tag":  "Isolation Policy"
+                                             },
+                                             {
+                                                 "AdditionalParams":  {
+
+                                                                      },
+                                                 "AllocationOrder":  2,
+                                                 "Flags":  0,
+                                                 "Health":  {
+                                                                "LastErrorCode":  0,
+                                                                "LastUpdateTime":  134364045341819444
+                                                            },
+                                                 "ID":  "2001976D-A16C-48B8-BF2B-A6698C14DD3F",
+                                                 "IsNetworkACL":  false,
+                                                 "IsPolicy":  true,
+                                                 "Rules":  [
+                                                               {
+                                                                   "Action":  "Allow",
+                                                                   "Direction":  "In",
+                                                                   "Flags":  1,
+                                                                   "Priority":  65500,
+                                                                   "RemoteAddresses":  "0.0.0.0/0",
+                                                                   "Type":  "ACL"
+                                                               },
+                                                               {
+                                                                   "Action":  "Allow",
+                                                                   "Direction":  "Out",
+                                                                   "Flags":  1,
+                                                                   "Priority":  65500,
+                                                                   "RemoteAddresses":  "0.0.0.0/0",
+                                                                   "Type":  "ACL"
+                                                               }
+                                                           ],
+                                                 "State":  2,
+                                                 "Tag":  "ACL Policy"
+                                             },
+                                             {
+                                                 "AdditionalParams":  {
+
+                                                                      },
+                                                 "AllocationOrder":  3,
+                                                 "EndpointGuid":  "79A72C58-D790-4E21-AF1B-874BBAD59ADA",
+                                                 "Flags":  0,
+                                                 "Health":  {
+                                                                "LastErrorCode":  0,
+                                                                "LastUpdateTime":  134364045341819444
+                                                            },
+                                                 "ID":  "F1875B99-0D28-4F5C-92FD-89DAE092A0E5",
+                                                 "InterfaceGuid":  "D57EA395-E79F-11F0-BA48-806E6F6E6963",
+                                                 "IsPolicy":  true,
+                                                 "PolicyFlags":  0,
+                                                 "PortFriendlyName":  "79A72C58-D790-4E21-AF1B-874BBAD59ADA",
+                                                 "Rules":  [
+                                                               {
+                                                                   "PolicyFlags":  0,
+                                                                   "Type":  "Firewall",
+                                                                   "VmCreatorId":  "40e0ac32-46a5-438a-a0b2-2b479e8f2e90"
+                                                               }
+                                                           ],
+                                                 "State":  3,
+                                                 "SwitchId":  "30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0",
+                                                 "Tag":  "Firewall Policy",
+                                                 "VirtualMachineId":  "4AD59F17-FF09-481E-AFA6-2CEA8182AC90",
+                                                 "VmCreatorId":  "40E0AC32-46A5-438A-A0B2-2B479E8F2E90"
+                                             }
+                                         ],
+                          "CompartmentOperationTime":  0,
+                          "Flags":  0,
+                          "Health":  {
+                                         "LastErrorCode":  0,
+                                         "LastUpdateTime":  134364045341793978
+                                     },
+                          "ID":  "C9025A21-D155-4498-A642-3AD881C41E1B",
+                          "PortOperationTime":  0,
+                          "State":  1,
+                          "SwitchOperationTime":  0,
+                          "VfpOperationTime":  0,
+                          "parentId":  "3E4596AA-C49B-431E-BBF9-BA4D3A045179"
+                      },
+        "State":  2,
+        "VirtualNetwork":  "d57ea395-e79f-11f0-ba48-806e6f6e6962",
+        "VirtualNetworkName":  "FSE Switch (Loopback Pseudo-Interface 1)",
+        "Policies":  [
+                         {
+                             "PolicyFlags":  0,
+                             "Type":  "Firewall",
+                             "VmCreatorId":  "40e0ac32-46a5-438a-a0b2-2b479e8f2e90"
+                         },
+                         {
+                             "Type":  "VLAN",
+                             "VLAN":  3
+                         }
+                     ],
+        "MacAddress":  "00-15-5D-EA-E8-F7",
+        "Namespace":  {
+                          "ID":  "2b414ef3-49f4-426f-b331-39d55a723efd"
+                      },
+        "InterfaceConstraint":  {
+                                    "InterfaceGuid":  "fc232fd7-4443-4791-a539-deef713ec4d4",
+                                    "InterfaceMediaType":  6
+                                },
+        "Flags":  4,
+        "SharedContainers":  [
+
+                             ],
+        "VirtualMachine":  "4AD59F17-FF09-481E-AFA6-2CEA8182AC90"
+    }
+]
