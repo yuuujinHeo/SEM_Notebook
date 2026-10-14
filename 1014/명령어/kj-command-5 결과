@@ -1,0 +1,25 @@
+-Tail 20 만 봐도 괜찮은가요?
+내용이 너무 많아 첨부가 어렵네요ㅠ
+
+PS C:\Users\admin> Get-Content C:\Users\admin\blocked_full.txt  -Tail 20
+[50022.734594]  ? vmf_insert_pfn+0x16/0x20
+[50022.734595]  ? vvar_fault+0x9f/0x110
+[50022.734597]  ? special_mapping_fault+0x25/0xd0
+[50022.734599]  ? __do_fault+0x39/0x190
+[50022.734600]  ? do_fault+0x2cf/0x590
+[50022.734601]  ? __handle_mm_fault+0x6ed/0x910
+[50022.734604]  ? count_memcg_events+0xbd/0x170
+[50022.734605]  ? handle_mm_fault+0xc3/0x2c0
+[50022.734607]  ? do_user_addr_fault+0x233/0x710
+[50022.734609]  ? irqentry_exit+0x3f/0x50
+[50022.734610]  ? exc_page_fault+0x7f/0x170
+[50022.734610]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[50022.734611] RIP: 0033:0x7e029f1278f0
+[50022.734612] RSP: 002b:00007fffbb09c0d8 EFLAGS: 00000246 ORIG_RAX: 000000000000002c
+[50022.734613] RAX: ffffffffffffffda RBX: 00007fffbb09c1c0 RCX: 00007e029f1278f0
+[50022.734613] RDX: 0000000000000020 RSI: 00007fffbb09c0e0 RDI: 0000000000000003
+[50022.734614] RBP: 00005635df9d0040 R08: 0000000000000000 R09: 0000000000000000
+[50022.734614] R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+[50022.734615] R13: 00005635df9d0040 R14: 00007fffbb09c430 R15: 00007fffbb09c448
+[50022.734638]  </TASK>
+PS C:\Users\admin>
