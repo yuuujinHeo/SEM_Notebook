@@ -17,3 +17,5 @@ Get-NetFirewallHyperVRule -PolicyStore ActiveStore |
     Format-Table Name,DisplayName,Direction,Action,Enabled
 
 Get-Content "$env:USERPROFILE\.wslconfig"
+
+Get-NetIPConfiguration -InterfaceAlias "Wi-Fi"
