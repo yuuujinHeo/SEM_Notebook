@@ -1,0 +1,65 @@
+PS C:\Temp> $start = [datetime]'2026-10-14 07:35:00'
+PS C:\Temp> $end = [datetime]'2026-10-14 09:00:00'
+PS C:\Temp>
+PS C:\Temp> Get-WinEvent -FilterHashtable @{
+>>     LogName = 'Microsoft-Windows-Hyper-V-Compute-Operational'
+>>     StartTime = $start
+>>     EndTime = $end
+>>     Id = 2007
+>> } |
+>> Where-Object {
+>>     $_.Message -match 'NetworkAdapters'
+>> } |
+>> Select-Object TimeCreated,Message |
+>> Format-List
+
+
+TimeCreated : 2026-10-14 오전 8:38:22
+Message     : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devices/N
+              etworkAdapters/{c7f7ce3b-8159-4b72-b897-598abdde9d00}","Settings":{"EndpointId":"cf16ec67-2c44-4a19-a308-89d8f8b1d117","Insta
+              nceId":"c7f7ce3b-8159-4b72-b897-598abdde9d00","MacAddress":"40-D1-33-CD-46-69"}}'', 결과 0x00000000
+
+TimeCreated : 2026-10-14 오전 8:38:20
+Message     : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Remove","ResourcePath":"VirtualMachine/Device
+              s/NetworkAdapters/{c7f7ce3b-8159-4b72-b897-598abdde9d00}","Settings":{"EndpointId":"cf16ec67-2c44-4a19-a308-89d8f8b1d117","In
+              stanceId":"c7f7ce3b-8159-4b72-b897-598abdde9d00","MacAddress":"00-00-00-00-00-00"}}'', 결과 0x00000000
+
+TimeCreated : 2026-10-14 오전 7:50:20
+Message     : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devices/N
+              etworkAdapters/{c7f7ce3b-8159-4b72-b897-598abdde9d00}","Settings":{"EndpointId":"cf16ec67-2c44-4a19-a308-89d8f8b1d117","Insta
+              nceId":"c7f7ce3b-8159-4b72-b897-598abdde9d00","MacAddress":"40-D1-33-CD-46-69"}}'', 결과 0x00000000
+
+TimeCreated : 2026-10-14 오전 7:50:20
+Message     : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Remove","ResourcePath":"VirtualMachine/Device
+              s/NetworkAdapters/{c7f7ce3b-8159-4b72-b897-598abdde9d00}","Settings":{"EndpointId":"cf16ec67-2c44-4a19-a308-89d8f8b1d117","In
+              stanceId":"c7f7ce3b-8159-4b72-b897-598abdde9d00","MacAddress":"00-00-00-00-00-00"}}'', 결과 0x00000000
+
+TimeCreated : 2026-10-14 오전 7:43:45
+Message     : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devices/N
+              etworkAdapters/{c7f7ce3b-8159-4b72-b897-598abdde9d00}","Settings":{"EndpointId":"cf16ec67-2c44-4a19-a308-89d8f8b1d117","Insta
+              nceId":"c7f7ce3b-8159-4b72-b897-598abdde9d00","MacAddress":"40-D1-33-CD-46-69"}}'', 결과 0x00000000
+
+TimeCreated : 2026-10-14 오전 7:43:45
+Message     : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Remove","ResourcePath":"VirtualMachine/Device
+              s/NetworkAdapters/{c7f7ce3b-8159-4b72-b897-598abdde9d00}","Settings":{"EndpointId":"cf16ec67-2c44-4a19-a308-89d8f8b1d117","In
+              stanceId":"c7f7ce3b-8159-4b72-b897-598abdde9d00","MacAddress":"00-00-00-00-00-00"}}'', 결과 0x00000000
+
+TimeCreated : 2026-10-14 오전 7:35:34
+Message     : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devices/N
+              etworkAdapters/{c7f7ce3b-8159-4b72-b897-598abdde9d00}","Settings":{"EndpointId":"cf16ec67-2c44-4a19-a308-89d8f8b1d117","Insta
+              nceId":"c7f7ce3b-8159-4b72-b897-598abdde9d00","MacAddress":"40-D1-33-CD-46-69"}}'', 결과 0x00000000
+
+TimeCreated : 2026-10-14 오전 7:35:34
+Message     : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devices/N
+              etworkAdapters/{fc232fd7-4443-4791-a539-deef713ec4d4}","Settings":{"EndpointId":"79a72c58-d790-4e21-af1b-874bbad59ada","Insta
+              nceId":"fc232fd7-4443-4791-a539-deef713ec4d4","MacAddress":"00-15-5D-EA-E8-F7"}}'', 결과 0x00000000
+
+TimeCreated : 2026-10-14 오전 7:35:34
+Message     : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devices/N
+              etworkAdapters/{c6a72c4c-68d4-4075-bd7c-16fa670bfb27}","Settings":{"EndpointId":"eedf5449-bf41-4dce-86c4-fb36fdacaea4","Insta
+              nceId":"c6a72c4c-68d4-4075-bd7c-16fa670bfb27","MacAddress":"00-24-9B-89-8D-7B"}}'', 결과 0x00000000
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Message     : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devices/N
+              etworkAdapters/{e0e2889f-a037-464d-8110-7438f3064c0c}","Settings":{"EndpointId":"2e0af794-11ac-4430-bee1-1ba6f0552320","Insta
+              nceId":"e0e2889f-a037-464d-8110-7438f3064c0c","MacAddress":"8C-C5-8C-10-B3-C0"}}'', 결과 0x00000000
