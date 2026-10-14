@@ -1,0 +1,25 @@
+1단계. 재부팅 전에 이것만 떠 주세요 (5분)
+WSL 새 터미널에서 순서대로 실행하세요. 출력만 하고 시스템은 안 바뀌어요.
+
+sudo sh -c 'echo w > /proc/sysrq-trigger'; sudo dmesg | tail -300 > /mnt/c/Users/admin/blocked.txt
+ps -o pid,lstart,etime,args -p 30341,314
+sudo dmesg | grep -iE "blocked for more|hung_task|netvsc|rtnl" | tail -50
+• 첫 줄은 "잠금을 누가 쥐고 있나"를 기록해요. 결과는 Windows의 C:\Users\admin\blocked.txt로 저장되니 그 파일을 여기 올려 주세요.
+• 둘째 줄은 "언제부터 멈췄나"예요. 출력 화면을 복사해 주세요.
+• 셋째 줄은 커널이 남긴 경고예요. 마찬가지로 복사해 주세요.
+
+그리고 Windows PowerShell에서 Wi-Fi 리셋 시각도 뽑아 주세요.
+
+Get-WinEvent -FilterHashtable @{LogName='System'; StartTime=(Get-Date).AddDays(-3)} | ? { $_.Id -in 4003,8000 } | select TimeCreated,Id | ft -AutoSize
+
+# 명령어 1. 무한대기
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ sudo sh -c 'echo w > /proc/sysrq-trigger'; sudo dmesg | tail -300 > /mnt/c/Users/admin/blocked.txt
+
+# 명령어 2.
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ ps -o pid,lstart,etime,args -p 30341,314
+    PID                  STARTED     ELAPSED COMMAND
+    314 Wed Oct 14 07:35:37 2026    10:52:07 /tmp/rb-bin-cache/host-73a2d7a9342e54d3/python/bin/python3 /tmp/rb-bin-cache/host-73a2d7a9342e54d3/svc/r
+  30341 Wed Oct 14 08:38:22 2026    09:49:22 ip -o -4 addr show
+
+# 명령어 3. 무한대기
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ sudo dmesg | grep -iE "blocked for more|hung_task|netvsc|rtnl" | tail -50
