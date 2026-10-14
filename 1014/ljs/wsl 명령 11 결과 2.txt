@@ -1,0 +1,312 @@
+PS C:\Users\admin> Get-WinEvent -FilterHashtable @{
+>>     LogName = 'Microsoft-Windows-Hyper-V-VmSwitch-Operational'
+>>     StartTime = [datetime]'2026-10-14 07:30:00'
+>> } -ErrorAction SilentlyContinue |
+>> Where-Object {
+>>     $_.Message -match 'NIC|port|endpoint'
+>> } |
+>> Select-Object -Last 50 TimeCreated,Id,Message |
+>> Format-List
+
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 0
+Message     : Guest vDev Operation Begin
+
+              VmOperation: Started Resume,
+              vmName: 4AD59F17-FF09-481E-AFA6-2CEA8182AC90,
+              vmFriendlyName: 4AD59F17-FF09-481E-AFA6-2CEA8182AC90,
+              nicName: 4AD59F17-FF09-481E-AFA6-2CEA8182AC90--E0E2889F-A037-464D-8110-7438F3064C0C,
+              nicFriendlyName: ,
+              switchName: 30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0,
+              switchFriendlyName: FSE Switch
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 220
+Message     : Status change (IPSEC 사용하지 않음) sent to Nic 4AD59F17-FF09-481E-AFA6-2CEA8182AC90--E0E2889F-A037-464D-8110-7438F3064C0C (F
+              riendly Name: ) on port 2E0AF794-11AC-4430-BEE1-1BA6F0552320 (Friendly Name: 2E0AF794-11AC-4430-BEE1-1BA6F0552320) on switch
+              30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: IPSEC 사용하지 않음, Status: {드라이브 준비되지
+              않음}
+              드라이브를 사용할 준비가 되지 않았습니다. 문이 열렸을 수 있습니다. 드라이브 %hs에 디스크가 들어있는지, 드라이브 문이 닫혀있는
+              지 확인하십시오.
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 220
+Message     : Status change (오프로드 변경) sent to Nic 4AD59F17-FF09-481E-AFA6-2CEA8182AC90--E0E2889F-A037-464D-8110-7438F3064C0C (Friendl
+              y Name: ) on port 2E0AF794-11AC-4430-BEE1-1BA6F0552320 (Friendly Name: 2E0AF794-11AC-4430-BEE1-1BA6F0552320) on switch 30BE60
+              1B-A2AB-4EDC-9AD5-9D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: 오프로드 변경, Status: {드라이브 준비되지 않음}
+              드라이브를 사용할 준비가 되지 않았습니다. 문이 열렸을 수 있습니다. 드라이브 %hs에 디스크가 들어있는지, 드라이브 문이 닫혀있는
+              지 확인하십시오.
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 220
+Message     : Status change (Nic 연결됨) sent to Nic 4AD59F17-FF09-481E-AFA6-2CEA8182AC90--E0E2889F-A037-464D-8110-7438F3064C0C (Friendly N
+              ame: ) on port 2E0AF794-11AC-4430-BEE1-1BA6F0552320 (Friendly Name: 2E0AF794-11AC-4430-BEE1-1BA6F0552320) on switch 30BE601B-
+              A2AB-4EDC-9AD5-9D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: Nic 연결됨, Status: {드라이브 준비되지 않음}
+              드라이브를 사용할 준비가 되지 않았습니다. 문이 열렸을 수 있습니다. 드라이브 %hs에 디스크가 들어있는지, 드라이브 문이 닫혀있는
+              지 확인하십시오.
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 220
+Message     : Status change (NIC 연결 해제됨) sent to Nic 4AD59F17-FF09-481E-AFA6-2CEA8182AC90--E0E2889F-A037-464D-8110-7438F3064C0C (Frien
+              dly Name: ) on port 2E0AF794-11AC-4430-BEE1-1BA6F0552320 (Friendly Name: 2E0AF794-11AC-4430-BEE1-1BA6F0552320) on switch 30BE
+              601B-A2AB-4EDC-9AD5-9D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: NIC 연결 해제됨, Status: {드라이브 준비되지 않음}
+              드라이브를 사용할 준비가 되지 않았습니다. 문이 열렸을 수 있습니다. 드라이브 %hs에 디스크가 들어있는지, 드라이브 문이 닫혀있는
+              지 확인하십시오.
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 89
+Message     : Completed security policy operation on port E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: Host Vnic E0E2889F-A037-464D
+              -8110-7438F3064C0D) on switch 30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0 (Friendly Name: FSE Switch) - AllowMacSpoofing: true, Enab
+              leDhcpGuard: false, EnableRouterGuard: false, MonitorMode: 0, AllowIeeePriorityTag: false, VirtualSubnetId: 0, AllowTeaming f
+              alse, StormLimit: 0, DynamicIPAddressLimit: 0, EnableFixSpeed10G: false.
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 143
+Message     : Virtual RSS configuration update succeeded on NIC E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) of switc
+              h 30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0 (Friendly Name: FSE Switch).
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 220
+Message     : Status change (IPSEC 사용하지 않음) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port E0
+              E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: Host Vnic E0E2889F-A037-464D-8110-7438F3064C0D) on switch 30BE601B-A2AB-4E
+              DC-9AD5-9D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: IPSEC 사용하지 않음, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 220
+Message     : Status change (오프로드 변경) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port E0E2889F
+              -A037-464D-8110-7438F3064C0D (Friendly Name: Host Vnic E0E2889F-A037-464D-8110-7438F3064C0D) on switch 30BE601B-A2AB-4EDC-9AD
+              5-9D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: 오프로드 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 220
+Message     : Status change (Nic 연결됨) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port E0E2889F-A0
+              37-464D-8110-7438F3064C0D (Friendly Name: Host Vnic E0E2889F-A037-464D-8110-7438F3064C0D) on switch 30BE601B-A2AB-4EDC-9AD5-9
+              D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: Nic 연결됨, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 125
+Message     : Media connected on NIC E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic).
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 220
+Message     : Status change (격리 변경) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port  (Friendly N
+              ame: ) on switch  (Friendly Name: ). NicStatus: 격리 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 220
+Message     : Status change (오프로드 변경) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port  (Friend
+              ly Name: ) on switch  (Friendly Name: ). NicStatus: 오프로드 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 124
+Message     : NIC E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) restarted.
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 220
+Message     : Status change (오프로드 변경) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port  (Friend
+              ly Name: ) on switch  (Friendly Name: ). NicStatus: 오프로드 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 220
+Message     : Status change (오프로드 변경) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port  (Friend
+              ly Name: ) on switch  (Friendly Name: ). NicStatus: 오프로드 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:29
+Id          : 143
+Message     : Virtual RSS configuration update succeeded on NIC E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) of switc
+              h  (Friendly Name: ).
+
+TimeCreated : 2026-10-14 오전 7:35:29
+Id          : 220
+Message     : Status change (NIC 연결 해제됨) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port E0E288
+              9F-A037-464D-8110-7438F3064C0D (Friendly Name: Host Vnic E0E2889F-A037-464D-8110-7438F3064C0D) on switch 30BE601B-A2AB-4EDC-9
+              AD5-9D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: NIC 연결 해제됨, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:29
+Id          : 126
+Message     : Media disconnected on NIC E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic).
+
+TimeCreated : 2026-10-14 오전 7:35:29
+Id          : 220
+Message     : Status change (IPSEC 사용하지 않음) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port E0
+              E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: Host Vnic E0E2889F-A037-464D-8110-7438F3064C0D) on switch 30BE601B-A2AB-4E
+              DC-9AD5-9D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: IPSEC 사용하지 않음, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:23
+Id          : 143
+Message     : Virtual RSS configuration update succeeded on NIC C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Default Switch) of swi
+              tch  (Friendly Name: ).
+
+TimeCreated : 2026-10-14 오전 7:35:23
+Id          : 220
+Message     : Status change (NIC 연결 해제됨) sent to Nic C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Default Switch) on port C08C
+              B7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Host Vnic C08CB7B8-9B3C-408E-8E30-5E16A3AEB444) on switch C08CB7B8-9B3C-408E
+              -8E30-5E16A3AEB444 (Friendly Name: Default Switch). NicStatus: NIC 연결 해제됨, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:23
+Id          : 126
+Message     : Media disconnected on NIC C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Default Switch).
+
+TimeCreated : 2026-10-14 오전 7:35:23
+Id          : 220
+Message     : Status change (IPSEC 사용하지 않음) sent to Nic C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Default Switch) on port
+              C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Host Vnic C08CB7B8-9B3C-408E-8E30-5E16A3AEB444) on switch C08CB7B8-9B3C-
+              408E-8E30-5E16A3AEB444 (Friendly Name: Default Switch). NicStatus: IPSEC 사용하지 않음, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 0
+Message     : ProtocolNic NetPnpEvent End
+
+              netPnpEvent: NetEventBindsComplete,
+              nicName: ,
+              nicFriendlyName: ,
+              switchName: ,
+              switchFriendlyName: ,
+              delta (100 ns): 43,
+              Status: 0x0(NT=STATUS_SUCCESS)
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 0
+Message     : ProtocolNic NetPnpEvent Begin
+
+              netPnpEvent: NetEventBindsComplete,
+              nicName: ,
+              nicFriendlyName: ,
+              switchName: ,
+              switchFriendlyName:
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 143
+Message     : Virtual RSS configuration update succeeded on NIC E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) of switc
+              h 30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0 (Friendly Name: FSE Switch).
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 220
+Message     : Status change (격리 변경) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port E0E2889F-A03
+              7-464D-8110-7438F3064C0D (Friendly Name: Host Vnic E0E2889F-A037-464D-8110-7438F3064C0D) on switch 30BE601B-A2AB-4EDC-9AD5-9D
+              2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: 격리 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 220
+Message     : Status change (오프로드 변경) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port E0E2889F
+              -A037-464D-8110-7438F3064C0D (Friendly Name: Host Vnic E0E2889F-A037-464D-8110-7438F3064C0D) on switch 30BE601B-A2AB-4EDC-9AD
+              5-9D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: 오프로드 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 124
+Message     : NIC E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) restarted.
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 220
+Message     : Status change (오프로드 변경) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port E0E2889F
+              -A037-464D-8110-7438F3064C0D (Friendly Name: Host Vnic E0E2889F-A037-464D-8110-7438F3064C0D) on switch 30BE601B-A2AB-4EDC-9AD
+              5-9D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: 오프로드 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 143
+Message     : Virtual RSS configuration update succeeded on NIC C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Default Switch) of swi
+              tch C08CB7B8-9B3C-408E-8E30-5E16A3AEB444 (Friendly Name: Default Switch).
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 220
+Message     : Status change (격리 변경) sent to Nic C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Default Switch) on port C08CB7B8-9
+              B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Host Vnic C08CB7B8-9B3C-408E-8E30-5E16A3AEB444) on switch C08CB7B8-9B3C-408E-8E30-
+              5E16A3AEB444 (Friendly Name: Default Switch). NicStatus: 격리 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 220
+Message     : Status change (오프로드 변경) sent to Nic C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Default Switch) on port C08CB7
+              B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Host Vnic C08CB7B8-9B3C-408E-8E30-5E16A3AEB444) on switch C08CB7B8-9B3C-408E-8
+              E30-5E16A3AEB444 (Friendly Name: Default Switch). NicStatus: 오프로드 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 124
+Message     : NIC C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Default Switch) restarted.
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 220
+Message     : Status change (오프로드 변경) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port E0E2889F
+              -A037-464D-8110-7438F3064C0D (Friendly Name: Host Vnic E0E2889F-A037-464D-8110-7438F3064C0D) on switch 30BE601B-A2AB-4EDC-9AD
+              5-9D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: 오프로드 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 220
+Message     : Status change (오프로드 변경) sent to Nic C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Default Switch) on port C08CB7
+              B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Host Vnic C08CB7B8-9B3C-408E-8E30-5E16A3AEB444) on switch C08CB7B8-9B3C-408E-8
+              E30-5E16A3AEB444 (Friendly Name: Default Switch). NicStatus: 오프로드 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 220
+Message     : Status change (IPSEC 사용하지 않음) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port E0
+              E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: Host Vnic E0E2889F-A037-464D-8110-7438F3064C0D) on switch 30BE601B-A2AB-4E
+              DC-9AD5-9D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: IPSEC 사용하지 않음, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 220
+Message     : Status change (오프로드 변경) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port E0E2889F
+              -A037-464D-8110-7438F3064C0D (Friendly Name: Host Vnic E0E2889F-A037-464D-8110-7438F3064C0D) on switch 30BE601B-A2AB-4EDC-9AD
+              5-9D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: 오프로드 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 220
+Message     : Status change (Nic 연결됨) sent to Nic E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: FSE HostVnic) on port E0E2889F-A0
+              37-464D-8110-7438F3064C0D (Friendly Name: Host Vnic E0E2889F-A037-464D-8110-7438F3064C0D) on switch 30BE601B-A2AB-4EDC-9AD5-9
+              D2600CF7CF0 (Friendly Name: FSE Switch). NicStatus: Nic 연결됨, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 220
+Message     : Status change (오프로드 변경) sent to Nic C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Default Switch) on port C08CB7
+              B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Host Vnic C08CB7B8-9B3C-408E-8E30-5E16A3AEB444) on switch C08CB7B8-9B3C-408E-8
+              E30-5E16A3AEB444 (Friendly Name: Default Switch). NicStatus: 오프로드 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 220
+Message     : Status change (IPSEC 사용하지 않음) sent to Nic C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Default Switch) on port
+              C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Host Vnic C08CB7B8-9B3C-408E-8E30-5E16A3AEB444) on switch C08CB7B8-9B3C-
+              408E-8E30-5E16A3AEB444 (Friendly Name: Default Switch). NicStatus: IPSEC 사용하지 않음, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 220
+Message     : Status change (오프로드 변경) sent to Nic C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Default Switch) on port C08CB7
+              B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Host Vnic C08CB7B8-9B3C-408E-8E30-5E16A3AEB444) on switch C08CB7B8-9B3C-408E-8
+              E30-5E16A3AEB444 (Friendly Name: Default Switch). NicStatus: 오프로드 변경, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 220
+Message     : Status change (Nic 연결됨) sent to Nic C08CB7B8-9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Default Switch) on port C08CB7B8-
+              9B3C-408E-8E30-5E16A3AEB445 (Friendly Name: Host Vnic C08CB7B8-9B3C-408E-8E30-5E16A3AEB444) on switch C08CB7B8-9B3C-408E-8E30
+              -5E16A3AEB444 (Friendly Name: Default Switch). NicStatus: Nic 연결됨, Status: STATUS_SUCCESS
+
+TimeCreated : 2026-10-14 오전 7:35:14
+Id          : 89
+Message     : Completed security policy operation on port E0E2889F-A037-464D-8110-7438F3064C0D (Friendly Name: Host Vnic E0E2889F-A037-464D
+              -8110-7438F3064C0D) on switch 30BE601B-A2AB-4EDC-9AD5-9D2600CF7CF0 (Friendly Name: FSE Switch) - AllowMacSpoofing: true, Enab
+              leDhcpGuard: false, EnableRouterGuard: false, MonitorMode: 0, AllowIeeePriorityTag: false, VirtualSubnetId: 0, AllowTeaming f
+              alse, StormLimit: 0, DynamicIPAddressLimit: 0, EnableFixSpeed10G: false.
+
+TimeCreated : 2026-10-14 오전 7:34:22
+Id          : 285
+Message     : V-스위치 작업 IOCTL_ENUM_NIC_COUNT_EX(2241616)을 완료하는 데 시간이 너무 오래 걸렸습니다. 작업 유형: IOCTL. 실행 시간이 0 밀
+              리초입니다. 대기 시간이 0 밀리초입니다. 예상 실행 시간이 ms.    .    .      0 미만입니다.
+
+TimeCreated : 2026-10-14 오전 7:33:22
+Id          : 285
+Message     : V-스위치 작업 IOCTL_ENUM_NIC_COUNT_EX(2241616)을 완료하는 데 시간이 너무 오래 걸렸습니다. 작업 유형: IOCTL. 실행 시간이 0 밀
+              리초입니다. 대기 시간이 0 밀리초입니다. 예상 실행 시간이 ms.    .    .      0 미만입니다.
+
+TimeCreated : 2026-10-14 오전 7:32:22
+Id          : 285
+Message     : V-스위치 작업 IOCTL_ENUM_NIC_COUNT_EX(2241616)을 완료하는 데 시간이 너무 오래 걸렸습니다. 작업 유형: IOCTL. 실행 시간이 0 밀
+              리초입니다. 대기 시간이 0 밀리초입니다. 예상 실행 시간이 ms.    .    .      0 미만입니다.
+
+TimeCreated : 2026-10-14 오전 7:31:22
+Id          : 285
+Message     : V-스위치 작업 IOCTL_ENUM_NIC_COUNT_EX(2241616)을 완료하는 데 시간이 너무 오래 걸렸습니다. 작업 유형: IOCTL. 실행 시간이 0 밀
+              리초입니다. 대기 시간이 0 밀리초입니다. 예상 실행 시간이 ms.    .    .      0 미만입니다.
+
+TimeCreated : 2026-10-14 오전 7:30:22
+Id          : 285
+Message     : V-스위치 작업 IOCTL_ENUM_NIC_COUNT_EX(2241616)을 완료하는 데 시간이 너무 오래 걸렸습니다. 작업 유형: IOCTL. 실행 시간이 0 밀
+              리초입니다. 대기 시간이 0 밀리초입니다. 예상 실행 시간이 ms.    .    .      0 미만입니다.
+
