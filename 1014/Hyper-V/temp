@@ -19,3 +19,7 @@ Get-NetFirewallHyperVRule -PolicyStore ActiveStore |
 Get-Content "$env:USERPROFILE\.wslconfig"
 
 Get-NetIPConfiguration -InterfaceAlias "Wi-Fi"
+
+Write-Host "START"
+wsl.exe -d Ubuntu-22.04 -- /bin/echo WSL_OK
+Write-Host "END"
