@@ -1,0 +1,98 @@
+윈도우 PC에서 SSH로 원격 접속하여 진행하였음.
+# 1번
+
+```
+timeout 5 ip -4 route show
+echo "ip route exit=$?"
+
+결과 : 무한 대기 아무것도 안나옴.
+아래 명령 수행은 같은 세션이 아닌 다른 세션에서 수행한 명령.
+      rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ echo "ip route exit=$?"
+      ip route exit=255
+
+timeout 5 ip -br link
+echo "ip link exit=$?"
+
+결과 : 무한 대기 아무것도 안나옴.
+아래 명령 수행은 같은 세션이 아닌 다른 세션에서 수행한 명령.
+      rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ echo "ip link exit=$?"
+      ip link exit=0
+
+
+timeout 5 ip -4 addr show
+echo "ip addr exit=$?"
+
+결과 : 무한대기 아무것도 안나옴.
+아래 명령 수행은 같은 세션이 아닌 다른 세션에서 수행한 명령.
+      rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ echo "ip addr exit=$?"
+      ip addr exit=0
+
+
+결과 :
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ timeout 5 cat /proc/net/route
+Iface   Destination     Gateway         Flags   RefCnt  Use     Metric  Mask            MTU     WindowIRTT
+eth2    00000000        018AF90A        0003    0       0       60      00000000        0       0    0
+
+eth0    00000000        01026C0A        0003    0       0       281     00000000        0       0    0
+
+eth1    00000000        0100A8C0        0003    0       0       291     00000000        0       0    0
+
+eth0    00026C0A        00000000        0001    0       0       281     00FFFFFF        0       0    0
+
+eth0    01026C0A        00000000        0005    0       0       281     FFFFFFFF        0       0    0
+
+eth2    008AF90A        00000000        0001    0       0       316     00FFFFFF        0       0    0
+
+eth2    018AF90A        00000000        0005    0       0       60      FFFFFFFF        0       0    0
+
+docker0 000011AC        00000000        0001    0       0       0       0000FFFF        0       0    0
+
+eth1    0000A8C0        00000000        0001    0       0       291     00FFFFFF        0       0    0
+
+eth1    0100A8C0        00000000        0005    0       0       291     FFFFFFFF        0       0    0
+```
+
+
+# 2번
+```
+timeout 8 strace -f -tt -o /tmp/ip-route.strace ip -4 route show
+echo "exit=$?"
+
+결과 : 무한정대기 결과 안나옴.
+
+
+tail -n 30 /tmp/ip-route.strace
+
+결과 : 
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ tail -n 30 /tmp/ip-route.strace
+248745 17:19:26.360069 prctl(PR_CAPBSET_READ, CAP_CHECKPOINT_RESTORE) = 1
+248745 17:19:26.360193 prctl(PR_CAPBSET_READ, 0x2c /* CAP_??? */) = -1 EINVAL (Invalid argument)
+248745 17:19:26.360258 prctl(PR_CAPBSET_READ, 0x2a /* CAP_??? */) = -1 EINVAL (Invalid argument)
+248745 17:19:26.360307 prctl(PR_CAPBSET_READ, 0x29 /* CAP_??? */) = -1 EINVAL (Invalid argument)
+248745 17:19:26.360397 getuid()         = 1000
+248745 17:19:26.360597 geteuid()        = 1000
+248745 17:19:26.360672 getrandom("\xc0\x9f\xcc\x03\xd5\xb9\xd2\xc2", 8, GRND_NONBLOCK) = 8
+248745 17:19:26.360753 brk(NULL)        = 0x5f259f4db000
+248745 17:19:26.360838 brk(0x5f259f4fc000) = 0x5f259f4fc000
+248745 17:19:26.360909 capget({version=_LINUX_CAPABILITY_VERSION_3, pid=0}, NULL) = 0
+248745 17:19:26.360965 capget({version=_LINUX_CAPABILITY_VERSION_3, pid=0}, {effective=0, permitted=0, inheritable=0}) = 0
+248745 17:19:26.361021 capset({version=_LINUX_CAPABILITY_VERSION_3, pid=0}, {effective=0, permitted=0, inheritable=0}) = 0
+248745 17:19:26.361078 socket(AF_NETLINK, SOCK_RAW|SOCK_CLOEXEC, NETLINK_ROUTE) = 3
+248745 17:19:26.361134 setsockopt(3, SOL_SOCKET, SO_SNDBUF, [32768], 4) = 0
+248745 17:19:26.361186 setsockopt(3, SOL_SOCKET, SO_RCVBUF, [1048576], 4) = 0
+248745 17:19:26.361236 setsockopt(3, SOL_NETLINK, NETLINK_EXT_ACK, [1], 4) = 0
+248745 17:19:26.361287 bind(3, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 0
+248745 17:19:26.362250 getsockname(3, {sa_family=AF_NETLINK, nl_pid=248745, nl_groups=00000000}, [12]) = 0
+248745 17:19:26.362313 setsockopt(3, SOL_NETLINK, NETLINK_GET_STRICT_CHK, [1], 4) = 0
+248745 17:19:26.362372 sendto(3, [[{nlmsg_len=36, nlmsg_type=RTM_GETROUTE, nlmsg_flags=NLM_F_REQUEST|NLM_F_DUMP, nlmsg_seq=1791965967, nlmsg_pid=0}, {rtm_family=AF_INET, rtm_dst_len=0, rtm_src_len=0, rtm_tos=0, rtm_table=RT_TABLE_UNSPEC, rtm_protocol=RTPROT_UNSPEC, rtm_scope=RT_SCOPE_UNIVERSE, rtm_type=RTN_UNSPEC, rtm_flags=0}, [{nla_len=8, nla_type=RTA_TABLE}, RT_TABLE_MAIN]], {nlmsg_len=0, nlmsg_type=0 /* NLMSG_??? */, nlmsg_flags=0, nlmsg_seq=0, nlmsg_pid=0}], 156, 0, NULL, 0) = 156
+248745 17:19:26.362539 recvmsg(3, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=NULL, iov_len=0}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_TRUNC}, MSG_PEEK|MSG_TRUNC) = 600
+248745 17:19:26.362605 recvmsg(3, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[[{nlmsg_len=60, nlmsg_type=RTM_NEWROUTE, nlmsg_flags=NLM_F_MULTI|NLM_F_DUMP_FILTERED, nlmsg_seq=1791965967, nlmsg_pid=248745}, {rtm_family=AF_INET, rtm_dst_len=0, rtm_src_len=0, rtm_tos=0, rtm_table=RT_TABLE_MAIN, rtm_protocol=RTPROT_KERNEL, rtm_scope=RT_SCOPE_UNIVERSE, rtm_type=RTN_UNICAST, rtm_flags=0}, [[{nla_len=8, nla_type=RTA_TABLE}, RT_TABLE_MAIN], [{nla_len=8, nla_type=RTA_PRIORITY}, 60], [{nla_len=8, nla_type=RTA_GATEWAY}, inet_addr("10.249.138.1")], [{nla_len=8, nla_type=RTA_OIF}, if_nametoindex("eth2")]]], [{nlmsg_len=60, nlmsg_type=RTM_NEWROUTE, nlmsg_flags=NLM_F_MULTI|NLM_F_DUMP_FILTERED, nlmsg_seq=1791965967, nlmsg_pid=248745}, {rtm_family=AF_INET, rtm_dst_len=0, rtm_src_len=0, rtm_tos=0, rtm_table=RT_TABLE_MAIN, rtm_protocol=RTPROT_KERNEL, rtm_scope=RT_SCOPE_UNIVERSE, rtm_type=RTN_UNICAST, rtm_flags=0}, [[{nla_len=8, nla_type=RTA_TABLE}, RT_TABLE_MAIN], [{nla_len=8, nla_type=RTA_PRIORITY}, 281], [{nla_len=8, nla_type=RTA_GATEWAY}, inet_addr("10.108.2.1")], [{nla_len=8, nla_type=RTA_OIF}, if_nametoindex("eth0")]]], [{nlmsg_len=60, nlmsg_type=RTM_NEWROUTE, nlmsg_flags=NLM_F_MULTI|NLM_F_DUMP_FILTERED, nlmsg_seq=1791965967, nlmsg_pid=248745}, {rtm_family=AF_INET, rtm_dst_len=0, rtm_src_len=0, rtm_tos=0, rtm_table=RT_TABLE_MAIN, rtm_protocol=RTPROT_KERNEL, rtm_scope=RT_SCOPE_UNIVERSE, rtm_type=RTN_UNICAST, rtm_flags=0}, [[{nla_len=8, nla_type=RTA_TABLE}, RT_TABLE_MAIN], [{nla_len=8, nla_type=RTA_PRIORITY}, 291], [{nla_len=8, nla_type=RTA_GATEWAY}, inet_addr("192.168.0.1")], [{nla_len=8, nla_type=RTA_OIF}, if_nametoindex("eth1")]]], [{nlmsg_len=60, nlmsg_type=RTM_NEWROUTE, nlmsg_flags=NLM_F_MULTI|NLM_F_DUMP_FILTERED, nlmsg_seq=1791965967, nlmsg_pid=248745}, {rtm_family=AF_INET, rtm_dst_len=24, rtm_src_len=0, rtm_tos=0, rtm_table=RT_TABLE_MAIN, rtm_protocol=RTPROT_KERNEL, rtm_scope=RT_SCOPE_LINK, rtm_type=RTN_UNICAST, rtm_flags=0}, [[{nla_len=8, nla_type=RTA_TABLE}, RT_TABLE_MAIN], [{nla_len=8, nla_type=RTA_DST}, inet_addr("10.108.2.0")], [{nla_len=8, nla_type=RTA_PRIORITY}, 281], [{nla_len=8, nla_type=RTA_OIF}, if_nametoindex("eth0")]]], [{nlmsg_len=60, nlmsg_type=RTM_NEWROUTE, nlmsg_flags=NLM_F_MULTI|NLM_F_DUMP_FILTERED, nlmsg_seq=1791965967, nlmsg_pid=248745}, {rtm_family=AF_INET, rtm_dst_len=32, rtm_src_len=0, rtm_tos=0, rtm_table=RT_TABLE_MAIN, rtm_protocol=RTPROT_KERNEL, rtm_scope=RT_SCOPE_LINK, rtm_type=RTN_UNICAST, rtm_flags=0}, [[{nla_len=8, nla_type=RTA_TABLE}, RT_TABLE_MAIN], [{nla_len=8, nla_type=RTA_DST}, inet_addr("10.108.2.1")], [{nla_len=8, nla_type=RTA_PRIORITY}, 281], [{nla_len=8, nla_type=RTA_OIF}, if_nametoindex("eth0")]]], [{nlmsg_len=60, nlmsg_type=RTM_NEWROUTE, nlmsg_flags=NLM_F_MULTI|NLM_F_DUMP_FILTERED, nlmsg_seq=1791965967, nlmsg_pid=248745}, {rtm_family=AF_INET, rtm_dst_len=24, rtm_src_len=0, rtm_tos=0, rtm_table=RT_TABLE_MAIN, rtm_protocol=RTPROT_KERNEL, rtm_scope=RT_SCOPE_LINK, rtm_type=RTN_UNICAST, rtm_flags=0}, [[{nla_len=8, nla_type=RTA_TABLE}, RT_TABLE_MAIN], [{nla_len=8, nla_type=RTA_DST}, inet_addr("10.249.138.0")], [{nla_len=8, nla_type=RTA_PRIORITY}, 316], [{nla_len=8, nla_type=RTA_OIF}, if_nametoindex("eth2")]]], [{nlmsg_len=60, nlmsg_type=RTM_NEWROUTE, nlmsg_flags=NLM_F_MULTI|NLM_F_DUMP_FILTERED, nlmsg_seq=1791965967, nlmsg_pid=248745}, {rtm_family=AF_INET, rtm_dst_len=32, rtm_src_len=0, rtm_tos=0, rtm_table=RT_TABLE_MAIN, rtm_protocol=RTPROT_KERNEL, rtm_scope=RT_SCOPE_LINK, rtm_type=RTN_UNICAST, rtm_flags=0}, [[{nla_len=8, nla_type=RTA_TABLE}, RT_TABLE_MAIN], [{nla_len=8, nla_type=RTA_DST}, inet_addr("10.249.138.1")], [{nla_len=8, nla_type=RTA_PRIORITY}, 60], [{nla_len=8, nla_type=RTA_OIF}, if_nametoindex("eth2")]]], [{nlmsg_len=60, nlmsg_type=RTM_NEWROUTE, nlmsg_flags=NLM_F_MULTI|NLM_F_DUMP_FILTERED, nlmsg_seq=1791965967, nlmsg_pid=248745}, {rtm_family=AF_INET, rtm_dst_len=16, rtm_src_len=0, rtm_tos=0, rtm_table=RT_TABLE_MAIN, rtm_protocol=RTPROT_KERNEL, rtm_scope=RT_SCOPE_LINK, rtm_type=RTN_UNICAST, rtm_flags=0}, [[{nla_len=8, nla_type=RTA_TABLE}, RT_TABLE_MAIN], [{nla_len=8, nla_type=RTA_DST}, inet_addr("172.17.0.0")], [{nla_len=8, nla_type=RTA_PREFSRC}, inet_addr("172.17.0.1")], [{nla_len=8, nla_type=RTA_OIF}, if_nametoindex("docker0")]]], [{nlmsg_len=60, nlmsg_type=RTM_NEWROUTE, nlmsg_flags=NLM_F_MULTI|NLM_F_DUMP_FILTERED, nlmsg_seq=1791965967, nlmsg_pid=248745}, {rtm_family=AF_INET, rtm_dst_len=24, rtm_src_len=0, rtm_tos=0, rtm_table=RT_TABLE_MAIN, rtm_protocol=RTPROT_KERNEL, rtm_scope=RT_SCOPE_LINK, rtm_type=RTN_UNICAST, rtm_flags=0}, [[{nla_len=8, nla_type=RTA_TABLE}, RT_TABLE_MAIN], [{nla_len=8, nla_type=RTA_DST}, inet_addr("192.168.0.0")], [{nla_len=8, nla_type=RTA_PRIORITY}, 291], [{nla_len=8, nla_type=RTA_OIF}, if_nametoindex("eth1")]]], [{nlmsg_len=60, nlmsg_type=RTM_NEWROUTE, nlmsg_flags=NLM_F_MULTI|NLM_F_DUMP_FILTERED, nlmsg_seq=1791965967, nlmsg_pid=248745}, {rtm_family=AF_INET, rtm_dst_len=32, rtm_src_len=0, rtm_tos=0, rtm_table=RT_TABLE_MAIN, rtm_protocol=RTPROT_KERNEL, rtm_scope=RT_SCOPE_LINK, rtm_type=RTN_UNICAST, rtm_flags=0}, [[{nla_len=8, nla_type=RTA_TABLE}, RT_TABLE_MAIN], [{nla_len=8, nla_type=RTA_DST}, inet_addr("192.168.0.1")], [{nla_len=8, nla_type=RTA_PRIORITY}, 291], [{nla_len=8, nla_type=RTA_OIF}, if_nametoindex("eth1")]]]], iov_len=32768}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 600
+248745 17:19:26.362722 newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0xd), ...}, AT_EMPTY_PATH) = 0
+248745 17:19:26.362789 socket(AF_NETLINK, SOCK_RAW|SOCK_CLOEXEC, NETLINK_ROUTE) = 4
+248745 17:19:26.362843 setsockopt(4, SOL_SOCKET, SO_SNDBUF, [32768], 4) = 0
+248745 17:19:26.362894 setsockopt(4, SOL_SOCKET, SO_RCVBUF, [1048576], 4) = 0
+248745 17:19:26.362946 setsockopt(4, SOL_NETLINK, NETLINK_EXT_ACK, [1], 4) = 0
+248745 17:19:26.362997 bind(4, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 0
+248745 17:19:26.372428 getsockname(4, {sa_family=AF_NETLINK, nl_pid=-530798712, nl_groups=00000000}, [12]) = 0
+248745 17:19:26.372493 sendmsg(4, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[{nlmsg_len=40, nlmsg_type=RTM_GETLINK, nlmsg_flags=NLM_F_REQUEST, nlmsg_seq=1791965967, nlmsg_pid=0}, {ifi_family=AF_UNSPEC, ifi_type=ARPHRD_NETROM, ifi_index=if_nametoindex("eth2"), ifi_flags=0, ifi_change=0}, [{nla_len=8, nla_type=IFLA_EXT_MASK}, RTEXT_FILTER_VF|RTEXT_FILTER_SKIP_STATS]], iov_len=40}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0
+```
