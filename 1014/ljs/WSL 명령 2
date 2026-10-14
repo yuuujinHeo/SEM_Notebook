@@ -63,3 +63,14 @@ if (Test-Path "$env:USERPROFILE\.wslconfig") {
 ## 5. 추가 관찰
 
 Windows B에서 Windows A의 WSL/Docker 서비스에 접속할 때 기존 연결 유지, 신규 연결만 실패, 모든 연결 실패 중 어느 경우인지 기록하세요.
+
+
+
+## 6.
+Get-WinEvent -FilterHashtable @{
+    LogName = 'Microsoft-Windows-WLAN-AutoConfig/Operational'
+    StartTime = [datetime]'2026-10-14 07:30:00'
+    EndTime = [datetime]'2026-10-14 08:35:00'
+} -ErrorAction SilentlyContinue |
+Select-Object TimeCreated,Id,Message |
+Format-List
