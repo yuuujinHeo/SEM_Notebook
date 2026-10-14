@@ -1,0 +1,275 @@
+PS C:\Temp> $start = [datetime]'2026-10-14 07:30:00'
+PS C:\Temp> $end = [datetime]'2026-10-14 09:00:00'
+PS C:\Temp>
+PS C:\Temp> Get-WinEvent -FilterHashtable @{
+>>     LogName = 'Microsoft-Windows-Hyper-V-Compute-Operational'
+>>     StartTime = $start
+>>     EndTime = $end
+>> } -ErrorAction SilentlyContinue |
+>> Select-Object TimeCreated,Id,LevelDisplayName,Message |
+>> Format-List
+
+
+TimeCreated      : 2026-10-14 오전 8:38:22
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 8:38:22
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 8:38:22
+Id               : 2009
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 큐 시스템 알림: 15/0x00000000
+
+TimeCreated      : 2026-10-14 오전 8:38:22
+Id               : 2007
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devi
+                   ces/NetworkAdapters/{c7f7ce3b-8159-4b72-b897-598abdde9d00}","Settings":{"EndpointId":"cf16ec67-2c44-4a19-a308-89d8f8b1d1
+                   17","InstanceId":"c7f7ce3b-8159-4b72-b897-598abdde9d00","MacAddress":"40-D1-33-CD-46-69"}}'', 결과 0x00000000
+
+TimeCreated      : 2026-10-14 오전 8:38:20
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 8:38:20
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 8:38:20
+Id               : 2009
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 큐 시스템 알림: 15/0x00000000
+
+TimeCreated      : 2026-10-14 오전 8:38:20
+Id               : 2007
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Remove","ResourcePath":"VirtualMachine/D
+                   evices/NetworkAdapters/{c7f7ce3b-8159-4b72-b897-598abdde9d00}","Settings":{"EndpointId":"cf16ec67-2c44-4a19-a308-89d8f8b
+                   1d117","InstanceId":"c7f7ce3b-8159-4b72-b897-598abdde9d00","MacAddress":"00-00-00-00-00-00"}}'', 결과 0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:50:20
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:50:20
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:50:20
+Id               : 2009
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 큐 시스템 알림: 15/0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:50:20
+Id               : 2007
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devi
+                   ces/NetworkAdapters/{c7f7ce3b-8159-4b72-b897-598abdde9d00}","Settings":{"EndpointId":"cf16ec67-2c44-4a19-a308-89d8f8b1d1
+                   17","InstanceId":"c7f7ce3b-8159-4b72-b897-598abdde9d00","MacAddress":"40-D1-33-CD-46-69"}}'', 결과 0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:50:20
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:50:20
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:50:20
+Id               : 2009
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 큐 시스템 알림: 15/0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:50:20
+Id               : 2007
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Remove","ResourcePath":"VirtualMachine/D
+                   evices/NetworkAdapters/{c7f7ce3b-8159-4b72-b897-598abdde9d00}","Settings":{"EndpointId":"cf16ec67-2c44-4a19-a308-89d8f8b
+                   1d117","InstanceId":"c7f7ce3b-8159-4b72-b897-598abdde9d00","MacAddress":"00-00-00-00-00-00"}}'', 결과 0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:43:45
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:43:45
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:43:45
+Id               : 2009
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 큐 시스템 알림: 15/0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:43:45
+Id               : 2007
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devi
+                   ces/NetworkAdapters/{c7f7ce3b-8159-4b72-b897-598abdde9d00}","Settings":{"EndpointId":"cf16ec67-2c44-4a19-a308-89d8f8b1d1
+                   17","InstanceId":"c7f7ce3b-8159-4b72-b897-598abdde9d00","MacAddress":"40-D1-33-CD-46-69"}}'', 결과 0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:43:45
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:43:45
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:43:45
+Id               : 2009
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 큐 시스템 알림: 15/0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:43:45
+Id               : 2007
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Remove","ResourcePath":"VirtualMachine/D
+                   evices/NetworkAdapters/{c7f7ce3b-8159-4b72-b897-598abdde9d00}","Settings":{"EndpointId":"cf16ec67-2c44-4a19-a308-89d8f8b
+                   1d117","InstanceId":"c7f7ce3b-8159-4b72-b897-598abdde9d00","MacAddress":"00-00-00-00-00-00"}}'', 결과 0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2009
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 큐 시스템 알림: 15/0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2007
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devi
+                   ces/Scsi/0/Attachments/3","Settings":{"AlwaysAllowSparseFiles":true,"Path":"C:\\Users\\admin\\AppData\\Local\\wsl\\{5b51
+                   048b-6b5a-46da-8f68-09c7d2ebdbbb}\\ext4.vhdx","ReadOnly":false,"SupportCompressedVolumes":true,"SupportEncryptedFiles":t
+                   rue,"Type":"VirtualDisk"}}'', 결과 0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2009
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 큐 시스템 알림: 15/0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2007
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devi
+                   ces/FlexibleIov/0ce43f9c-18ed-40d2-b880-88d391ba1ec8","Settings":{"EmulatorId":"872270e1-a899-4af6-b454-7193634435ad","H
+                   ostingModel":"ExternalRestricted"}}'', 결과 0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 140x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 140x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2009
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 큐 시스템 알림: 14/0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2009
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 큐 시스템 알림: 15/0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2007
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devi
+                   ces/NetworkAdapters/{c7f7ce3b-8159-4b72-b897-598abdde9d00}","Settings":{"EndpointId":"cf16ec67-2c44-4a19-a308-89d8f8b1d1
+                   17","InstanceId":"c7f7ce3b-8159-4b72-b897-598abdde9d00","MacAddress":"40-D1-33-CD-46-69"}}'', 결과 0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2009
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 큐 시스템 알림: 15/0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2007
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devi
+                   ces/NetworkAdapters/{fc232fd7-4443-4791-a539-deef713ec4d4}","Settings":{"EndpointId":"79a72c58-d790-4e21-af1b-874bbad59a
+                   da","InstanceId":"fc232fd7-4443-4791-a539-deef713ec4d4","MacAddress":"00-15-5D-EA-E8-F7"}}'', 결과 0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2009
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 큐 시스템 알림: 15/0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:34
+Id               : 2007
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 계산 시스템 수정, 설정 ''{"RequestType":"Add","ResourcePath":"VirtualMachine/Devi
+                   ces/NetworkAdapters/{c6a72c4c-68d4-4075-bd7c-16fa670bfb27}","Settings":{"EndpointId":"eedf5449-bf41-4dce-86c4-fb36fdacae
+                   a4","InstanceId":"c6a72c4c-68d4-4075-bd7c-16fa670bfb27","MacAddress":"00-24-9B-89-8D-7B"}}'', 결과 0x00000000
+
+TimeCreated      : 2026-10-14 오전 7:35:33
+Id               : 2008
+LevelDisplayName : 정보
+Message          : [4AD59F17-FF09-481E-AFA6-2CEA8182AC90] 쿼리 계산 시스템 알림, 결과 0x00000000, 알림 150x00000000
+
