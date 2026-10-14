@@ -1,4 +1,4 @@
-rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ ps -eo pid,ppid,stat,wchan:32,comm,args | grep -E '[i]p -|[t]imeout|[s]trace'
+# rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ ps -eo pid,ppid,stat,wchan:32,comm,args | grep -E '[i]p -|[t]imeout|[s]trace'
    1910    1909 Ss+  poll_schedule_timeout.constprop. bash            -bash
    2042    1911 S+   poll_schedule_timeout.constprop. bash            -bash
   30341     314 D    rtnl_dumpit                      ip              ip -o -4 addr show
@@ -29,7 +29,7 @@ rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ ps -eo pid,ppid,stat,wchan:32,comm,a
  260710  259405 S+   sigsuspend                       timeout         timeout 5 ip -br link
  260711  260710 D+   rtnl_dumpit                      ip              ip -br link
  262033     314 S    poll_schedule_timeout.constprop. avahi-publish-s avahi-publish-service rainbowbot-SEC_Process_2 _rainbow-robot._tcp 8180 model=QD-SEC_CNC_A robot_serial=SEC_Process_2 name=SEC_Process_2 alias=삼성전자 A동 CNC QD타입 api_mode=muscat state=DISCONNECT
-rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /proc/net/dev
+# rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /proc/net/dev
 Inter-|   Receive                                                |  Transmit
  face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
     lo: 97117524 1740082    0    0    0     0          0         0 97117524 1740082    0    0    0     0       0          0
@@ -42,3 +42,85 @@ veth280046b:    3305      23    0    0    0     0          0         0  2737344 
 vethddc994e:  215255    1119    0    0    0     0          0         0  3027652    9807    0    0    0     0       0          0
 veth06cd98a:     126       3    0    0    0     0          0         0  2735340    8368    0    0    0     0       0          0
   eth2: 5780167   88236    0    0    0     0          0         0 108431385   97143    0 21569    0     0       0          0
+
+
+
+
+# rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ nmcli -f GENERAL device show eth2
+GENERAL.DEVICE:                         eth2
+GENERAL.TYPE:                           ethernet
+GENERAL.NM-TYPE:                        NMDeviceEthernet
+GENERAL.DBUS-PATH:                      /org/freedesktop/NetworkManager/Devices/12
+GENERAL.VENDOR:                         M-Systems Flash Disk Pioneers
+GENERAL.PRODUCT:                        --
+GENERAL.DRIVER:                         hv_netvsc
+GENERAL.DRIVER-VERSION:                 6.18.33.1-microsoft-standard-WS
+GENERAL.FIRMWARE-VERSION:               N/A
+GENERAL.HWADDR:                         40:D1:33:CD:46:69
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          10 (unmanaged)
+GENERAL.REASON:                         0 (No reason given)
+GENERAL.IP4-CONNECTIVITY:               0 (unknown)
+GENERAL.IP6-CONNECTIVITY:               0 (unknown)
+GENERAL.UDI:                            /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/c7f7ce3b-8159-4b72-b897-598abdde9d00/n>
+GENERAL.PATH:                           acpi-MSFT1000:00
+GENERAL.IP-IFACE:                       eth2
+GENERAL.IS-SOFTWARE:                    no
+GENERAL.NM-MANAGED:                     no
+GENERAL.AUTOCONNECT:                    yes
+GENERAL.FIRMWARE-MISSING:               no
+GENERAL.NM-PLUGIN-MISSING:              no
+GENERAL.PHYS-PORT-ID:                   --
+GENERAL.CONNECTION:                     --
+GENERAL.CON-UUID:                       --
+GENERAL.CON-PATH:                       --
+GENERAL.METERED:                        unknown
+...skipping...
+GENERAL.DEVICE:                         eth2
+GENERAL.TYPE:                           ethernet
+GENERAL.NM-TYPE:                        NMDeviceEthernet
+GENERAL.DBUS-PATH:                      /org/freedesktop/NetworkManager/Devices/12
+GENERAL.VENDOR:                         M-Systems Flash Disk Pioneers
+GENERAL.PRODUCT:                        --
+GENERAL.DRIVER:                         hv_netvsc
+GENERAL.DRIVER-VERSION:                 6.18.33.1-microsoft-standard-WS
+GENERAL.FIRMWARE-VERSION:               N/A
+GENERAL.HWADDR:                         40:D1:33:CD:46:69
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          10 (unmanaged)
+GENERAL.REASON:                         0 (No reason given)
+GENERAL.IP4-CONNECTIVITY:               0 (unknown)
+GENERAL.IP6-CONNECTIVITY:               0 (unknown)
+GENERAL.UDI:                            /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/c7f7ce3b-8159-4b72-b897-598abdde9d00/n>
+GENERAL.PATH:                           acpi-MSFT1000:00
+GENERAL.IP-IFACE:                       eth2
+GENERAL.IS-SOFTWARE:                    no
+GENERAL.NM-MANAGED:                     no
+GENERAL.AUTOCONNECT:                    yes
+GENERAL.FIRMWARE-MISSING:               no
+GENERAL.NM-PLUGIN-MISSING:              no
+GENERAL.PHYS-PORT-ID:                   --
+GENERAL.CONNECTION:                     --
+GENERAL.CON-UUID:                       --
+GENERAL.CON-PATH:                       --
+GENERAL.METERED:                        unknown
+
+# rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /etc/NetworkManager/NetworkManager.conf
+[main]
+plugins=ifupdown,keyfile
+
+[ifupdown]
+managed=false
+
+[device]
+wifi.scan-rand-mac-address=no
+# rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /etc/wsl.conf
+[boot]
+systemd=true
+command="sysctl -w net.ipv4.ip_nonlocal_bind=1"
+
+
+
+
+
+
