@@ -1,0 +1,1 @@
+wsl -d Ubuntu-22.04 -u root -e sh -c "echo w > /proc/sysrq-trigger; dmesg > /mnt/c/Users/admin/blocked_full.txt"
