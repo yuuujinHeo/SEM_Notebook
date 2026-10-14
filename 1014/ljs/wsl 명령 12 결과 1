@@ -1,0 +1,38 @@
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /sys/class/net/eth2/address
+40:d1:33:cd:46:69
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /sys/class/net/eth2/ifindex
+12
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /sys/class/net/eth2/operstate
+up
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ cat /sys/class/net/eth2/carrier
+
+
+
+
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ ps -eo pid,stat,wchan:32,comm | grep -E 'cat|rtnl|netvsc'
+  30341 D    rtnl_dumpit                      ip
+ 238471 D+   rtnl_lock                        ifconfig
+ 242289 D+   rtnl_dumpit                      ip
+ 246989 D+   rtnl_dumpit                      ip
+ 247218 D+   rtnl_dumpit                      ip
+ 258956 D+   rtnl_dumpit                      hostname
+ 260711 D+   rtnl_dumpit                      ip
+ 264825 D+   rtnl_dumpit                      ip
+ 264956 D+   rtnl_dumpit                      ip
+ 300472 D+   rtnl_dumpit                      ip
+ 301615 D+   rtnl_dumpit                      ip
+ 302854 D+   rtnl_dumpit                      ip
+ 304364 D+   rtnl_dumpit                      ip
+ 304398 D+   rtnl_dumpit                      tcpdump
+ 304620 D    rtnl_dumpit                      ip
+ 304813 D+   rtnl_dumpit                      ip
+ 305114 D    rtnl_dumpit                      ip
+ 306669 D    rtnl_dumpit                      ip
+ 306842 D    rtnl_dumpit                      ip
+ 306990 D    rtnl_dumpit                      ip
+ 307783 D    rtnl_dumpit                      ip
+ 307850 D    rtnl_dumpit                      ip
+ 308365 Ds+  rtnl_dumpit                      ip
+ 308707 D    rtnl_dumpit                      ip
+ 309234 D    rtnl_dumpit                      ip
+ 334012 S+   rtnl_lock_interruptible          cat
