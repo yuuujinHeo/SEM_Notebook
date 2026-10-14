@@ -7,3 +7,9 @@ DefaultInboundAction  : Block
 DefaultOutboundAction : Allow
 LoopbackEnabled       : True
 AllowHostPolicyMerge  : True
+
+PS C:\Users\admin> Get-Content "$env:USERPROFILE\.wslconfig"
+[wsl2]
+networkingMode=mirrored
+dnsTunneling=true
+firewall=false
