@@ -1,0 +1,14 @@
+$start = [datetime]'2026-10-14 07:35:00'
+$end = [datetime]'2026-10-14 09:00:00'
+
+Get-WinEvent -FilterHashtable @{
+    LogName = 'Microsoft-Windows-Hyper-V-Compute-Operational'
+    StartTime = $start
+    EndTime = $end
+    Id = 2007
+} |
+Where-Object {
+    $_.Message -match 'NetworkAdapters'
+} |
+Select-Object TimeCreated,Message |
+Format-List
