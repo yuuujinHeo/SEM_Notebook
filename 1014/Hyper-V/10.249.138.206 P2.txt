@@ -76,3 +76,14 @@ rainbow@DESKTOP-HRM6NE5:/mnt/c/Users/admin$ ip neigh show
 
 rainbow@DESKTOP-HRM6NE5:/mnt/c/Users/admin$ nc -vz -w 3 10.244.201.165 7447
 Connection to 10.244.201.165 7447 port [tcp/*] succeeded!
+
+PS C:\Users\admin> Write-Host "START"
+START
+PS C:\Users\admin> wsl.exe -d Ubuntu-22.04 -- /usr/bin/timeout -k 2s 5s /usr/sbin/ip -4 addr show
+
+PS C:\Users\admin> Write-Host "ExitCode=$LASTEXITCODE"
+ExitCode=9
+PS C:\Users\admin> Write-Host "END"
+END
+PS C:\Users\admin>
+
