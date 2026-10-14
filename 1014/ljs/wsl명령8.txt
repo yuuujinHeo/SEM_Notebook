@@ -1,0 +1,961 @@
+PS C:\Temp> $start = [datetime]'2026-10-14 07:35:00'
+PS C:\Temp> $end = [datetime]'2026-10-14 08:35:00'
+PS C:\Temp>
+PS C:\Temp> Get-WinEvent -FilterHashtable @{
+>>     LogName = 'Microsoft-Windows-NetworkProfile/Operational'
+>>     StartTime = $start
+>>     EndTime = $end
+>> } -ErrorAction SilentlyContinue |
+>> Select-Object TimeCreated,Id,Message |
+>> Format-List
+
+
+TimeCreated : 2026-10-14 오전 7:55:32
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:53:46
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:51:56
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: true
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:51:55
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: sWave_works_shared
+                설명: sWave_works_shared
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:51:55
+Id          : 4002
+Message     : 상태 전환: 식별된 네트워크 인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+
+TimeCreated : 2026-10-14 오전 7:51:55
+Id          : 4001
+Message     : 입력된 상태: 네트워크 식별 인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+
+TimeCreated : 2026-10-14 오전 7:51:40
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: false
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:51:29
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: false
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:50:49
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: true
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:50:49
+Id          : 10001
+Message     : 네트워크 연결 끊김
+                이름: sWave_works_shared
+                설명: sWave_works_shared
+                종류: 관리되지 않음
+                상태: 연결 끊김
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:49:56
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: true
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:49:51
+Id          : 20002
+Message     : NSI 집합 범주 결과
+                프로필 GUID: {ffffffff-ffff-ffff-ffff-ffffffffffff}
+                인터페이스 GUID: {2a37bed3-a5e9-4d5a-a5e3-2ccb3d759f46}
+                네트워크 범주: 공용
+                IPv4 오류 코드: 0
+                IPv6 오류 코드: 0
+                컨텍스트: 3240
+
+
+TimeCreated : 2026-10-14 오전 7:49:51
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: 식별 중...
+                설명: 식별 중...
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:49:51
+Id          : 4001
+Message     : 입력된 상태: 네트워크 식별 인터페이스 GUID: {2a37bed3-a5e9-4d5a-a5e3-2ccb3d759f46}
+
+TimeCreated : 2026-10-14 오전 7:49:49
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:49:47
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:49:46
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: 식별 중...
+                설명: 식별 중...
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:49:46
+Id          : 20002
+Message     : NSI 집합 범주 결과
+                프로필 GUID: {ffffffff-ffff-ffff-ffff-ffffffffffff}
+                인터페이스 GUID: {2a37bed3-a5e9-4d5a-a5e3-2ccb3d759f46}
+                네트워크 범주: 공용
+                IPv4 오류 코드: 0
+                IPv6 오류 코드: 0
+                컨텍스트: 3240
+
+
+TimeCreated : 2026-10-14 오전 7:49:46
+Id          : 4001
+Message     : 입력된 상태: 네트워크 식별 인터페이스 GUID: {2a37bed3-a5e9-4d5a-a5e3-2ccb3d759f46}
+
+TimeCreated : 2026-10-14 오전 7:49:45
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: true
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:49:44
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: sWave_works_shared
+                설명: sWave_works_shared
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:49:44
+Id          : 4002
+Message     : 상태 전환: 식별된 네트워크 인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+
+TimeCreated : 2026-10-14 오전 7:49:44
+Id          : 20002
+Message     : NSI 집합 범주 결과
+                프로필 GUID: {ffffffff-ffff-ffff-ffff-ffffffffffff}
+                인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+                네트워크 범주: 공용
+                IPv4 오류 코드: 0
+                IPv6 오류 코드: 0
+                컨텍스트: 3240
+
+
+TimeCreated : 2026-10-14 오전 7:49:44
+Id          : 4001
+Message     : 입력된 상태: 네트워크 식별 인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+
+TimeCreated : 2026-10-14 오전 7:49:44
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: false
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:49:41
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: false
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:49:41
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: true
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:49:40
+Id          : 10001
+Message     : 네트워크 연결 끊김
+                이름: sWave_works_shared
+                설명: sWave_works_shared
+                종류: 관리되지 않음
+                상태: 연결 끊김
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:48:56
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:47:10
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:46:15
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:45:21
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: true
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:45:21
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:45:20
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: sWave_works_shared
+                설명: sWave_works_shared
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:45:20
+Id          : 4002
+Message     : 상태 전환: 식별된 네트워크 인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+
+TimeCreated : 2026-10-14 오전 7:45:20
+Id          : 4001
+Message     : 입력된 상태: 네트워크 식별 인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+
+TimeCreated : 2026-10-14 오전 7:45:05
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: false
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:44:55
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: false
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:44:15
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: true
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:44:15
+Id          : 10001
+Message     : 네트워크 연결 끊김
+                이름: sWave_works_shared
+                설명: sWave_works_shared
+                종류: 관리되지 않음
+                상태: 연결 끊김
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:43:26
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: true
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:43:21
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: false
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:43:16
+Id          : 20002
+Message     : NSI 집합 범주 결과
+                프로필 GUID: {ffffffff-ffff-ffff-ffff-ffffffffffff}
+                인터페이스 GUID: {2a37bed3-a5e9-4d5a-a5e3-2ccb3d759f46}
+                네트워크 범주: 공용
+                IPv4 오류 코드: 0
+                IPv6 오류 코드: 0
+                컨텍스트: 3240
+
+
+TimeCreated : 2026-10-14 오전 7:43:16
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: 식별 중...
+                설명: 식별 중...
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:43:16
+Id          : 4001
+Message     : 입력된 상태: 네트워크 식별 인터페이스 GUID: {2a37bed3-a5e9-4d5a-a5e3-2ccb3d759f46}
+
+TimeCreated : 2026-10-14 오전 7:43:15
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:43:12
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:43:12
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: 식별 중...
+                설명: 식별 중...
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:43:12
+Id          : 20002
+Message     : NSI 집합 범주 결과
+                프로필 GUID: {ffffffff-ffff-ffff-ffff-ffffffffffff}
+                인터페이스 GUID: {2a37bed3-a5e9-4d5a-a5e3-2ccb3d759f46}
+                네트워크 범주: 공용
+                IPv4 오류 코드: 0
+                IPv6 오류 코드: 0
+                컨텍스트: 3240
+
+
+TimeCreated : 2026-10-14 오전 7:43:12
+Id          : 4001
+Message     : 입력된 상태: 네트워크 식별 인터페이스 GUID: {2a37bed3-a5e9-4d5a-a5e3-2ccb3d759f46}
+
+TimeCreated : 2026-10-14 오전 7:43:11
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: true
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:43:10
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: sWave_works_shared
+                설명: sWave_works_shared
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:43:10
+Id          : 4002
+Message     : 상태 전환: 식별된 네트워크 인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+
+TimeCreated : 2026-10-14 오전 7:43:10
+Id          : 20002
+Message     : NSI 집합 범주 결과
+                프로필 GUID: {ffffffff-ffff-ffff-ffff-ffffffffffff}
+                인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+                네트워크 범주: 공용
+                IPv4 오류 코드: 0
+                IPv6 오류 코드: 0
+                컨텍스트: 3240
+
+
+TimeCreated : 2026-10-14 오전 7:43:10
+Id          : 4001
+Message     : 입력된 상태: 네트워크 식별 인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+
+TimeCreated : 2026-10-14 오전 7:43:10
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: false
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:43:07
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: false
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:43:06
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: true
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:43:06
+Id          : 10001
+Message     : 네트워크 연결 끊김
+                이름: sWave_works_shared
+                설명: sWave_works_shared
+                종류: 관리되지 않음
+                상태: 연결 끊김
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:37:35
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:37:23
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:37:16
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:37:12
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:37:10
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:36:12
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:36:12
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: 네트워크 3
+                설명: 네트워크
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 개인
+
+
+TimeCreated : 2026-10-14 오전 7:36:12
+Id          : 20002
+Message     : NSI 집합 범주 결과
+                프로필 GUID: {ce2d6dca-fac6-4f0a-98d5-0882aac0a4fe}
+                인터페이스 GUID: {e0e2889f-a037-464d-8110-7438f3064c0c}
+                네트워크 범주: 개인
+                IPv4 오류 코드: 0
+                IPv6 오류 코드: 0
+                컨텍스트: 3240
+
+
+TimeCreated : 2026-10-14 오전 7:36:12
+Id          : 4002
+Message     : 상태 전환: 식별된 네트워크 인터페이스 GUID: {e0e2889f-a037-464d-8110-7438f3064c0c}
+
+TimeCreated : 2026-10-14 오전 7:35:41
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: false
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:35:40
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: 식별 중...
+                설명: 식별 중...
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:35:40
+Id          : 20002
+Message     : NSI 집합 범주 결과
+                프로필 GUID: {ffffffff-ffff-ffff-ffff-ffffffffffff}
+                인터페이스 GUID: {2a37bed3-a5e9-4d5a-a5e3-2ccb3d759f46}
+                네트워크 범주: 공용
+                IPv4 오류 코드: 0
+                IPv6 오류 코드: 0
+                컨텍스트: 3240
+
+
+TimeCreated : 2026-10-14 오전 7:35:40
+Id          : 4001
+Message     : 입력된 상태: 네트워크 식별 인터페이스 GUID: {2a37bed3-a5e9-4d5a-a5e3-2ccb3d759f46}
+
+TimeCreated : 2026-10-14 오전 7:35:36
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:35:33
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:35:31
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:35:30
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: true
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:35:30
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: sWave_works_shared
+                설명: sWave_works_shared
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:35:30
+Id          : 4002
+Message     : 상태 전환: 식별된 네트워크 인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+
+TimeCreated : 2026-10-14 오전 7:35:29
+Id          : 20002
+Message     : NSI 집합 범주 결과
+                프로필 GUID: {ffffffff-ffff-ffff-ffff-ffffffffffff}
+                인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+                네트워크 범주: 공용
+                IPv4 오류 코드: 0
+                IPv6 오류 코드: 0
+                컨텍스트: 3240
+
+
+TimeCreated : 2026-10-14 오전 7:35:29
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: 식별 중...
+                설명: 식별 중...
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:35:29
+Id          : 4001
+Message     : 입력된 상태: 네트워크 식별 인터페이스 GUID: {c7f7ce3b-8159-4b72-b897-598abdde9d00}
+
+TimeCreated : 2026-10-14 오전 7:35:29
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:35:28
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: 식별되지 않은 네트워크
+                설명: 식별되지 않은 네트워크
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:35:28
+Id          : 4003
+Message     : 상태 전환: 식별되지 않은 네트워크 인터페이스 GUID: {e0e2889f-a037-464d-8110-7438f3064c0c}
+
+TimeCreated : 2026-10-14 오전 7:35:28
+Id          : 4003
+Message     : 상태 전환: 식별되지 않은 네트워크 인터페이스 GUID: {c6a72c4c-68d4-4075-bd7c-16fa670bfb27}
+
+TimeCreated : 2026-10-14 오전 7:35:26
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:35:25
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: false
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:35:24
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: true
+                연결 비용 변경됨: false
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: false
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:35:22
+Id          : 4004
+Message     : 네트워크 상태 변경 발생
+                새 인터넷 연결 프로필: true
+                연결 비용 변경됨: true
+                도메인 연결 수준 변경됨: false
+                네트워크 연결 수준 변경됨: true
+                호스트 이름 변경됨: true
+                Wwan 등록 상태 변경됨: false
+                테더링 작동 상태 변경됨: false
+                테더링 클라이언트 수 변경됨: false
+
+TimeCreated : 2026-10-14 오전 7:35:20
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: 식별되지 않은 네트워크
+                설명: 식별되지 않은 네트워크
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:35:20
+Id          : 4003
+Message     : 상태 전환: 식별되지 않은 네트워크 인터페이스 GUID: {3824a2df-af47-4a85-9ae2-28a7e2e73470}
+
+TimeCreated : 2026-10-14 오전 7:35:20
+Id          : 10000
+Message     : 네트워크 연결됨
+                이름: 식별 중...
+                설명: 식별 중...
+                종류: 관리되지 않음
+                상태: 연결됨
+                범주: 공용
+
+
+TimeCreated : 2026-10-14 오전 7:35:20
+Id          : 20002
+Message     : NSI 집합 범주 결과
+                프로필 GUID: {ffffffff-ffff-ffff-ffff-ffffffffffff}
+                인터페이스 GUID: {3824a2df-af47-4a85-9ae2-28a7e2e73470}
+                네트워크 범주: 공용
+                IPv4 오류 코드: 0
+                IPv6 오류 코드: 0
+                컨텍스트: 3240
+
+
+TimeCreated : 2026-10-14 오전 7:35:20
+Id          : 20002
+Message     : NSI 집합 범주 결과
+                프로필 GUID: {ffffffff-ffff-ffff-ffff-ffffffffffff}
+                인터페이스 GUID: {e0e2889f-a037-464d-8110-7438f3064c0c}
+                네트워크 범주: 공용
+                IPv4 오류 코드: 0
+                IPv6 오류 코드: 0
+                컨텍스트: 3240
+
+
+TimeCreated : 2026-10-14 오전 7:35:20
+Id          : 20002
+Message     : NSI 집합 범주 결과
+                프로필 GUID: {ffffffff-ffff-ffff-ffff-ffffffffffff}
+                인터페이스 GUID: {c6a72c4c-68d4-4075-bd7c-16fa670bfb27}
+                네트워크 범주: 공용
+                IPv4 오류 코드: 0
+                IPv6 오류 코드: 0
+                컨텍스트: 3240
+
+
+TimeCreated : 2026-10-14 오전 7:35:20
+Id          : 4001
+Message     : 입력된 상태: 네트워크 식별 인터페이스 GUID: {3824a2df-af47-4a85-9ae2-28a7e2e73470}
+
+TimeCreated : 2026-10-14 오전 7:35:20
+Id          : 4001
+Message     : 입력된 상태: 네트워크 식별 인터페이스 GUID: {e0e2889f-a037-464d-8110-7438f3064c0c}
+
+TimeCreated : 2026-10-14 오전 7:35:20
+Id          : 4001
+Message     : 입력된 상태: 네트워크 식별 인터페이스 GUID: {c6a72c4c-68d4-4075-bd7c-16fa670bfb27}
