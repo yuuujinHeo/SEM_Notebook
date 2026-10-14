@@ -1,0 +1,92 @@
+PS C:\ProgramData> Test-NetConnection 127.0.0.1 -Port 7447
+
+
+ComputerName     : 127.0.0.1
+RemoteAddress    : 127.0.0.1
+RemotePort       : 7447
+InterfaceAlias   : Loopback Pseudo-Interface 1
+SourceAddress    : 127.0.0.1
+TcpTestSucceeded : True
+
+
+
+PS C:\ProgramData> curl.exe -i http://localhost:3000/common/docs
+HTTP/1.1 200 OK
+Server: nginx/1.24.0 (Ubuntu)
+Date: Wed, 14 Oct 2026 07:52:15 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 801
+Connection: keep-alive
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <link type="text/css" rel="stylesheet" href="/common/swagger-ui/swagger-ui.css">
+    <link rel="shortcut icon" href="https://fastapi.tiangolo.com/img/favicon.png">
+    <title>Common Service</title>
+    </head>
+    <body>
+    <div id="swagger-ui">
+    </div>
+    <script src="/common/swagger-ui/swagger-ui.js"></script>
+    <!-- `SwaggerUIBundle` is now available on the page -->
+    <script>
+    const ui = SwaggerUIBundle({
+        url: '/common/openapi.json',
+    "dom_id": "#swagger-ui",
+"layout": "BaseLayout",
+"deepLinking": true,
+"showExtensions": true,
+"showCommonExtensions": true,
+
+    presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIBundle.SwaggerUIStandalonePreset
+        ],
+    })
+    </script>
+    </body>
+    </html>
+
+PS C:\ProgramData> ^C
+PS C:\ProgramData> wsl
+rainbow@DESKTOP-19T7OTG:/mnt/c/ProgramData$ curl -i http://localhost:3000/common/docs
+HTTP/1.1 200 OK
+Server: nginx/1.24.0 (Ubuntu)
+Date: Wed, 14 Oct 2026 07:53:04 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 801
+Connection: keep-alive
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <link type="text/css" rel="stylesheet" href="/common/swagger-ui/swagger-ui.css">
+    <link rel="shortcut icon" href="https://fastapi.tiangolo.com/img/favicon.png">
+    <title>Common Service</title>
+    </head>
+    <body>
+    <div id="swagger-ui">
+    </div>
+    <script src="/common/swagger-ui/swagger-ui.js"></script>
+    <!-- `SwaggerUIBundle` is now available on the page -->
+    <script>
+    const ui = SwaggerUIBundle({
+        url: '/common/openapi.json',
+    "dom_id": "#swagger-ui",
+"layout": "BaseLayout",
+"deepLinking": true,
+"showExtensions": true,
+"showCommonExtensions": true,
+
+    presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIBundle.SwaggerUIStandalonePreset
+        ],
+    })
+    </script>
+    </body>
+    </html>
+    rainbow@DESKTOP-19T7OTG:/mnt/c/ProgramData$ ip route
