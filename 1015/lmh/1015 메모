@@ -1,3 +1,20 @@
+PS C:\Users\admin> ping 10.249.25.73
+
+Ping 10.249.25.73 32바이트 데이터 사용:
+10.249.25.73의 응답: 바이트=32 시간=3ms TTL=127
+10.249.25.73의 응답: 바이트=32 시간=10ms TTL=127
+10.249.25.73의 응답: 바이트=32 시간=4ms TTL=127
+
+10.249.25.73에 대한 Ping 통계:
+    패킷: 보냄 = 3, 받음 = 3, 손실 = 0 (0% 손실),
+왕복 시간(밀리초):
+    최소 = 3ms, 최대 = 10ms, 평균 = 5ms
+Control-C
+PS C:\Users\admin> scp C:\ProgramData\Microsoft\Windows\WlanReport\wlan-report-latest.html cd2354.kim@10.249.25.73:C:\Users\cd2354.kim\Desktop
+ssh: connect to host 10.249.25.73 port 22: Connection refused
+C:\WINDOWS\System32\OpenSSH\scp.exe: Connection closed
+PS C:\Users\admin>
+
 PS C:\Users\admin> $path = 'C:\Users\admin\blocked_full.txt'
 PS C:\Users\admin>
 PS C:\Users\admin> Select-String -Path $path `
