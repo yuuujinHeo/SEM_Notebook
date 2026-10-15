@@ -1,0 +1,6 @@
+Get-ScheduledTask | Where-Object {
+    $_.Actions.Execute -match 'wsl|powershell|pwsh' -or
+    $_.Actions.Arguments -match 'wsl|FRS-Network-Watch'
+} | Select-Object TaskName, TaskPath, State,
+    @{N='Execute';E={$_.Actions.Execute}},
+    @{N='Arguments';E={$_.Actions.Arguments}} | Format-List
