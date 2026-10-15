@@ -1,0 +1,439 @@
+PS C:\Users\admin> netsh wlan show interfaces
+
+시스템에 1 인터페이스가 있습니다.
+
+    이름                   : Wi-Fi
+    설명                   : Intel(R) Wi-Fi 6E AX210 160MHz
+    GUID                   : d29b469c-a217-4c9e-b726-8350340e3248
+    물리적 주소            : 40:d1:33:cd:3f:39
+    인터페이스 유형         : 기본
+    상태                   : 연결됨
+    SSID                   : sWave_works_shared
+    AP BSSID               : b8:3a:5a:cd:1d:71
+    밴드                   : 5GHz
+    채널                : 36
+    연결된 Akm-cipher : [ akm = 00-0f-ac:01, 암호 = 00-0f-ac:04 ]
+    네트워크 종류          : 인프라
+    송수신 장치 종류       : 802.11 ax
+    인증                   : WPA2-엔터프라이즈
+    암호                 : CCMP
+    연결 모드        : 자동 연결
+    수신 속도(Mbps)        : 172
+    전송 속도(Mbps)        : 287
+    신호                   : 62%
+    Rssi                   : -72
+    프로필                : sWave_works_shared
+
+    QoS MSCS 구성됨         : 0
+    QoS 맵 구성됨          : 0
+    정책에서 허용하는 QoS 맵    : 0
+
+PS C:\Users\admin> netsh wlan show networks mode=bssid
+
+인터페이스 이름: Wi-Fi
+현재 6개 네트워크를 볼 수 있습니다.
+
+SSID 1 : sWave_works
+    네트워크 종류            : 인프라
+    인증          : WPA2-엔터프라이즈
+    암호화              : CCMP
+    BSSID 1                 : b8:3a:5a:d1:3e:90
+         신호             : 38%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 124
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 2                 : b8:3a:5a:d1:6b:30
+         신호             : 40%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 48
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 3                 : b8:3a:5a:d1:12:f0
+         신호             : 33%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 52
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 4                 : b8:3a:5a:d1:e2:90
+         신호             : 57%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 60
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 5                 : b8:3a:5a:cc:ab:b0
+         신호             : 57%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 108
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 6                 : b8:3a:5a:cc:9d:10
+         신호             : 38%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 100
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 7                 : b8:3a:5a:d1:eb:f0
+         신호             : 24%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 44
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 8                 : b8:3a:5a:d1:23:f0
+         신호             : 60%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 116
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 9                 : b8:3a:5a:d0:b1:b0
+         신호             : 31%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 132
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+
+SSID 2 : sWave_setup
+    네트워크 종류            : 인프라
+    인증          : 오픈
+    암호화              : 없음
+    BSSID 1                 : b8:3a:5a:d1:23:f2
+         신호             : 60%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 116
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 2                 : b8:3a:5a:cc:b7:32
+         신호             : 38%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 116
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 3                 : b8:3a:5a:cc:ab:b2
+         신호             : 53%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 108
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 4                 : b8:3a:5a:d1:6b:32
+         신호             : 40%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 48
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 5                 : b8:3a:5a:cc:9d:12
+         신호             : 38%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 100
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 6                 : b8:3a:5a:d1:12:f2
+         신호             : 33%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 52
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 7                 : b8:3a:5a:d1:3e:92
+         신호             : 40%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 124
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 8                 : b8:3a:5a:d1:eb:f2
+         신호             : 26%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 44
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 9                 : b8:3a:5a:d1:e2:92
+         신호             : 57%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 60
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 10                 : b8:3a:5a:d0:b1:b2
+         신호             : 33%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 132
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+
+SSID 3 : sWave_works_shared
+    네트워크 종류            : 인프라
+    인증          : WPA2-엔터프라이즈
+    암호화              : CCMP
+    BSSID 1                 : b8:3a:5a:cc:8f:11
+         신호             : 26%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 136
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 2                 : b8:3a:5a:d2:07:91
+         신호             : 29%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 48
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 3                 : b8:3a:5a:d0:b1:b1
+         신호             : 31%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 132
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 4                 : b8:3a:5a:d2:7a:71
+         신호             : 60%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 149
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 5                 : b8:3a:5a:d1:6b:31
+         신호             : 40%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 48
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 6                 : b8:3a:5a:cd:1d:71
+         신호             : 62%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 36
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 7                 : b8:3a:5a:cc:c2:71
+         신호             : 22%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 48
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 8                 : b8:3a:5a:d1:23:f1
+         신호             : 60%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 116
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 9                 : b8:3a:5a:cc:b7:31
+         신호             : 38%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 116
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 10                 : b8:3a:5a:cc:a2:d1
+         신호             : 50%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 120
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 11                 : b8:3a:5a:d1:56:91
+         신호             : 60%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 132
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 12                 : b8:3a:5a:cd:4b:71
+         신호             : 53%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 149
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 13                 : b8:3a:5a:d1:3e:91
+         신호             : 40%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 124
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 14                 : b8:3a:5a:d1:e2:91
+         신호             : 57%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 60
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 15                 : b8:3a:5a:cd:27:b1
+         신호             : 57%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 48
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 16                 : b8:3a:5a:d1:30:f1
+         신호             : 46%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 128
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 17                 : b8:3a:5a:cc:ab:b1
+         신호             : 53%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 108
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 18                 : b8:3a:5a:cc:8d:91
+         신호             : 26%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 52
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 19                 : b8:3a:5a:d1:12:f1
+         신호             : 33%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 52
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 20                 : b8:3a:5a:cc:9d:11
+         신호             : 38%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 100
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 21                 : b8:3a:5a:d1:cd:31
+         신호             : 26%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 124
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 22                 : b8:3a:5a:d1:eb:f1
+         신호             : 26%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 44
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+    BSSID 23                 : b8:3a:5a:cc:e0:71
+         신호             : 29%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 40
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+
+SSID 4 : HVS_SAM_2.4
+    네트워크 종류            : 인프라
+    인증          : WPA2-개인
+    암호화              : CCMP
+    BSSID 1                 : 70:5d:cc:ce:64:9e
+         신호             : 82%
+         무선 송수신 장치 유형         : 802.11n
+         밴드               : 2.4GHz
+         채널            : 2
+         Bss 로드:
+             연결되는 스테이션: 0
+             채널 사용률: 17 (6 %)
+             중간 사용 가능한 용량: 0 (0 us/s)
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 1 2 5.5 11
+         기타 속도(Mbps): 6 9 12 18 24 36 48 54
+
+SSID 5 : sWave_works_shared-2G
+    네트워크 종류            : 인프라
+    인증          : WPA2-엔터프라이즈
+    암호화              : CCMP
+    BSSID 1                 : b8:3a:5a:d1:3e:81
+         신호             : 65%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 2.4GHz
+         채널            : 1
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+
+SSID 6 : sWave_works_shared_psk
+    네트워크 종류            : 인프라
+    인증          : WPA2-개인
+    암호화              : CCMP
+    BSSID 1                 : b8:3a:5a:d1:3e:80
+         신호             : 65%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 2.4GHz
+         채널            : 1
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+
+PS C:\Users\admin> Get-CimInstance Win32_PnPSignedDriver |
+>> Where-Object {
+>>     $_.DeviceName -match 'AX210|Wi-Fi 6E'
+>> } |
+>> Select-Object DeviceName, DriverVersion, DriverDate, Manufacturer
+
+DeviceName                     DriverVersion DriverDate              Manufacturer
+----------                     ------------- ----------              ------------
+Intel(R) Wi-Fi 6E AX210 160MHz 22.0.1.5      2019-05-12 오전 9:00:00 Intel Corporation
