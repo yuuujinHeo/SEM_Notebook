@@ -15,3 +15,10 @@
 2026-10-14 08:41:51,597 INFO waiting for crash-watch, influxdb, mediamtx, mongo, mqtt, zenoh-bridge-humble, zenoh-bridge-jazzy, plugin-socketio, nginx, nginx-watchdog, amr, common to die
 2026-10-14 08:41:51,597 INFO waiting for crash-watch, influxdb, mediamtx, mongo, mqtt, zenoh-bridge-humble, zenoh-bridge-jazzy, plugin-socketio, nginx, nginx-watchdog, amr, common to die
 rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$
+
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ docker exec muscat /bin/sh -c 'echo OK'
+OCI runtime exec failed: exec failed: unable to start container process: error executing setns process: exit status 1
+
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ ps -o pid,ppid,stat,wchan:32,cmd -p 1093
+    PID    PPID STAT WCHAN                            CMD
+   1093    1058 Ss   -                                [supervisord]
