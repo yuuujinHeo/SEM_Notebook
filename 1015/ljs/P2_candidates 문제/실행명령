@@ -1,0 +1,15 @@
+$body = @{
+    amrSerial = "SEC_Process_1"
+    goals = @(
+        @{
+            nodeId = "A05"
+            priority = 10
+        }
+    )
+} | ConvertTo-Json -Depth 5
+
+Invoke-RestMethod `
+    -Uri "http://10.244.201.165/api/v1/amrs/candidates" `
+    -Method POST `
+    -ContentType "application/json; charset=utf-8" `
+    -Body $body
