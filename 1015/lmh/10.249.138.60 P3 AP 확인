@@ -27,3 +27,24 @@ PS C:\Users\admin> netsh wlan show interfaces
     QoS MSCS 구성됨         : 0
     QoS 맵 구성됨          : 0
     정책에서 허용하는 QoS 맵    : 0
+
+$log = "$env:USERPROFILE\Desktop\wifi-bssid-history.csv"
+
+while ($true) {
+    $raw = netsh wlan show interfaces
+
+    $ssid  = ($raw | Select-String '^\s*SSID\s*:' | Select-Object -First 1)
+    $bssid = ($raw | Select-String '^\s*BSSID\s*:' | Select-Object -First 1)
+    $signal = ($raw | Select-String '^\s*(Signal|신호)\s*:' | Select-Object -First 1)
+    $channel = ($raw | Select-String '^\s*(Channel|채널)\s*:' | Select-Object -First 1)
+
+    [PSCustomObject]@{
+        Time = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+        SSID = if ($ssid) { ($ssid.ToString() -split ':',2)[1].Trim() } else { "" }
+        BSSID = if ($bssid) { ($bssid.ToString() -split ':',2)[1].Trim() } else { "" }
+        Signal = if ($signal) { ($signal.ToString() -split ':',2)[1].Trim() } else { "" }
+        Channel = if ($channel) { ($channel.ToString() -split ':',2)[1].Trim() } else { "" }
+    } | Export-Csv $log -NoTypeInformation -Append -Encoding UTF8
+
+    Start-Sleep -Seconds 5
+}
