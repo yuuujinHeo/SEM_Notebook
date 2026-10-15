@@ -23,25 +23,28 @@ rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ ps -o pid,ppid,stat,wchan:32,cmd -p 
     PID    PPID STAT WCHAN                            CMD
    1093    1058 Ss   -                                [supervisord]
 
-$path = 'C:\Users\admin\blocked_full.txt'
-$out = 'C:\Users\admin\blocked_holder.txt'
-
-$raw = Get-Content -LiteralPath $path -Raw
-$parts = [regex]::Split($raw, 'Show Blocked State')
-$t = $parts[$parts.Length - 1]
-
-$blocks = [regex]::Split($t, '(?=task:)')
-
-$result = @(
-    foreach ($block in $blocks) {
-        if ($block -match '^\s*task:\s*(GnsEngine|kworker\S*|rx-5)\s') {
-            ($block -split '\r?\n' | Select-Object -First 30) -join "`n"
-            '-----'
-        }
-    }
-)
-
-$result | Out-File -LiteralPath $out -Encoding utf8
-
-Write-Host "추출된 블록 수: $(($result | Where-Object { $_ -eq '-----' }).Count)"
-Write-Host "저장 위치: $out"
+PS C:\Users\admin> $path = 'C:\Users\admin\blocked_full.txt'
+PS C:\Users\admin> $out = 'C:\Users\admin\blocked_holder.txt'
+PS C:\Users\admin>
+PS C:\Users\admin> $raw = Get-Content -LiteralPath $path -Raw
+PS C:\Users\admin> $parts = [regex]::Split($raw, 'Show Blocked State')
+PS C:\Users\admin> $t = $parts[$parts.Length - 1]
+PS C:\Users\admin>
+PS C:\Users\admin> $blocks = [regex]::Split($t, '(?=task:)')
+PS C:\Users\admin>
+PS C:\Users\admin> $result = @(
+>>     foreach ($block in $blocks) {
+>>         if ($block -match '^\s*task:\s*(GnsEngine|kworker\S*|rx-5)\s') {
+>>             ($block -split '\r?\n' | Select-Object -First 30) -join "`n"
+>>             '-----'
+>>         }
+>>     }
+>> )
+PS C:\Users\admin>
+PS C:\Users\admin> $result | Out-File -LiteralPath $out -Encoding utf8
+PS C:\Users\admin>
+PS C:\Users\admin> Write-Host "추출된 블록 수: $(($result | Where-Object { $_ -eq '-----' }).Count)"
+추출된 블록 수: 4
+PS C:\Users\admin> Write-Host "저장 위치: $out"
+저장 위치: C:\Users\admin\blocked_holder.txt
+PS C:\Users\admin>
