@@ -1,0 +1,80 @@
+admin@DESKTOP-19T7OTG C:\Users\admin>type "%USERPROFILE%\.wslconfig"
+[wsl2]
+networkingMode=mirrored
+dnsTunneling=true
+firewall=false
+
+admin@DESKTOP-19T7OTG C:\Users\admin>curl.exe -v http://localhost:8180/muscat/
+* Host localhost:8180 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:8180...
+*   Trying 127.0.0.1:8180...
+* Established connection to localhost (127.0.0.1 port 8180) from 127.0.0.1 port 63465
+* using HTTP/1.x
+> GET /muscat/ HTTP/1.1
+> Host: localhost:8180
+> User-Agent: curl/8.16.0
+> Accept: */*
+>
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Server: nginx/1.31.2
+< Date: Thu, 15 Oct 2026 06:27:29 GMT
+< Content-Type: text/html
+< Content-Length: 1663
+< Last-Modified: Wed, 14 Oct 2026 08:50:24 GMT
+< Connection: keep-alive
+< ETag: "6acf4250-67f"
+< Cache-Control: no-store, must-revalidate
+< Accept-Ranges: bytes
+<
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/rainbow-robotics-favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Muscat</title>
+      <script type="importmap">{"imports":{"react":"/plugin-shared/react.js","react/jsx-runtime":"/plugin-shared/react_jsx-runtime.js","react/jsx-dev-runtime":"/plugin-shared/react_jsx-dev-runtime.js","react-dom":"/plugin-shared/react-dom.js","react-dom/client":"/plugin-shared/react-dom_client.js","@rainbow-robotics/plugin-ui/react":"/plugin-shared/plugin-ui_react.js","@rainbow-robotics/plugin-ui/sdk":"/plugin-shared/plugin-ui_sdk.js","@rainbow-robotics/plugin-ui/host-ui":"/plugin-shared/plugin-ui_host-ui.js","@rainbow-robotics/plugin-ui/ws":"/plugin-shared/plugin-ui_ws.js"}}</script>
+    <script type="module" crossorigin src="/assets/index-DSNMyxd5.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/_virtual___federation_fn_import-Cczv4JGa.js">
+    <link rel="modulepreload" crossorigin href="/assets/index-ChsGqxH_.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-BTJTZTIL.js">
+    <link rel="modulepreload" crossorigin href="/assets/index-DoY8hNoU.js">
+    <link rel="modulepreload" crossorigin href="/assets/_commonjsHelpers-CqkleIqs.js">
+
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      if (window.ReactNativeWebView) {
+        window.ReactNativeWebView.postMessage(
+          JSON.stringify({
+            type: "onBridgeConnected",
+          }),
+        );
+      }
+    </script>
+  </body>
+</html>
+* Connection #0 to host localhost:8180 left intact
+
+admin@DESKTOP-19T7OTG C:\Users\admin>curl.exe -v --noproxy "*" http://10.249.138.143:8180/muscat/
+*   Trying 10.249.138.143:8180...
+* connect to 10.249.138.143 port 8180 from 0.0.0.0 port 63466 failed: Timed out
+* Failed to connect to 10.249.138.143 port 8180 after 21055 ms: Could not connect to server
+* closing connection #0
+curl: (28) Failed to connect to 10.249.138.143 port 8180 after 21055 ms: Could not connect to server
+
+admin@DESKTOP-19T7OTG C:\Users\admin>netsh interface portproxy show all
+
+ipv4 수신 대기:             ipv4에 연결:
+
+주소            포트        주소            포트
+--------------- ----------  --------------- ----------
+0.0.0.0         8089        127.0.0.1       8089
+
+
+admin@DESKTOP-19T7OTG C:\Users\admin>
