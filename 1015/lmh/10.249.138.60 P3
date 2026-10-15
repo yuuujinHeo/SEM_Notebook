@@ -20,3 +20,14 @@ rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ arp -a
 ? (169.254.73.152) at 00:11:22:33:44:55 [ether] PERM on loopback0
 ? (10.108.2.2) at cc:82:7f:a7:68:d3 [ether] on eth0
 ? (10.108.2.1) at 00:90:e8:de:d8:01 [ether] on eth0
+
+PS C:\Users\admin> Get-NetAdapter |
+>>     Format-Table Name,Status,LinkSpeed,InterfaceDescription
+
+Name                       Status LinkSpeed InterfaceDescription
+----                       ------ --------- --------------------
+RB&Vision                  Up     1 Gbps    Realtek PCIe GbE Family Controller
+Wi-Fi                      Up     287 Mbps  Intel(R) Wi-Fi 6E AX210 160MHz
+Fastech                    Up     100 Mbps  ASIX AX88179 USB 3.0 to Gigabit Ethernet Adapter #2
+vEthernet (Default Switch) Up     10 Gbps   Hyper-V Virtual Ethernet Adapter
+vEthernet (FSE HostVnic)   Up     10 Gbps   Hyper-V Virtual Ethernet Container Adapter
