@@ -1,4 +1,4 @@
-# FRS Network Watcher v6 - Windows PowerShell 5.1
+# FRS Network Watcher v7 - Windows PowerShell 5.1
 # WSL-AutoStart must run persistently under the same Windows account as Ubuntu-22.04.
 # WARNING: wsl --shutdown stops ALL WSL distributions and their workloads.
 param(
@@ -6,8 +6,8 @@ param(
     [int]$Port = 7447,
     [string]$Distro = 'Ubuntu-22.04',
     [string]$KeepAliveTaskName = 'WSL-AutoStart',
-    [int]$IntervalSeconds = 10,
-    [int]$FailureThreshold = 6,
+    [int]$IntervalSeconds = 30,
+    [int]$FailureThreshold = 5,
     [int]$RecoveryCooldownMinutes = 30,
     [int]$VerifyTimeoutSeconds = 180,
     [bool]$EnableAutoRecovery = $true
@@ -61,15 +61,21 @@ function Test-WslTcp {
         return @{ Kind='PROBE_ERROR'; Detail=$_.Exception.Message }
     }
 }
-function Ensure-KeepAliveTask([string]$Reason) {
+function Ensure-KeepAliveTask([string]$Reason, [bool]$ForceRestart = $false) {
     try {
         $task = Get-ScheduledTask -TaskName $KeepAliveTaskName -ErrorAction Stop
-        if ($task.State -eq 'Disabled') { Write-Log "KEEPALIVE_DISABLED name=$KeepAliveTaskName"; return }
-        if ($task.State -ne 'Running') {
+        if ($task.State -eq 'Disabled') { Write-Log "KEEPALIVE_DISABLED name=$KeepAliveTaskName"; return $false }
+        if ($ForceRestart -and $task.State -eq 'Running') {
+            Stop-ScheduledTask -TaskName $KeepAliveTaskName -ErrorAction Stop
+            Write-Log "KEEPALIVE_TASK_STOPPED reason=$Reason"
+            Start-Sleep -Seconds 2
+        }
+        if ($ForceRestart -or $task.State -ne 'Running') {
             Start-ScheduledTask -TaskName $KeepAliveTaskName -ErrorAction Stop
             Write-Log "KEEPALIVE_STARTED reason=$Reason previousState=$($task.State)"
         }
-    } catch { Write-Log "KEEPALIVE_ERROR $($_.Exception.Message)" }
+        return $true
+    } catch { Write-Log "KEEPALIVE_ERROR $($_.Exception.Message)"; return $false }
 }
 function Get-LastRecovery {
     if (-not (Test-Path $CooldownFile)) { return [datetime]::MinValue }
@@ -96,10 +102,11 @@ function Invoke-Recovery {
         $shutdownCode = $LASTEXITCODE
         if ($shutdownCode -ne 0) { Write-Log "RECOVERY_FAILED shutdown_exit=$shutdownCode detail=[$($shutdownOutput -join ' ')]"; return }
         Start-Sleep -Seconds 8
-        Ensure-KeepAliveTask 'after_shutdown'
-        # Direct invocation also starts the distro if the scheduled task is one-shot.
-        $launchOutput = @(& wsl.exe -d $Distro --exec /bin/true 2>&1)
-        if ($LASTEXITCODE -ne 0) { Write-Log "RECOVERY_FAILED launch_exit=$LASTEXITCODE detail=[$($launchOutput -join ' ')]"; return }
+        # Restart the existing scheduled task; it is responsible for launching/keeping WSL alive.
+        if (-not (Ensure-KeepAliveTask 'after_shutdown' $true)) {
+            Write-Log 'RECOVERY_FAILED scheduled_task_restart_failed'
+            return
+        }
         $deadline = (Get-Date).AddSeconds($VerifyTimeoutSeconds)
         while ((Get-Date) -lt $deadline) {
             $result = Test-WslTcp
@@ -115,11 +122,10 @@ $lastStatus = ''
 $lastProbeError = ''
 $lastKeepAliveCheck = [datetime]::MinValue
 $inMaintenance = $false
-
 try {
     $who = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
-    Write-Log "START version=v6 user=$who distro=$Distro target=${Server}:${Port} interval=$IntervalSeconds threshold=$FailureThreshold autoRecovery=$EnableAutoRecovery"
-    Ensure-KeepAliveTask 'startup'
+    Write-Log "START version=v7 user=$who distro=$Distro target=${Server}:${Port} interval=$IntervalSeconds threshold=$FailureThreshold autoRecovery=$EnableAutoRecovery"
+    [void](Ensure-KeepAliveTask 'startup')
     while ($true) {
         if (Test-Path $MaintFlag) {
             if (-not $inMaintenance) { Write-Log 'MAINTENANCE_ON'; $inMaintenance = $true }
@@ -129,7 +135,7 @@ try {
         }
         if ($inMaintenance) { Write-Log 'MAINTENANCE_OFF'; $inMaintenance = $false }
         if (((Get-Date) - $lastKeepAliveCheck).TotalSeconds -ge 60) {
-            Ensure-KeepAliveTask 'periodic'
+            [void](Ensure-KeepAliveTask 'periodic')
             $lastKeepAliveCheck = Get-Date
         }
         $win = Test-WindowsTcp
