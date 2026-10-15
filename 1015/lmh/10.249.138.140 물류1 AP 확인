@@ -1,4 +1,4 @@
-PS C:\Users\admin> netsh wlan show interfaces
+ PS C:\Users\admin> netsh wlan show interfaces
 
 시스템에 1 인터페이스가 있습니다.
 
