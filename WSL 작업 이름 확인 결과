@@ -1,0 +1,25 @@
+PS C:\Users\admin> Get-ScheduledTask | Where-Object {
+>>     $_.Actions.Execute -match 'wsl|powershell|pwsh' -or
+>>     $_.Actions.Arguments -match 'wsl|FRS-Network-Watch'
+>> } | Select-Object TaskName, TaskPath, State,
+>>     @{N='Execute';E={$_.Actions.Execute}},
+>>     @{N='Arguments';E={$_.Actions.Arguments}} | Format-List
+
+
+TaskName  : FleetAgent
+TaskPath  : \
+State     : Ready
+Execute   : powershell.exe
+Arguments : -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\ProgramData\FleetAgent\scripts\start.ps1
+
+TaskName  : FRS-Network-Watch
+TaskPath  : \
+State     : Ready
+Execute   : powershell.exe
+Arguments : -NoProfile -ExecutionPolicy Bypass -File "C:\Scripts\FRS-Network-Watch.ps1"
+
+TaskName  : WSL 자동실행
+TaskPath  : \
+State     : Running
+Execute   : C:\Windows\System32\wsl.exe
+Arguments : -d Ubuntu-22.04
