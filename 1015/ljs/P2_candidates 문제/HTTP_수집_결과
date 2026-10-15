@@ -1,0 +1,59 @@
+PS C:\Users\admin> $A='C:\Users\admin\Desktop\ALGN'; $o="$A\p2_0950"
+PS C:\Users\admin> New-Item -ItemType Directory -Force $o | Out-Null
+PS C:\Users\admin> $s=[datetime]'2026-10-15 09:00'; $e=[datetime]'2026-10-15 10:30'
+PS C:\Users\admin>
+PS C:\Users\admin> Get-WinEvent -FilterHashtable @{LogName='System';StartTime=$s;EndTime=$e} -ErrorAction SilentlyContinue |
+>>   ? { $_.Id -in 4003,8000 -and $_.ProviderName -match 'WLAN|Netwtw' } |
+>>   select @{n='T';e={$_.TimeCreated.ToString('HH:mm:ss')}},ProviderName,Id | Sort-Object T |
+>>   Out-File $o\wifi_reset.txt
+PS C:\Users\admin>
+PS C:\Users\admin> Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-WLAN-AutoConfig/Operational';StartTime=$s;EndTime=$e} -ErrorAction SilentlyContinue |
+>>   ? Id -in 8003,8001,11004,11005 |
+>>   select @{n='T';e={$_.TimeCreated.ToString('HH:mm:ss')}},Id | Sort-Object T |
+>>   Out-File $o\wifi_conn.txt
+PS C:\Users\admin>
+PS C:\Users\admin> Get-Content $o\wifi_reset.txt, $o\wifi_conn.txt
+
+T        ProviderName                        Id
+-        ------------                        --
+09:40:54 Netwtw14                          8000
+09:40:54 Microsoft-Windows-WLAN-AutoConfig 4003
+10:26:14 Netwtw14                          8000
+10:26:14 Microsoft-Windows-WLAN-AutoConfig 4003
+
+
+
+T           Id
+-           --
+09:24:53 11005
+09:24:53 11004
+09:31:00 11005
+09:31:00 11004
+09:40:38 11005
+09:40:38 11004
+09:40:54  8003
+09:40:54 11004
+09:40:58  8001
+09:40:58 11005
+09:42:03  8003
+09:42:03 11004
+09:43:08  8001
+09:43:08 11005
+09:51:01 11005
+09:51:01 11004
+10:01:46 11005
+10:01:46 11004
+10:07:03 11005
+10:07:03 11004
+10:13:43 11005
+10:13:43 11004
+10:25:58 11005
+10:25:58 11004
+10:26:14  8003
+10:26:14 11004
+10:26:18  8001
+10:26:18 11005
+10:27:23  8003
+10:27:23 11004
+10:28:28  8001
+10:28:28 11005
