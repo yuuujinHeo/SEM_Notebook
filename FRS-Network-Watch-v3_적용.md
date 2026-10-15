@@ -40,29 +40,36 @@ Unregister-ScheduledTask -TaskName 'WSL 자동실행' -Confirm:$false
 
 이름을 다르게 쓰려면 v3 실행 인수에 `-KeepAliveTaskName '원하는이름'`을 추가하면 됩니다.
 
-## 3. 적용 (PowerShell 관리자)
+## 3. 적용 — 작업을 지우고 새로 등록 (PC마다 동일하게, PowerShell 관리자)
+
+PC마다 기존 작업의 설정이 조금씩 다를 수 있어서, 기존 작업을 고치는 것보다 **지우고 같은 설정으로 새로 등록하는 편이 깔끔합니다.** 작업 이름과 스크립트 경로는 그대로 씁니다.
 
 ```powershell
-# 1) 백업 후 덮어쓰기 (작업 이름/경로 그대로)
-Copy-Item C:\Scripts\FRS-Network-Watch.ps1 C:\Scripts\FRS-Network-Watch.ps1.bak -Force
-Copy-Item .\FRS-Network-Watch.ps1 C:\Scripts\FRS-Network-Watch.ps1 -Force
+$taskName = 'FRS-Network-Watch'
+$script   = 'C:\Scripts\FRS-Network-Watch.ps1'
+$user     = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name   # 배포판을 가진 admin 계정으로 실행할 것
 
-# 2) 작업 설정: 창 숨김, 재시작 횟수 늘림, 5분마다 되살리는 실행 조건 추가
-$t = Get-ScheduledTask -TaskName 'FRS-Network-Watch'
-$t.Actions[0].Arguments = '-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\Scripts\FRS-Network-Watch.ps1"'
-$t.Settings.RestartCount = 999
-$t.Settings.ExecutionTimeLimit = 'PT0S'
-$t.Settings.MultipleInstances = 'IgnoreNew'
-$repeat = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 5)
-$t.Triggers = @($t.Triggers) + $repeat
-Set-ScheduledTask -InputObject $t
+# 1) 스크립트 교체 (기존 파일 백업)
+Copy-Item $script "$script.bak" -Force -ErrorAction SilentlyContinue
+Copy-Item .\FRS-Network-Watch.ps1 $script -Force
 
-# 3) 확인
-Get-ScheduledTask -TaskName 'FRS-Network-Watch' | Select TaskName,State,@{n='User';e={$_.Principal.UserId}},@{n='Args';e={$_.Actions.Arguments}} | Format-List
+# 2) 기존 작업 정지 후 삭제
+Stop-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue
+Unregister-ScheduledTask -TaskName $taskName -Confirm:$false -ErrorAction SilentlyContinue
 
-# 4) 이미 실행 중인 이전 감시 스크립트가 있으면 먼저 정지한 뒤 시작
-Stop-ScheduledTask -TaskName 'FRS-Network-Watch'
-Start-ScheduledTask -TaskName 'FRS-Network-Watch'
+# 3) 새로 등록: 창 숨김 / 로그온 시 + 5분마다 되살리기 / 시간 제한 없음 / 중복 실행 방지
+$action    = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$script`""
+$atLogon   = New-ScheduledTaskTrigger -AtLogOn -User $user
+$every5min = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 5)
+$principal = New-ScheduledTaskPrincipal -UserId $user -LogonType Interactive -RunLevel Limited
+$settings  = New-ScheduledTaskSettingsSet -MultipleInstances IgnoreNew -ExecutionTimeLimit ([TimeSpan]::Zero) `
+             -RestartCount 999 -RestartInterval (New-TimeSpan -Minutes 1) `
+             -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable
+Register-ScheduledTask -TaskName $taskName -Action $action -Trigger @($atLogon, $every5min) -Principal $principal -Settings $settings
+
+# 4) 확인 후 시작
+Get-ScheduledTask -TaskName $taskName | Select TaskName,State,@{n='User';e={$_.Principal.UserId}},@{n='Args';e={$_.Actions.Arguments}} | Format-List
+Start-ScheduledTask -TaskName $taskName
 Get-Content C:\ProgramData\FRSNetworkWatch\watch.log -Tail 20 -Wait
 ```
 
@@ -70,6 +77,35 @@ Get-Content C:\ProgramData\FRSNetworkWatch\watch.log -Tail 20 -Wait
 - `START user=<admin 계정> ... distro=Ubuntu-22.04 ... autoRecovery=True maxPerDay=3`
 - `KEEPER_RUNNING` 또는 `KEEPER_NOT_STARTED exit=1`(이미 keeper 있음, 정상)
 - 이후 `STATUS=BOTH_OK`
+
+## 3-1. 재부팅 대비 확인 (PC마다 1회, 3장 직후)
+
+```powershell
+# 1) 자동 로그인: AutoAdminLogon=1, DefaultUserName=admin 이어야 재부팅 후 자동 실행됨
+Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon' | Select AutoAdminLogon, DefaultUserName
+
+# 2) 두 작업의 실행 시간 제한: 둘 다 PT0S(제한 없음)여야 함. PT72H면 3일 후 강제 종료
+Get-ScheduledTask -TaskName 'FRS-Network-Watch','WSL-AutoStart' -ErrorAction SilentlyContinue |
+  Select TaskName,State,@{n='TimeLimit';e={$_.Settings.ExecutionTimeLimit}},@{n='Triggers';e={($_.Triggers | % { $_.CimClass.CimClassName }) -join ','}}
+
+# 3) WSL-AutoStart에 제한이 있으면 해제
+$t = Get-ScheduledTask -TaskName 'WSL-AutoStart' -ErrorAction SilentlyContinue
+if ($t -and $t.Settings.ExecutionTimeLimit -ne 'PT0S') { $t.Settings.ExecutionTimeLimit = 'PT0S'; Set-ScheduledTask -InputObject $t }
+```
+
+- `AutoAdminLogon`이 1이 아니면 재부팅 후 **로그인 화면에서 멈추고, 감시 스크립트와 WSL이 실행되지 않습니다.** 이 경우 자동 로그인 설정은 현장 보안 정책에 맞춰 결정해야 합니다.
+- FRS-Network-Watch 트리거에 `MSFT_TaskLogonTrigger`(로그온 시)와 `MSFT_TaskTimeTrigger`(5분 반복)가 둘 다 있어야 합니다.
+
+## 3-2. 재부팅 실제 확인 (한 대에서 1회)
+
+재부팅한 뒤 로그인되면 아래를 확인합니다.
+```powershell
+Get-ScheduledTask -TaskName 'FRS-Network-Watch','WSL-AutoStart' | Select TaskName,State     # 둘 다 Running
+Select-String C:\ProgramData\FRSNetworkWatch\watch.log -Pattern 'START user|KEEPER_RUNNING|KEEPER_NOT_STARTED|STATUS=' | Select -Last 5
+wsl -l -v                                   # Ubuntu-22.04 Running
+wsl -d Ubuntu-22.04 -e docker ps            # 컨테이너가 올라왔는지
+```
+`START user=...`, `KEEPER_RUNNING`(또는 `KEEPER_NOT_STARTED exit=1`), `STATUS=BOTH_OK`가 보이고 컨테이너가 떠 있으면 재부팅 대응이 정상입니다.
 
 ## 4. 일부러 WSL을 꺼 둬야 할 때 (업데이트, 멈춤 상태 진단 등)
 
