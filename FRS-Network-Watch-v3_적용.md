@@ -158,3 +158,10 @@ Start-ScheduledTask -TaskName 'FRS-Network-Watch'
 # 4) 새 파일로 돌고 있는지 확인
 Get-Content C:\ProgramData\FRSNetworkWatch\watch.log -Tail 10 -Wait
 ```
+
+
+```
+Stop-ScheduledTask -TaskName 'FRS-Network-Watch'
+Get-CimInstance Win32_Process -Filter "Name='powershell.exe'" | ? CommandLine -match 'FRS-Network-Watch' | % { Stop-Process -Id $_.ProcessId -Force }
+powershell -NoProfile -ExecutionPolicy Bypass -File C:\Scripts\FRS-Network-Watch.ps1
+```
