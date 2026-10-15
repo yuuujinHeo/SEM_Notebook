@@ -1,3 +1,10 @@
+$path = 'C:\Users\admin\blocked_full.txt'
+
+Select-String -Path $path `
+  -Pattern 'rndis_filter_device_remove|netvsc_remove|hv_vmbus_rescind|vmbus_onoffer_rescind' `
+  -Context 12,25 |
+  Select-Object -Last 120
+
 [resource-watch] shm: python3(341) lck=0MB maps=863; python3(340) lck=0MB maps=907; python3(339) lck=0MB maps=848
 [resource-watch] shm: python3(341) lck=0MB maps=863; python3(340) lck=0MB maps=907; python3(339) lck=0MB maps=848
 2026-10-14 08:41:44,818 WARN received SIGTERM indicating exit request
