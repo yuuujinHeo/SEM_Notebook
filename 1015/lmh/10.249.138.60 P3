@@ -275,3 +275,11 @@ grep -E 'ip|timeout|STAT'
  567718  567717 D+   rtnetlink_rcv_msg         ip
  571642  571626 S+   anon_pipe_read            tail
  571700     314 S    poll_schedule_timeout.con avahi-publish-s
+
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ timeout -k 2s 5s bash -c \
+'echo > /dev/tcp/10.244.201.165/7447'
+
+echo "tcp_exit=$?"
+bash: connect: No route to host
+bash: line 1: /dev/tcp/10.244.201.165/7447: No route to host
+tcp_exit=1
