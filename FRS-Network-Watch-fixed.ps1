@@ -32,22 +32,40 @@ function Test-WindowsTcp {
     } catch { return $false }
 }
 function Test-WslTcp {
-    # Run WSL test as a child process with a Windows-side hard timeout.
-    $command = "timeout 3 bash -c 'echo > /dev/tcp/$Server/$Port'"
     $out = Join-Path $LogDir ('probe-{0}.out' -f $PID)
     $err = Join-Path $LogDir ('probe-{0}.err' -f $PID)
+
     try {
-        $argsLine = '-d "{0}" -- bash -lc "{1}"' -f $Distro, $command
-        $p = Start-Process -FilePath 'wsl.exe' -ArgumentList $argsLine -WindowStyle Hidden -PassThru -RedirectStandardOutput $out -RedirectStandardError $err
+        $argsLine = '-d "{0}" --exec /bin/bash -c "echo > /dev/tcp/{1}/{2}"' -f $Distro, $Server, $Port
+
+        $p = Start-Process -FilePath 'wsl.exe' `
+            -ArgumentList $argsLine `
+            -WindowStyle Hidden `
+            -PassThru `
+            -RedirectStandardOutput $out `
+            -RedirectStandardError $err `
+            -ErrorAction Stop
+
         if (-not $p.WaitForExit(8000)) {
             try { $p.Kill() } catch {}
+            Write-Log 'WSL_PROBE_TIMEOUT'
             return $false
         }
-        return ($p.ExitCode -eq 0)
-    } catch {
+
+        $exitCode = $p.ExitCode
+
+        if ($exitCode -ne 0) {
+            $detail = Get-Content -LiteralPath $err -Raw -ErrorAction SilentlyContinue
+            Write-Log "WSL_PROBE_FAILED exit=$exitCode detail=$detail"
+        }
+
+        return ($exitCode -eq 0)
+    }
+    catch {
         Write-Log "WSL_PROBE_ERROR $($_.Exception.Message)"
         return $false
-    } finally {
+    }
+    finally {
         Remove-Item -LiteralPath $out, $err -Force -ErrorAction SilentlyContinue
     }
 }
