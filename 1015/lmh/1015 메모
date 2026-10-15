@@ -168,6 +168,65 @@ veth, br_, docker → Docker 네트워크 관련 여부
 1단계 분석 결과 — 핵심 원인에 상당히 가까워졌습니다.
 이번 결과에서 WSL과 Windows 사이의 Hyper-V 가상 네트워크 장치가 제거되는 과정에서 멈춘 정황이 확인됐습니다.
 
+PS C:\Users\admin> Get-Content C:\Users\admin\blocked_full.txt |
+>> Select-Object -Skip 2545 -First 55
+[97574.507399] RIP: 0033:0x72045f1bd52d
+[97574.507400] RSP: 002b:00007204467fb248 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+[97574.507401] RAX: fffffffffffffdfc RBX: 000072045f1bd510 RCX: 000072045f1bd52d
+[97574.507402] RDX: 000000000000000e RSI: 0000000000000089 RDI: 0000720454022240
+[97574.507402] RBP: 00007204467fb2a0 R08: 0000000000000000 R09: 00000000ffffffff
+[97574.507403] R10: 00007204467fb260 R11: 0000000000000246 R12: 0000000000000001
+[97574.507404] R13: 000072045f0c06e0 R14: 0000720454022240 R15: 000000000000000e
+[97574.507405]  </TASK>
+[97574.507410] task:kworker/0:2     state:D stack:0     pid:27078 tgid:27078 ppid:2      task_flags:0x4288060 flags:0x00080000
+[97574.507412] Workqueue: hv_vmbus_rescind vmbus_onmessage_work
+[97574.507414] Call Trace:
+[97574.507415]  <TASK>
+[97574.507416]  __schedule+0x546/0xc20
+[97574.507418]  schedule+0x2b/0xf0
+[97574.507420]  rndis_filter_device_remove+0x130/0x240
+[97574.507423]  ? __pfx_autoremove_wake_function+0x10/0x10
+[97574.507426]  netvsc_remove+0x89/0x140
+[97574.507428]  vmbus_remove+0x2b/0x40
+[97574.507429]  device_remove+0x43/0x70
+[97574.507432]  device_release_driver_internal+0x1ad/0x210
+[97574.507439]  device_release_driver+0x16/0x20
+[97574.507440]  bus_remove_device+0xee/0x190
+[97574.507441]  ? device_remove_attrs+0xa4/0xf0
+[97574.507443]  device_del+0x166/0x3b0
+[97574.507444]  ? sysfs_remove_dir+0x53/0x60
+[97574.507448]  device_unregister+0x1b/0x60
+[97574.507449]  vmbus_device_unregister+0x28/0x60
+[97574.507450]  vmbus_onoffer_rescind+0x20d/0x240
+[97574.507452]  vmbus_onmessage+0x29/0x80
+[97574.507452]  vmbus_onmessage_work+0x29/0x40
+[97574.507454]  process_one_work+0x19b/0x3c0
+[97574.507455]  worker_thread+0x1a3/0x320
+[97574.507457]  ? __pfx_worker_thread+0x10/0x10
+[97574.507458]  kthread+0x111/0x240
+[97574.507459]  ? _raw_spin_unlock_irq+0x12/0x40
+[97574.507461]  ? __pfx_kthread+0x10/0x10
+[97574.507463]  ret_from_fork+0x13c/0x1a0
+[97574.507464]  ? __pfx_kthread+0x10/0x10
+[97574.507466]  ret_from_fork_asm+0x1a/0x30
+[97574.507468]  </TASK>
+[97574.507468] task:ip              state:D stack:0     pid:30712 tgid:30712 ppid:2342   task_flags:0x400000 flags:0x00080003
+[97574.507470] Call Trace:
+[97574.507471]  <TASK>
+[97574.507471]  __schedule+0x546/0xc20
+[97574.507473]  schedule+0x2b/0xf0
+[97574.507475]  schedule_preempt_disabled+0x19/0x30
+[97574.507477]  __mutex_lock.constprop.0+0x521/0x9c0
+[97574.507478]  ? kmalloc_reserve+0x69/0x100
+[97574.507480]  ? __pfx_rtnl_dump_ifinfo+0x10/0x10
+[97574.507482]  __mutex_lock_slowpath+0x13/0x20
+[97574.507483]  mutex_lock+0x39/0x50
+[97574.507484]  rtnl_dumpit+0x7f/0xb0
+[97574.507485]  netlink_dump+0x188/0x3c0
+[97574.507488]  __netlink_dump_start+0x1fc/0x330
+[97574.507490]  ? __pfx_rtnl_dump_ifinfo+0x10/0x10
+PS C:\Users\admin>
+
 [resource-watch] shm: python3(341) lck=0MB maps=863; python3(340) lck=0MB maps=907; python3(339) lck=0MB maps=848
 [resource-watch] shm: python3(341) lck=0MB maps=863; python3(340) lck=0MB maps=907; python3(339) lck=0MB maps=848
 2026-10-14 08:41:44,818 WARN received SIGTERM indicating exit request
