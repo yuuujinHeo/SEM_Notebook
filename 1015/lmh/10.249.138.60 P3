@@ -176,3 +176,18 @@ TcpTestSucceeded       : False
 
 PS C:\Users\admin> curl.exe -i --max-time 5 http://localhost:3000/common/docs
 curl: (7) Failed to connect to localhost port 3000 after 2253 ms: Could not connect to server
+
+PS C:\Users\admin> wsl --version
+WSL 버전: 2.7.8.0
+커널 버전: 6.18.33.1-1
+WSLg 버전: 1.0.73.2
+MSRDC 버전: 1.2.6676
+Direct3D 버전: 1.611.1-81528511
+DXCore 버전: 10.0.26100.1-240331-1435.ge-release
+Windows 버전: 10.0.26100.7462
+PS C:\Users\admin> wsl --status
+기본 배포: Ubuntu-22.04
+기본 버전: 2
+PS C:\Users\admin> wsl --list --verbose
+  NAME            STATE           VERSION
+* Ubuntu-22.04    Running         2
