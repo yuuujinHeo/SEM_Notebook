@@ -135,3 +135,8 @@ Remove-Item C:\ProgramData\FRSNetworkWatch\maintenance.flag
 | `RECOVERY_FAILED ...` | 복구 실패. 수동 확인 필요 |
 | `ALERT recovery_limit_reached` | 하루 한도 초과로 자동 복구 중단. 수동 확인 필요 |
 | `MAINTENANCE_ON / OFF` | 유지보수 플래그 감지 / 해제 |
+
+
+
+$p = Start-Process wsl.exe -ArgumentList '-d "Ubuntu-22.04" --exec /bin/true' -PassThru -WindowStyle Hidden -RedirectStandardOutput $env:TEMP\o.txt -RedirectStandardError $env:TEMP\e.txt
+$p.WaitForExit(8000) | Out-Null; "ExitCode=[$($p.ExitCode)]"
