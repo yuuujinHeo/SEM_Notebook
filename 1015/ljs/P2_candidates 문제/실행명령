@@ -9,7 +9,7 @@ $body = @{
 } | ConvertTo-Json -Depth 5
 
 Invoke-RestMethod `
-    -Uri "http://10.244.201.165/api/v1/amrs/candidates" `
+    -Uri "http://10.244.201.165:3000/api/v1/amrs/candidates" `
     -Method POST `
     -ContentType "application/json; charset=utf-8" `
     -Body $body
