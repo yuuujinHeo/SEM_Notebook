@@ -232,6 +232,21 @@ PS C:\Users\admin> Get-Content C:\Users\admin\blocked_full.txt |
 [97574.507490]  ? __pfx_rtnl_dump_ifinfo+0x10/0x10
 PS C:\Users\admin>
 
+2단계 분석 결과 — 가상 랜카드 제거 과정에서 대기 중인 것 확인
+이번 로그로 두 가지가 명확해졌습니다.
+① Hyper-V 가상 네트워크 장치 제거 작업이 완료되지 않고 대기 중입니다.
+PID 27078은 Hyper-V 가상 네트워크 장치 제거를 처리하고 있습니다.
+rndis_filter_device_remove() 내부에서 대기하고 있습니다.
+단, 무엇의 완료를 기다리는지는 이 스택만으로 확인되지 않습니다.
+② ip 명령은 네트워크 잠금 획득을 기다리고 있습니다.
+이는 ip 명령이 네트워크 정보를 조회하기 위해 RTNL 잠금을 얻으려다가 대기 중이라는 의미입니다.
+현재 판단
+Hyper-V 가상 네트워크 제거 작업 정체
+RTNL 잠금 경합
+가상 랜카드 제거 작업이 RTNL 잠금 보유자
+Docker가 최초 원인
+현재로서는 WSL의 Hyper-V 가상 네트워크 장치 제거 과정이 장애와 연관되어 있다는 근거가 강합니다. 다만 잠금 보유자와 최초 정체 원인을 확인해야 최종 판단할 수 있습니다.
+
 [resource-watch] shm: python3(341) lck=0MB maps=863; python3(340) lck=0MB maps=907; python3(339) lck=0MB maps=848
 [resource-watch] shm: python3(341) lck=0MB maps=863; python3(340) lck=0MB maps=907; python3(339) lck=0MB maps=848
 2026-10-14 08:41:44,818 WARN received SIGTERM indicating exit request
