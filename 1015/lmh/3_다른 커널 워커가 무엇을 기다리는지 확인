@@ -43,3 +43,10 @@ PS C:\Users\admin>  Select-String -Path C:\Users\admin\blocked_full.txt ` -Patte
 
 
 PS C:\Users\admin>
+
+3단계 분석 완료 — RTNL 잠금 대기 확인
+이번 결과로 kworker/u64:0과 GnsEngine도 동일한 네트워크 잠금을 기다리고 있다는 사실이 확인됐습니다.
+특히 다음 부분이 중요합니다.
+이는 IPv6 주소를 검증하는 커널 작업조차 네트워크 잠금을 획득하지 못하고 있다는 의미입니다.
+현재까지 확인된 것은 단순 FRS 통신 장애가 아니라 WSL 커널의 네트워크 작업이 광범위하게 정체된 상태라는 점입니다.
+
