@@ -115,6 +115,7 @@ $lastStatus = ''
 $lastProbeError = ''
 $lastKeepAliveCheck = [datetime]::MinValue
 $inMaintenance = $false
+
 try {
     $who = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
     Write-Log "START version=v6 user=$who distro=$Distro target=${Server}:${Port} interval=$IntervalSeconds threshold=$FailureThreshold autoRecovery=$EnableAutoRecovery"
@@ -135,12 +136,7 @@ try {
         $probe = Test-WslTcp
         $status = if ($probe.Kind -eq 'PROBE_ERROR') { 'PROBE_ERROR' } elseif ($win -and $probe.Kind -eq 'OK') { 'BOTH_OK' } elseif (-not $win -and $probe.Kind -ne 'OK') { 'BOTH_FAIL' } elseif ($win -and $probe.Kind -eq 'TCP_FAIL') { 'WSL_ONLY_FAIL' } else { 'WINDOWS_ONLY_FAIL' }
         if ($status -eq 'WSL_ONLY_FAIL') { $failures++ } else { $failures = 0 }
-        $errorSignature = if ($status -eq 'PROBE_ERROR') { $probe.Detail } else { '' }
-        if ($status -ne $lastStatus -or $status -eq 'WSL_ONLY_FAIL' -or ($errorSignature -ne $lastProbeError)) {
-            Write-Log "STATUS=$status windows=$win wsl=$($probe.Kind) consecutiveWslFailures=$failures detail=[$($probe.Detail)]"
-        }
-        $lastStatus = $status
-        $lastProbeError = $errorSignature
+        Write-Log "STATUS=$status windows=$win wsl=$($probe.Kind) consecutiveWslFailures=$failures detail=[$($probe.Detail)]"
         if ($failures -ge $FailureThreshold) {
             if ($EnableAutoRecovery) { Invoke-Recovery; $failures = 0 }
             elseif ($failures -eq $FailureThreshold) { Write-Log 'ALERT recovery_eligible monitor_only' }
