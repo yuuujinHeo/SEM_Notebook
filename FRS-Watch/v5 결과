@@ -1,0 +1,6 @@
+2026-10-15 20:40:41 START version=v5 user=DESKTOP-19T7OTG\admin distro=Ubuntu-22.04 target=10.244.201.165:7447 interval=10 threshold=6 autoRecovery=True keeperBackup=True
+2026-10-15 20:40:41 KEEPALIVE_TASK_RUNNING reason=startup name=WSL-AutoStart
+2026-10-15 20:40:43 KEEPER_EXITED exit=-1 (lock held, missing flock, or startup error; verify manually)
+2026-10-15 20:40:43 FATAL nc_unavailable_or_wsl_unresponsive kind=EXIT code=-1 err=; install netcat-openbsd in Ubuntu and retry
+2026-10-15 20:40:43 FATAL WSL TCP probe prerequisite failed
+2026-10-15 20:40:43 STOP
