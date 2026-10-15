@@ -160,3 +160,19 @@ InterfaceAlias          : Wi-Fi
 SourceAddress           : 10.249.138.60
 NetRoute (NextHop)      : 10.249.138.1
 TcpTestSucceeded        : True
+
+PS C:\Users\admin> Test-NetConnection 127.0.0.1 -Port 7447
+경고: TCP connect to (127.0.0.1 : 7447) failed
+
+
+ComputerName           : 127.0.0.1
+RemoteAddress          : 127.0.0.1
+RemotePort             : 7447
+InterfaceAlias         : Loopback Pseudo-Interface 1
+SourceAddress          : 127.0.0.1
+PingSucceeded          : True
+PingReplyDetails (RTT) : 0 ms
+TcpTestSucceeded       : False
+
+PS C:\Users\admin> curl.exe -i --max-time 5 http://localhost:3000/common/docs
+curl: (7) Failed to connect to localhost port 3000 after 2253 ms: Could not connect to server
