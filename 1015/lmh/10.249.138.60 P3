@@ -31,3 +31,25 @@ Wi-Fi                      Up     287 Mbps  Intel(R) Wi-Fi 6E AX210 160MHz
 Fastech                    Up     100 Mbps  ASIX AX88179 USB 3.0 to Gigabit Ethernet Adapter #2
 vEthernet (Default Switch) Up     10 Gbps   Hyper-V Virtual Ethernet Adapter
 vEthernet (FSE HostVnic)   Up     10 Gbps   Hyper-V Virtual Ethernet Container Adapter
+
+PS C:\Users\admin> Get-NetIPConfiguration |
+>>     Format-List InterfaceAlias,IPv4Address,IPv4DefaultGateway
+
+
+InterfaceAlias     : Fastech
+IPv4Address        : {192.168.0.160}
+IPv4DefaultGateway : {MSFT_NetRoute(InstanceID = ":8:8:8:9:55?:55;C?8;@B8:8;55;")}
+
+InterfaceAlias     : RB&Vision
+IPv4Address        : {10.108.2.101}
+IPv4DefaultGateway : {MSFT_NetRoute(InstanceID = ":8:8:8:9:55??55;:8;:B8?8;55;")}
+
+InterfaceAlias     : vEthernet (Default Switch)
+IPv4Address        : {172.25.48.1}
+IPv4DefaultGateway :
+
+InterfaceAlias     : Wi-Fi
+IPv4Address        : {10.249.138.60}
+IPv4DefaultGateway : {MSFT_NetRoute(InstanceID = ":8:8:8:9:55?;55;:8??C8;?B8;55;")}
+
+
