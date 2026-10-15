@@ -12,3 +12,11 @@ docker0 000011AC        00000000        0001    0       0       0       0000FFFF
 eth1    0000A8C0        00000000        0001    0       0       291     00FFFFFF        0       0       0
 eth1    0100A8C0        00000000        0005    0       0       291     FFFFFFFF        0       0       0
 proc_route_exit=0
+
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ arp -a
+? (172.17.0.3) at e6:93:ce:54:a3:dd [ether] on docker0
+? (10.249.138.1) at <incomplete> on eth2
+? (172.17.0.4) at 32:4d:26:9a:d0:65 [ether] on docker0
+? (169.254.73.152) at 00:11:22:33:44:55 [ether] PERM on loopback0
+? (10.108.2.2) at cc:82:7f:a7:68:d3 [ether] on eth0
+? (10.108.2.1) at 00:90:e8:de:d8:01 [ether] on eth0
