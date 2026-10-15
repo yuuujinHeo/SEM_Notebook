@@ -137,6 +137,7 @@ Remove-Item C:\ProgramData\FRSNetworkWatch\maintenance.flag
 | `MAINTENANCE_ON / OFF` | 유지보수 플래그 감지 / 해제 |
 
 
-
+```
 $p = Start-Process wsl.exe -ArgumentList '-d "Ubuntu-22.04" --exec /bin/true' -PassThru -WindowStyle Hidden -RedirectStandardOutput $env:TEMP\o.txt -RedirectStandardError $env:TEMP\e.txt
 $p.WaitForExit(8000) | Out-Null; "ExitCode=[$($p.ExitCode)]"
+```
