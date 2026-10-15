@@ -1,0 +1,26 @@
+4단계 — RTNL 잠금 보유 후보 찾기
+이번에는 blocked_full.txt 전체에서 RTNL 잠금을 기다리는 태스크가 아닌, 네트워크 장치 제거·변경 작업을 수행하는 태스크를 찾겠습니다.
+PowerShell에서 아래 명령어를 실행해 주세요.
+
+이 명령어는 파일만 읽으며 시스템 상태를 변경하지 않습니다.
+특히 다음 두 가지를 확인하려는 목적입니다.
+unregister_netdevice, netdev_run_todo → 가상 랜카드 제거 중 네트워크 장치 정리가 지연되는지
+flush_work, wait_for_completion → 다른 커널 작업의 종료를 기다리면서 멈췄는지
+결과를 보내주시면 가상 랜카드 제거 작업이 RTNL 잠금 정체와 직접 연결되는지 분석하겠습니다.
+
+PS C:\Users\admin> Select-String -Path C:\Users\admin\blocked_full.txt `
+>>   -Pattern 'unregister_netdevice|unregister_netdev|rollback_registered|netdev_run_todo|rtnl_unlock|netvsc_remove|rndis_filter_device_remove|flush_work|wait_for_completion' `
+>>   -Context 3,5 |
+>>   Select-Object -First 100
+
+  blocked_full.txt:2557:[97574.507415]  <TASK>
+  blocked_full.txt:2558:[97574.507416]  __schedule+0x546/0xc20
+  blocked_full.txt:2559:[97574.507418]  schedule+0x2b/0xf0
+> blocked_full.txt:2560:[97574.507420]  rndis_filter_device_remove+0x130/0x240
+  blocked_full.txt:2561:[97574.507423]  ? __pfx_autoremove_wake_function+0x10/0x10
+> blocked_full.txt:2562:[97574.507426]  netvsc_remove+0x89/0x140
+  blocked_full.txt:2563:[97574.507428]  vmbus_remove+0x2b/0x40
+  blocked_full.txt:2564:[97574.507429]  device_remove+0x43/0x70
+  blocked_full.txt:2565:[97574.507432]  device_release_driver_internal+0x1ad/0x210
+  blocked_full.txt:2566:[97574.507439]  device_release_driver+0x16/0x20
+  blocked_full.txt:2567:[97574.507440]  bus_remove_device+0xee/0x190
