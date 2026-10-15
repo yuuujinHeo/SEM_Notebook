@@ -1,0 +1,2 @@
+$t = (Get-Content C:\Users\admin\blocked_full.txt -Raw) -split 'Show Blocked State' | Select-Object -Last 1
+($t -split '(?=task:)') | ? { $_ -match '^task:(GnsEngine|kworker\S*|rx-5)\s' } | % { ($_ -split "`r?`n" | Select-Object -First 30) -join "`n"; '-----' } | Out-File C:\Users\admin\blocked_holder.txt
