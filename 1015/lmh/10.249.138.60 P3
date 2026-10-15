@@ -293,4 +293,8 @@ root      573133  0.0  0.0   5156  2192 ?        S    09:12   0:00 /bin/bash /ho
 root      573134  0.0  0.0  19852 10156 ?        S    09:12   0:00 curl -sf http://localhost:3000/common/deploy/update-info?category=muscat
 rainbow   573563  0.0  0.0   7068  3352 ?        S    09:14   0:00 avahi-publish-service rainbowbot-SEC_Process_2 _rainbow-robot._tcp 8180 model=QD-SEC_CNC_A robot_serial=SEC_Process_2 name=SEC_Process_2 alias=삼성전자 A동 CNC QD타입 api_mode=muscat state=DISCONNECT
 rainbow   573589  0.0  0.0   4036  2456 pts/65   R+   09:14   0:00 grep --color=auto -Ei muscat|zenoh
-rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$
+
+PS C:\Users\admin> Get-NetTCPConnection -LocalPort 7447,3000 `
+>>     -ErrorAction SilentlyContinue |
+>>     Select-Object LocalAddress,LocalPort,State,OwningProcess
+PS C:\Users\admin>
