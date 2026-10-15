@@ -24,3 +24,11 @@ PS C:\Users\admin> Select-String -Path C:\Users\admin\blocked_full.txt `
   blocked_full.txt:2565:[97574.507432]  device_release_driver_internal+0x1ad/0x210
   blocked_full.txt:2566:[97574.507439]  device_release_driver+0x16/0x20
   blocked_full.txt:2567:[97574.507440]  bus_remove_device+0xee/0x190
+
+4단계 분석 결과 — Hyper-V 가상 랜카드 제거 과정이 핵심 의심 지점
+이번 검색에서는 rndis_filter_device_remove와 netvsc_remove만 확인됐습니다.
+반면 unregister_netdevice, netdev_run_todo, wait_for_completion 등은 검색되지 않았습니다.
+현재까지의 판단
+중요한 점은 rndis_filter_device_remove()가 대기 중이라는 사실만으로 RTNL 잠금을 보유하고 있다고 단정할 수 없다는 것입니다.
+해당 함수가 내부 작업의 완료를 기다리는 상황일 수 있고, 다른 태스크가 RTNL 잠금을 보유하고 있을 수도 있습니다.
+따라서 지금은 Docker보다 Hyper-V 가상 네트워크 장치 제거 경로를 우선 조사할 근거가 충분합니다.
