@@ -145,4 +145,18 @@ PS C:\Users\admin> arp -a
   224.0.0.251           01-00-5e-00-00-fb     정적
   239.255.255.250       01-00-5e-7f-ff-fa     정적
   255.255.255.255       ff-ff-ff-ff-ff-ff     정적
-PS C:\Users\admin>
+
+PS C:\Users\admin> Test-NetConnection 10.244.201.165 -Port 7447 -InformationLevel Detailed
+
+
+ComputerName            : 10.244.201.165
+RemoteAddress           : 10.244.201.165
+RemotePort              : 7447
+NameResolutionResults   : 10.244.201.165
+                          DESKTOP-0QT5CQ0
+MatchingIPsecRules      :
+NetworkIsolationContext : Internet
+InterfaceAlias          : Wi-Fi
+SourceAddress           : 10.249.138.60
+NetRoute (NextHop)      : 10.249.138.1
+TcpTestSucceeded        : True
