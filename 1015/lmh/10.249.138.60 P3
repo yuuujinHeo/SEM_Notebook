@@ -191,3 +191,9 @@ PS C:\Users\admin> wsl --status
 PS C:\Users\admin> wsl --list --verbose
   NAME            STATE           VERSION
 * Ubuntu-22.04    Running         2
+
+PS C:\Users\admin> Get-Content "$env:USERPROFILE\.wslconfig" -ErrorAction SilentlyContinue
+[wsl2]
+networkingMode=mirrored
+dnsTunneling=true
+firewall=false
