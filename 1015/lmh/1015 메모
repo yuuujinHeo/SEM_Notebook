@@ -168,6 +168,11 @@ veth, br_, docker → Docker 네트워크 관련 여부
 1단계 분석 결과 — 핵심 원인에 상당히 가까워졌습니다.
 이번 결과에서 WSL과 Windows 사이의 Hyper-V 가상 네트워크 장치가 제거되는 과정에서 멈춘 정황이 확인됐습니다.
 
+2단계 — 가상 랜카드 제거 작업이 무엇을 기다리는지 확인
+이제 rndis_filter_device_remove 주변의 전체 스택을 확인하겠습니다.
+PowerShell에서 아래 명령어 하나만 실행해 주세요.
+이 명령어는 저장된 파일의 2546~2600번째 줄을 읽기만 하므로 장애 상태에 영향을 주지 않습니다.
+
 PS C:\Users\admin> Get-Content C:\Users\admin\blocked_full.txt |
 >> Select-Object -Skip 2545 -First 55
 [97574.507399] RIP: 0033:0x72045f1bd52d
