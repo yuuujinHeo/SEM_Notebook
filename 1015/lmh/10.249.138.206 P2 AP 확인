@@ -1,0 +1,57 @@
+PS C:\Users\cd2354.kim> netsh wlan show interfaces
+
+시스템에 1 인터페이스가 있습니다.
+
+    이름                   : Wi-Fi
+    설명                   : Intel(R) Wi-Fi 6E AX211 160MHz
+    GUID                   : 39bd355f-9eb7-434f-b8fc-0132b2b70d5f
+    물리적 주소            : 34:fd:70:1b:3e:10
+    인터페이스 유형         : 기본
+    상태                   : 연결됨
+    SSID                   : sWave_works
+    AP BSSID               : b8:3a:5a:cd:44:10
+    밴드                   : 5GHz
+    채널                : 60
+    연결된 Akm-cipher : [ akm = 00-0f-ac:01, 암호 = 00-0f-ac:04 ]
+    네트워크 종류          : 인프라
+    송수신 장치 종류       : 802.11 ax
+    인증                   : WPA2-엔터프라이즈
+    암호                 : CCMP
+    연결 모드        : 자동 연결
+    수신 속도(Mbps)        : 574
+    전송 속도(Mbps)        : 574
+    신호                   : 85%
+    Rssi                   : -56
+    프로필                : sWave_works
+
+    QoS MSCS 구성됨         : 0
+    QoS 맵 구성됨          : 0
+    정책에서 허용하는 QoS 맵    : 0
+
+PS C:\Users\cd2354.kim> netsh wlan show networks mode=bssid
+
+인터페이스 이름: Wi-Fi
+현재 1개 네트워크를 볼 수 있습니다.
+
+SSID 1 : sWave_works
+    네트워크 종류            : 인프라
+    인증          : WPA2-엔터프라이즈
+    암호화              : CCMP
+    BSSID 1                 : b8:3a:5a:cd:44:10
+         신호             : 85%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 60
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+
+PS C:\Users\cd2354.kim> Get-CimInstance Win32_PnPSignedDriver |
+>> Where-Object {
+>>     $_.DeviceName -match 'AX210|Wi-Fi 6E'
+>> } |
+>> Select-Object DeviceName, DriverVersion, DriverDate, Manufacturer
+
+DeviceName                     DriverVersion DriverDate              Manufacturer
+----------                     ------------- ----------              ------------
+Intel(R) Wi-Fi 6E AX211 160MHz 23.110.0.5    2025-01-02 오전 9:00:00 Intel Corporation
