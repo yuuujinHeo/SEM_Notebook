@@ -2,7 +2,7 @@ $body = @{
     amrSerial = "SEC_Process_1"
     goals = @(
         @{
-            nodeId = "A05"
+            nodeId = "LOC_187"
             priority = 10
         }
     )
