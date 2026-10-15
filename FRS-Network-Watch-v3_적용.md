@@ -141,3 +141,20 @@ Remove-Item C:\ProgramData\FRSNetworkWatch\maintenance.flag
 $p = Start-Process wsl.exe -ArgumentList '-d "Ubuntu-22.04" --exec /bin/true' -PassThru -WindowStyle Hidden -RedirectStandardOutput $env:TEMP\o.txt -RedirectStandardError $env:TEMP\e.txt
 $p.WaitForExit(8000) | Out-Null; "ExitCode=[$($p.ExitCode)]"
 ```
+
+
+```
+# 1) 기존 파일 백업 후 새 파일로 덮어쓰기 (새 파일이 바탕화면 ALGN에 있다고 가정)
+Copy-Item C:\Scripts\FRS-Network-Watch.ps1 C:\Scripts\FRS-Network-Watch.ps1.bak -Force
+Copy-Item C:\Users\admin\Desktop\ALGN\FRS-Network-Watch-ljs-4.ps1 C:\Scripts\FRS-Network-Watch.ps1 -Force
+
+# 2) 지금 돌고 있는 감시 스크립트 종료 (작업 중지만으로는 남을 수 있어 프로세스를 직접 종료)
+Stop-ScheduledTask -TaskName 'FRS-Network-Watch'
+Get-CimInstance Win32_Process -Filter "Name='powershell.exe'" | ? CommandLine -match 'FRS-Network-Watch' | % { Stop-Process -Id $_.ProcessId -Force }
+
+# 3) 다시 시작
+Start-ScheduledTask -TaskName 'FRS-Network-Watch'
+
+# 4) 새 파일로 돌고 있는지 확인
+Get-Content C:\ProgramData\FRSNetworkWatch\watch.log -Tail 10 -Wait
+```
