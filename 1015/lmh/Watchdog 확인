@@ -9,3 +9,20 @@ Get-ScheduledTask -TaskName "FRS-Network-Watch" |
 30초마다 검사하고 로그찍을텐데
 Get-Content "C:\ProgramData\FRSNetworkWatch\watch.log" -Tail 30 -Wait
 이거로 로그 쌓이는것까지만 봐주세여
+
+
+PS C:\Users\admin> Get-ScheduledTask -TaskName "FRS-Network-Watch" |
+>>     Select-Object TaskName, State
+
+TaskName            State
+--------            -----
+FRS-Network-Watch Running
+
+
+PS C:\Users\admin> Get-Content "C:\ProgramData\FRSNetworkWatch\watch.log" -Tail 30 -Wait
+2026-10-15 19:59:11 STATUS=WSL_ONLY_FAIL windows=True wsl=False consecutiveWslFailures=9
+2026-10-15 19:59:24 KEEPER_NOT_STARTED exit=-1 (1=another keeper already holds the lock)
+2026-10-15 19:59:25 KEEPALIVE_TASK_STARTED name='WSL-AutoStart' prevState=Disabled
+2026-10-15 19:59:25 STATUS=WSL_ONLY_FAIL windows=True wsl=False consecutiveWslFailures=10
+2026-10-15 19:59:38 KEEPER_NOT_STARTED exit=-1 (1=another keeper already holds the lock)
+2026-10-15 19:59:38 KEEPALIVE_TASK_STARTED name='WSL-AutoStart' prevState=Disabled
