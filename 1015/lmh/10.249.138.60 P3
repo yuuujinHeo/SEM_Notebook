@@ -283,3 +283,14 @@ echo "tcp_exit=$?"
 bash: connect: No route to host
 bash: line 1: /dev/tcp/10.244.201.165/7447: No route to host
 tcp_exit=1
+
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$ ps aux | grep -Ei 'muscat|zenoh'
+root        1503  0.0  0.0   4792  3380 ?        Ss   Oct14   0:26 /bin/bash /home/rainbow/muscat-backup/muscat-monitoring/docker-monitor.sh
+root        1504  0.0  0.0   5156  3676 ?        Ss   Oct14   0:04 /bin/bash /home/rainbow/rainbow-deploy-kit/muscat/muscat-version-observer.sh
+root        1629  0.0  0.0      0     0 ?        Zl   Oct14   0:50 [zenoh-bridge-ro] <defunct>
+rainbow     1998  0.0  0.1 1996388 29660 ?       Sl   Oct14   0:01 docker events --filter container=muscat --filter event=die --filter event=oom --filter event=start --format {{json .}}
+root      573133  0.0  0.0   5156  2192 ?        S    09:12   0:00 /bin/bash /home/rainbow/rainbow-deploy-kit/muscat/muscat-version-observer.sh
+root      573134  0.0  0.0  19852 10156 ?        S    09:12   0:00 curl -sf http://localhost:3000/common/deploy/update-info?category=muscat
+rainbow   573563  0.0  0.0   7068  3352 ?        S    09:14   0:00 avahi-publish-service rainbowbot-SEC_Process_2 _rainbow-robot._tcp 8180 model=QD-SEC_CNC_A robot_serial=SEC_Process_2 name=SEC_Process_2 alias=삼성전자 A동 CNC QD타입 api_mode=muscat state=DISCONNECT
+rainbow   573589  0.0  0.0   4036  2456 pts/65   R+   09:14   0:00 grep --color=auto -Ei muscat|zenoh
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$
