@@ -160,9 +160,13 @@ PS C:\Users\admin> Select-String -Path C:\Users\admin\blocked_full.txt `
   blocked_full.txt:4702:[97574.510470] RIP: 0033:0x756c997278f0
   blocked_full.txt:4703:[97574.510471] RSP: 002b:00007ffd5eb4a9c8 EFLAGS: 00000246 ORIG_RAX: 000000000000002c
   blocked_full.txt:4704:[97574.510472] RAX: ffffffffffffffda RBX: 00007ffd5eb4aab0 RCX: 0000756c997278f0
+
 rtnl_lock → Linux 네트워크 설정 잠금 대기 여부
 netvsc, vmbus, hv_ → Windows와 WSL 사이 가상 네트워크 관련 여부
 veth, br_, docker → Docker 네트워크 관련 여부
+
+1단계 분석 결과 — 핵심 원인에 상당히 가까워졌습니다.
+이번 결과에서 WSL과 Windows 사이의 Hyper-V 가상 네트워크 장치가 제거되는 과정에서 멈춘 정황이 확인됐습니다.
 
 [resource-watch] shm: python3(341) lck=0MB maps=863; python3(340) lck=0MB maps=907; python3(339) lck=0MB maps=848
 [resource-watch] shm: python3(341) lck=0MB maps=863; python3(340) lck=0MB maps=907; python3(339) lck=0MB maps=848
