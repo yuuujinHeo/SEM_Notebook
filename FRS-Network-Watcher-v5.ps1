@@ -227,9 +227,7 @@ try {
         else { 'WINDOWS_ONLY_FAIL' }
         if ($status -eq 'WSL_ONLY_FAIL') { $failures++ } else { $failures = 0 }
         $detail = $wsl.Detail
-        if ($status -ne $lastStatus -or ($status -ne 'BOTH_OK' -and $detail -ne $lastDetail)) {
-            Write-Log "STATUS=$status windows=$win wsl=$($wsl.Kind) consecutive=$failures detail=$detail"
-        }
+        Write-Log "STATUS=$status windows=$win wsl=$($wsl.Kind) consecutive=$failures detail=$detail"
         $lastStatus = $status
         $lastDetail = $detail
         if ($failures -ge $FailureThreshold) {
