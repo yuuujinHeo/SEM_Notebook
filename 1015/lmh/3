@@ -1,0 +1,5 @@
+PS C:\Users\admin> Select-String -Path C:\Users\admin\blocked_full.txt `
+>> -Pattern 'task:kworker/u64:0'
+>> -Context 0,35
+
+blocked_full.txt:2449:[97574.507101] task:kworker/u64:0   state:D stack:0     pid:12    tgid:12    ppid:2      task_flags:0x4208060 flags:0x00080000
