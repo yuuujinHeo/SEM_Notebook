@@ -1,0 +1,30 @@
+PS C:\Scripts> Get-CimInstance Win32_Process -Filter "Name='powershell.exe'" | ? CommandLine -match 'FRS-Network-Watch' | Select ProcessId,CommandLine
+
+ProcessId CommandLine
+--------- -----------
+    10012 "powershell.exe" -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\Scripts\FRS-Network-Watch.ps1"
+
+
+PS C:\Scripts> # 2) 디스크의 파일이 수정본인지 확인 (결과가 나오면 수정본)
+PS C:\Scripts> Select-String C:\Scripts\FRS-Network-Watch.ps1 -Pattern 'New-WslStartInfo' | Select -First 1
+
+FRS-Network-Watch.ps1:64:function New-WslStartInfo([string]$ArgsLine, [bool]$Redirect) {
+
+
+PS C:\Scripts> # 3) 실행 중인 감시 스크립트를 모두 종료
+PS C:\Scripts> Get-CimInstance Win32_Process -Filter "Name='powershell.exe'" | ? CommandLine -match 'FRS-Network-Watch' | % { Stop-Process -Id $_.ProcessId -Force }
+PS C:\Scripts>
+PS C:\Scripts> # 4) 방금 보낸 v3.1로 파일 교체 후, 작업 다시 시작
+PS C:\Scripts> Start-ScheduledTask -TaskName 'FRS-Network-Watch'
+PS C:\Scripts> # 5) 로그 확인
+PS C:\Scripts> Get-Content C:\ProgramData\FRSNetworkWatch\watch.log -Tail 10 -Wait
+2026-10-15 19:55:11 KEEPER_NOT_STARTED exit=-1 (1=another keeper already holds the lock)
+2026-10-15 19:55:12 KEEPALIVE_TASK_STARTED name='WSL-AutoStart' prevState=Disabled
+2026-10-15 19:55:12 STATUS=WSL_ONLY_FAIL windows=True wsl=False consecutiveWslFailures=12
+2026-10-15 19:55:25 KEEPER_NOT_STARTED exit=-1 (1=another keeper already holds the lock)
+2026-10-15 19:55:25 KEEPALIVE_TASK_STARTED name='WSL-AutoStart' prevState=Disabled
+2026-10-15 19:55:25 STATUS=WSL_ONLY_FAIL windows=True wsl=False consecutiveWslFailures=13
+2026-10-15 19:55:38 START user=DESKTOP-19T7OTG\admin server=10.244.201.165:7447 distro=Ubuntu-22.04 interval=10s threshold=6 autoRecovery=True maxPerDay=3 keepAliveTask='WSL-AutoStart'
+2026-10-15 19:55:41 KEEPER_NOT_STARTED exit=-1 (1=another keeper already holds the lock)
+2026-10-15 19:55:42 KEEPALIVE_TASK_STARTED name='WSL-AutoStart' prevState=Disabled
+2026-10-15 19:55:42 STATUS=WSL_ONLY_FAIL windows=True wsl=False consecutiveWslFailures=1
