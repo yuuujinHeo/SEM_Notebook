@@ -1,8 +1,0 @@
-3단계 — 다른 커널 워커가 무엇을 기다리는지 확인
-앞서 kworker/u64:0도 D 상태로 기록됐습니다. 이 작업이 RTNL 잠금을 기다리는지, 다른 네트워크 장치 작업을 수행 중인지 확인하겠습니다.
-
-PS C:\Users\admin> Select-String -Path C:\Users\admin\blocked_full.txt `
->> -Pattern 'task:kworker/u64:0'
->> -Context 0,35
-
-blocked_full.txt:2449:[97574.507101] task:kworker/u64:0   state:D stack:0     pid:12    tgid:12    ppid:2      task_flags:0x4208060 flags:0x00080000

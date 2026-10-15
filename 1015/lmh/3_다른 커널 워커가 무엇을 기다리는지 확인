@@ -1,0 +1,45 @@
+3단계 — 다른 커널 워커가 무엇을 기다리는지 확인
+앞서 kworker/u64:0도 D 상태로 기록됐습니다. 이 작업이 RTNL 잠금을 기다리는지, 다른 네트워크 장치 작업을 수행 중인지 확인하겠습니다.
+
+
+PS C:\Users\admin>  Select-String -Path C:\Users\admin\blocked_full.txt ` -Pattern 'task:kworker/u64:0' -Context 0,35
+
+> blocked_full.txt:2449:[97574.507101] task:kworker/u64:0   state:D stack:0     pid:12    tgid:12    ppid:2      task_flags:0x4208060 flags:0x00080000
+  blocked_full.txt:2450:[97574.507107] Workqueue: ipv6_addrconf addrconf_verify_work
+  blocked_full.txt:2451:[97574.507113] Call Trace:
+  blocked_full.txt:2452:[97574.507115]  <TASK>
+  blocked_full.txt:2453:[97574.507118]  __schedule+0x546/0xc20
+  blocked_full.txt:2454:[97574.507122]  schedule+0x2b/0xf0
+  blocked_full.txt:2455:[97574.507124]  schedule_preempt_disabled+0x19/0x30
+  blocked_full.txt:2456:[97574.507125]  __mutex_lock.constprop.0+0x521/0x9c0
+  blocked_full.txt:2457:[97574.507127]  ? _raw_spin_unlock+0x12/0x30
+  blocked_full.txt:2458:[97574.507129]  __mutex_lock_slowpath+0x13/0x20
+  blocked_full.txt:2459:[97574.507130]  mutex_lock+0x39/0x50
+  blocked_full.txt:2460:[97574.507132]  rtnl_lock+0x19/0x20
+  blocked_full.txt:2461:[97574.507134]  addrconf_verify_work+0x16/0x40
+  blocked_full.txt:2462:[97574.507135]  process_one_work+0x19b/0x3c0
+  blocked_full.txt:2463:[97574.507138]  worker_thread+0x1a3/0x320
+  blocked_full.txt:2464:[97574.507140]  ? __pfx_worker_thread+0x10/0x10
+  blocked_full.txt:2465:[97574.507141]  kthread+0x111/0x240
+  blocked_full.txt:2466:[97574.507143]  ? _raw_spin_unlock_irq+0x12/0x40
+  blocked_full.txt:2467:[97574.507145]  ? __pfx_kthread+0x10/0x10
+  blocked_full.txt:2468:[97574.507146]  ret_from_fork+0x13c/0x1a0
+  blocked_full.txt:2469:[97574.507149]  ? __pfx_kthread+0x10/0x10
+  blocked_full.txt:2470:[97574.507150]  ret_from_fork_asm+0x1a/0x30
+  blocked_full.txt:2471:[97574.507153]  </TASK>
+  blocked_full.txt:2472:[97574.507182] task:GnsEngine       state:D stack:0     pid:192   tgid:192   ppid:1      task_flags:0x400100 flags:0x00080000
+  blocked_full.txt:2473:[97574.507184] Call Trace:
+  blocked_full.txt:2474:[97574.507184]  <TASK>
+  blocked_full.txt:2475:[97574.507185]  __schedule+0x546/0xc20
+  blocked_full.txt:2476:[97574.507187]  schedule+0x2b/0xf0
+  blocked_full.txt:2477:[97574.507189]  schedule_preempt_disabled+0x19/0x30
+  blocked_full.txt:2478:[97574.507191]  __mutex_lock.constprop.0+0x521/0x9c0
+  blocked_full.txt:2479:[97574.507192]  ? cred_has_capability.isra.0+0x78/0x120
+  blocked_full.txt:2480:[97574.507196]  __mutex_lock_slowpath+0x13/0x20
+  blocked_full.txt:2481:[97574.507197]  mutex_lock+0x39/0x50
+  blocked_full.txt:2482:[97574.507198]  rtnl_lock+0x19/0x20
+  blocked_full.txt:2483:[97574.507199]  dev_ioctl+0x270/0x5a0
+  blocked_full.txt:2484:[97574.507201]  sock_do_ioctl+0xa8/0xf0
+
+
+PS C:\Users\admin>
