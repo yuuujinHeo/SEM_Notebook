@@ -30,7 +30,10 @@
 $old = Get-ScheduledTask -TaskName 'WSL 자동실행'
 $old.Actions | Format-List Execute,Arguments      # 실행 내용 확인 (wsl.exe -d Ubuntu-22.04)
 
-Register-ScheduledTask -TaskName 'WSL-AutoStart' -Action $old.Actions -Trigger $old.Triggers -Principal $old.Principal -Settings $old.Settings
+$old.Principal | Format-List UserId,LogonType,RunLevel   # 참고: LogonType이 Password면 기존 Principal을 그대로 복사할 수 없음
+$user = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
+$p = New-ScheduledTaskPrincipal -UserId $user -LogonType Interactive -RunLevel Limited
+Register-ScheduledTask -TaskName 'WSL-AutoStart' -Action $old.Actions -Trigger $old.Triggers -Principal $p -Settings $old.Settings
 Start-ScheduledTask -TaskName 'WSL-AutoStart'
 Get-ScheduledTask -TaskName 'WSL-AutoStart' | Select TaskName,State   # Running 확인
 
