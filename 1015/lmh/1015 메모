@@ -1,0 +1,17 @@
+[resource-watch] shm: python3(341) lck=0MB maps=863; python3(340) lck=0MB maps=907; python3(339) lck=0MB maps=848
+[resource-watch] shm: python3(341) lck=0MB maps=863; python3(340) lck=0MB maps=907; python3(339) lck=0MB maps=848
+2026-10-14 08:41:44,818 WARN received SIGTERM indicating exit request
+2026-10-14 08:41:44,818 WARN received SIGTERM indicating exit request
+2026-10-14 08:41:44,818 INFO waiting for crash-watch, influxdb, mediamtx, mongo, mqtt, zenoh-bridge-humble, zenoh-bridge-jazzy, plugin-socketio, nginx, nginx-watchdog, amr, common, log, resource-watch to die
+2026-10-14 08:41:44,818 INFO waiting for crash-watch, influxdb, mediamtx, mongo, mqtt, zenoh-bridge-humble, zenoh-bridge-jazzy, plugin-socketio, nginx, nginx-watchdog, amr, common, log, resource-watch to die
+2026-10-14 08:41:44,819 WARN stopped: resource-watch (terminated by SIGTERM)
+2026-10-14 08:41:44,819 WARN stopped: resource-watch (terminated by SIGTERM)
+2026-10-14 08:41:45,365 WARN stopped: log (exit status 143)
+2026-10-14 08:41:45,365 WARN stopped: log (exit status 143)
+2026-10-14 08:41:45,467 INFO reaped unknown pid 745 (terminated by SIGTERM)
+2026-10-14 08:41:45,467 INFO reaped unknown pid 745 (terminated by SIGTERM)
+2026-10-14 08:41:48,594 INFO waiting for crash-watch, influxdb, mediamtx, mongo, mqtt, zenoh-bridge-humble, zenoh-bridge-jazzy, plugin-socketio, nginx, nginx-watchdog, amr, common to die
+2026-10-14 08:41:48,594 INFO waiting for crash-watch, influxdb, mediamtx, mongo, mqtt, zenoh-bridge-humble, zenoh-bridge-jazzy, plugin-socketio, nginx, nginx-watchdog, amr, common to die
+2026-10-14 08:41:51,597 INFO waiting for crash-watch, influxdb, mediamtx, mongo, mqtt, zenoh-bridge-humble, zenoh-bridge-jazzy, plugin-socketio, nginx, nginx-watchdog, amr, common to die
+2026-10-14 08:41:51,597 INFO waiting for crash-watch, influxdb, mediamtx, mongo, mqtt, zenoh-bridge-humble, zenoh-bridge-jazzy, plugin-socketio, nginx, nginx-watchdog, amr, common to die
+rainbow@DESKTOP-19T7OTG:/mnt/c/Users/admin$
