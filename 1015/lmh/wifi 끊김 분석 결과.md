@@ -28,4 +28,31 @@ PS C:\Users\admin> netsh wlan show interfaces
     QoS 맵 구성됨          : 0
     정책에서 허용하는 QoS 맵    : 0
 
-PS C:\Users\admin>
+PS C:\Users\admin> netsh wlan show networks mode=bssid
+
+인터페이스 이름: Wi-Fi
+현재 1개 네트워크를 볼 수 있습니다.
+
+SSID 1 : sWave_works_shared
+    네트워크 종류            : 인프라
+    인증          : WPA2-엔터프라이즈
+    암호화              : CCMP
+    BSSID 1                 : b8:3a:5a:d1:56:91
+         신호             : 82%
+         무선 송수신 장치 유형         : 802.11 ax
+         밴드               : 5GHz
+         채널            : 132
+         QoS MSCS 지원됨    : 0
+         QoS Map 지원됨     : 0
+         기본 속도(Mbps): 18 24 36 48 54
+
+PS C:\Users\admin> Get-CimInstance Win32_PnPSignedDriver |
+>> Where-Object {
+>>     $_.DeviceName -match 'AX210|Wi-Fi 6E'
+>> } |
+>> Select-Object DeviceName, DriverVersion, DriverDate, Manufacturer
+
+DeviceName                     DriverVersion DriverDate              Manufacturer
+----------                     ------------- ----------              ------------
+Intel(R) Wi-Fi 6E AX210 160MHz 24.70.0.3     2026-07-29 오전 9:00:00 Intel Corporation
+
