@@ -3,6 +3,10 @@
 1단계 — D 상태 프로세스의 커널 대기 지점 확인
 Windows PowerShell에서 아래 명령어를 실행해 주세요.
 이 명령어는 다음을 확인합니다.
+Select-String -Path C:\Users\admin\blocked_full.txt `
+  -Pattern 'rtnl_lock|rtnl_mutex|netvsc|vmbus|hv_|dev_change_flags|veth|br_|docker' `
+  -Context 5,8 |
+  Select-Object -First 100
 rtnl_lock → Linux 네트워크 설정 잠금 대기 여부
 netvsc, vmbus, hv_ → Windows와 WSL 사이 가상 네트워크 관련 여부
 veth, br_, docker → Docker 네트워크 관련 여부
