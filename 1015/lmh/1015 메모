@@ -1,9 +1,200 @@
-$path = 'C:\Users\admin\blocked_full.txt'
+PS C:\Users\admin> $path = 'C:\Users\admin\blocked_full.txt'
+PS C:\Users\admin>
+PS C:\Users\admin> Select-String -Path $path `
+>>   -Pattern 'rndis_filter_device_remove|netvsc_remove|hv_vmbus_rescind|vmbus_onoffer_rescind' `
+>>   -Context 12,25 |
+>>   Select-Object -Last 120
 
-Select-String -Path $path `
-  -Pattern 'rndis_filter_device_remove|netvsc_remove|hv_vmbus_rescind|vmbus_onoffer_rescind' `
-  -Context 12,25 |
-  Select-Object -Last 120
+  blocked_full.txt:2543:[97574.507395]  ? do_syscall_64+0x73/0x990
+  blocked_full.txt:2544:[97574.507397]  ? ret_from_fork+0x186/0x1a0
+  blocked_full.txt:2545:[97574.507398]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+  blocked_full.txt:2546:[97574.507399] RIP: 0033:0x72045f1bd52d
+  blocked_full.txt:2547:[97574.507400] RSP: 002b:00007204467fb248 EFLAGS: 00000246 ORIG_RAX: 00000000000000ca
+  blocked_full.txt:2548:[97574.507401] RAX: fffffffffffffdfc RBX: 000072045f1bd510 RCX: 000072045f1bd52d
+  blocked_full.txt:2549:[97574.507402] RDX: 000000000000000e RSI: 0000000000000089 RDI: 0000720454022240
+  blocked_full.txt:2550:[97574.507402] RBP: 00007204467fb2a0 R08: 0000000000000000 R09: 00000000ffffffff
+  blocked_full.txt:2551:[97574.507403] R10: 00007204467fb260 R11: 0000000000000246 R12: 0000000000000001
+  blocked_full.txt:2552:[97574.507404] R13: 000072045f0c06e0 R14: 0000720454022240 R15: 000000000000000e
+  blocked_full.txt:2553:[97574.507405]  </TASK>
+  blocked_full.txt:2554:[97574.507410] task:kworker/0:2     state:D stack:0     pid:27078 tgid:27078 ppid:2      task_flags:0x4288060 flags:0x00080000
+> blocked_full.txt:2555:[97574.507412] Workqueue: hv_vmbus_rescind vmbus_onmessage_work
+  blocked_full.txt:2556:[97574.507414] Call Trace:
+  blocked_full.txt:2557:[97574.507415]  <TASK>
+  blocked_full.txt:2558:[97574.507416]  __schedule+0x546/0xc20
+  blocked_full.txt:2559:[97574.507418]  schedule+0x2b/0xf0
+> blocked_full.txt:2560:[97574.507420]  rndis_filter_device_remove+0x130/0x240
+  blocked_full.txt:2561:[97574.507423]  ? __pfx_autoremove_wake_function+0x10/0x10
+> blocked_full.txt:2562:[97574.507426]  netvsc_remove+0x89/0x140
+  blocked_full.txt:2563:[97574.507428]  vmbus_remove+0x2b/0x40
+  blocked_full.txt:2564:[97574.507429]  device_remove+0x43/0x70
+  blocked_full.txt:2565:[97574.507432]  device_release_driver_internal+0x1ad/0x210
+  blocked_full.txt:2566:[97574.507439]  device_release_driver+0x16/0x20
+  blocked_full.txt:2567:[97574.507440]  bus_remove_device+0xee/0x190
+  blocked_full.txt:2568:[97574.507441]  ? device_remove_attrs+0xa4/0xf0
+  blocked_full.txt:2569:[97574.507443]  device_del+0x166/0x3b0
+  blocked_full.txt:2570:[97574.507444]  ? sysfs_remove_dir+0x53/0x60
+  blocked_full.txt:2571:[97574.507448]  device_unregister+0x1b/0x60
+  blocked_full.txt:2572:[97574.507449]  vmbus_device_unregister+0x28/0x60
+> blocked_full.txt:2573:[97574.507450]  vmbus_onoffer_rescind+0x20d/0x240
+  blocked_full.txt:2574:[97574.507452]  vmbus_onmessage+0x29/0x80
+  blocked_full.txt:2575:[97574.507452]  vmbus_onmessage_work+0x29/0x40
+  blocked_full.txt:2576:[97574.507454]  process_one_work+0x19b/0x3c0
+  blocked_full.txt:2577:[97574.507455]  worker_thread+0x1a3/0x320
+  blocked_full.txt:2578:[97574.507457]  ? __pfx_worker_thread+0x10/0x10
+  blocked_full.txt:2579:[97574.507458]  kthread+0x111/0x240
+  blocked_full.txt:2580:[97574.507459]  ? _raw_spin_unlock_irq+0x12/0x40
+  blocked_full.txt:2581:[97574.507461]  ? __pfx_kthread+0x10/0x10
+  blocked_full.txt:2582:[97574.507463]  ret_from_fork+0x13c/0x1a0
+  blocked_full.txt:2583:[97574.507464]  ? __pfx_kthread+0x10/0x10
+  blocked_full.txt:2584:[97574.507466]  ret_from_fork_asm+0x1a/0x30
+  blocked_full.txt:2585:[97574.507468]  </TASK>
+  blocked_full.txt:2586:[97574.507468] task:ip              state:D stack:0     pid:30712 tgid:30712 ppid:2342   task_flags:0x400000 flags:0x00080003
+  blocked_full.txt:2587:[97574.507470] Call Trace:
+  blocked_full.txt:2588:[97574.507471]  <TASK>
+  blocked_full.txt:2589:[97574.507471]  __schedule+0x546/0xc20
+  blocked_full.txt:2590:[97574.507473]  schedule+0x2b/0xf0
+  blocked_full.txt:2591:[97574.507475]  schedule_preempt_disabled+0x19/0x30
+  blocked_full.txt:2592:[97574.507477]  __mutex_lock.constprop.0+0x521/0x9c0
+  blocked_full.txt:2593:[97574.507478]  ? kmalloc_reserve+0x69/0x100
+  blocked_full.txt:2594:[97574.507480]  ? __pfx_rtnl_dump_ifinfo+0x10/0x10
+  blocked_full.txt:2595:[97574.507482]  __mutex_lock_slowpath+0x13/0x20
+  blocked_full.txt:2596:[97574.507483]  mutex_lock+0x39/0x50
+  blocked_full.txt:2597:[97574.507484]  rtnl_dumpit+0x7f/0xb0
+  blocked_full.txt:2598:[97574.507485]  netlink_dump+0x188/0x3c0
+
+
+PS C:\Users\admin> Select-String -Path $path `
+>>   -Pattern 'rtnl_lock|rtnl_unlock|rtnl_mutex|netvsc|rndis|vmbus' `
+>>   -Context 5,12 |
+>>   Select-Object -Last 150
+
+  blocked_full.txt:1:[93242.626519]  mutex_lock+0x39/0x50
+> blocked_full.txt:2:[93242.626520]  rtnl_lock+0x19/0x20
+  blocked_full.txt:3:[93242.626521]  dev_ifconf+0x7c/0x160
+  blocked_full.txt:4:[93242.626522]  sock_ioctl+0x219/0x2e0
+  blocked_full.txt:5:[93242.626523]  ? selinux_file_ioctl+0xb0/0x160
+  blocked_full.txt:6:[93242.626525]  __x64_sys_ioctl+0xa1/0xf0
+  blocked_full.txt:7:[93242.626526]  ? __secure_computing+0x7d/0xd0
+  blocked_full.txt:8:[93242.626527]  x64_sys_call+0x102c/0x20f0
+  blocked_full.txt:9:[93242.626528]  do_syscall_64+0x73/0x990
+  blocked_full.txt:10:[93242.626530]  ? do_syscall_64+0x73/0x990
+  blocked_full.txt:11:[93242.626531]  ? do_user_addr_fault+0x179/0x710
+  blocked_full.txt:12:[93242.626533]  ? irqentry_exit+0x3f/0x50
+  blocked_full.txt:13:[93242.626533]  ? exc_page_fault+0x7f/0x170
+  blocked_full.txt:14:[93242.626534]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+  blocked_full.txt:2455:[97574.507124]  schedule_preempt_disabled+0x19/0x30
+  blocked_full.txt:2456:[97574.507125]  __mutex_lock.constprop.0+0x521/0x9c0
+  blocked_full.txt:2457:[97574.507127]  ? _raw_spin_unlock+0x12/0x30
+  blocked_full.txt:2458:[97574.507129]  __mutex_lock_slowpath+0x13/0x20
+  blocked_full.txt:2459:[97574.507130]  mutex_lock+0x39/0x50
+> blocked_full.txt:2460:[97574.507132]  rtnl_lock+0x19/0x20
+  blocked_full.txt:2461:[97574.507134]  addrconf_verify_work+0x16/0x40
+  blocked_full.txt:2462:[97574.507135]  process_one_work+0x19b/0x3c0
+  blocked_full.txt:2463:[97574.507138]  worker_thread+0x1a3/0x320
+  blocked_full.txt:2464:[97574.507140]  ? __pfx_worker_thread+0x10/0x10
+  blocked_full.txt:2465:[97574.507141]  kthread+0x111/0x240
+  blocked_full.txt:2466:[97574.507143]  ? _raw_spin_unlock_irq+0x12/0x40
+  blocked_full.txt:2467:[97574.507145]  ? __pfx_kthread+0x10/0x10
+  blocked_full.txt:2468:[97574.507146]  ret_from_fork+0x13c/0x1a0
+  blocked_full.txt:2469:[97574.507149]  ? __pfx_kthread+0x10/0x10
+  blocked_full.txt:2470:[97574.507150]  ret_from_fork_asm+0x1a/0x30
+  blocked_full.txt:2471:[97574.507153]  </TASK>
+  blocked_full.txt:2472:[97574.507182] task:GnsEngine       state:D stack:0     pid:192   tgid:192   ppid:1      task_flags:0x400100 flags:0x00080000
+  blocked_full.txt:2477:[97574.507189]  schedule_preempt_disabled+0x19/0x30
+  blocked_full.txt:2478:[97574.507191]  __mutex_lock.constprop.0+0x521/0x9c0
+  blocked_full.txt:2479:[97574.507192]  ? cred_has_capability.isra.0+0x78/0x120
+  blocked_full.txt:2480:[97574.507196]  __mutex_lock_slowpath+0x13/0x20
+  blocked_full.txt:2481:[97574.507197]  mutex_lock+0x39/0x50
+> blocked_full.txt:2482:[97574.507198]  rtnl_lock+0x19/0x20
+  blocked_full.txt:2483:[97574.507199]  dev_ioctl+0x270/0x5a0
+  blocked_full.txt:2484:[97574.507201]  sock_do_ioctl+0xa8/0xf0
+  blocked_full.txt:2485:[97574.507203]  sock_ioctl+0x26d/0x2e0
+  blocked_full.txt:2486:[97574.507205]  ? selinux_file_ioctl+0xb0/0x160
+  blocked_full.txt:2487:[97574.507207]  __x64_sys_ioctl+0xa1/0xf0
+  blocked_full.txt:2488:[97574.507210]  x64_sys_call+0x102c/0x20f0
+  blocked_full.txt:2489:[97574.507211]  do_syscall_64+0x73/0x990
+  blocked_full.txt:2490:[97574.507214]  ? mntput_no_expire+0x50/0x2a0
+  blocked_full.txt:2491:[97574.507216]  ? putname+0x63/0x80
+  blocked_full.txt:2492:[97574.507218]  ? do_readlinkat.part.0+0xa6/0x160
+  blocked_full.txt:2493:[97574.507219]  ? __x64_sys_readlink+0x29/0x40
+  blocked_full.txt:2494:[97574.507221]  ? x64_sys_call+0x1f7f/0x20f0
+  blocked_full.txt:2510:[97574.507339]  schedule+0x2b/0xf0
+  blocked_full.txt:2511:[97574.507341]  schedule_preempt_disabled+0x19/0x30
+  blocked_full.txt:2512:[97574.507342]  __mutex_lock.constprop.0+0x521/0x9c0
+  blocked_full.txt:2513:[97574.507344]  __mutex_lock_slowpath+0x13/0x20
+  blocked_full.txt:2514:[97574.507345]  mutex_lock+0x39/0x50
+> blocked_full.txt:2515:[97574.507346]  rtnl_lock+0x19/0x20
+  blocked_full.txt:2516:[97574.507347]  ip_mc_drop_socket+0x30/0xc0
+  blocked_full.txt:2517:[97574.507350]  inet_release+0x2f/0x90
+  blocked_full.txt:2518:[97574.507351]  __sock_release+0x40/0xc0
+  blocked_full.txt:2519:[97574.507354]  sock_close+0x19/0x30
+  blocked_full.txt:2520:[97574.507355]  __fput+0xed/0x2c0
+  blocked_full.txt:2521:[97574.507357]  ____fput+0x19/0x20
+  blocked_full.txt:2522:[97574.507358]  task_work_run+0x64/0xa0
+  blocked_full.txt:2523:[97574.507359]  do_exit+0x2f4/0xad0
+  blocked_full.txt:2524:[97574.507361]  ? __remove_hrtimer+0x40/0x90
+  blocked_full.txt:2525:[97574.507364]  ? _raw_spin_unlock_irqrestore+0x12/0x40
+  blocked_full.txt:2526:[97574.507366]  do_group_exit+0x38/0x90
+  blocked_full.txt:2527:[97574.507367]  get_signal+0x89a/0x8a0
+  blocked_full.txt:2550:[97574.507402] RBP: 00007204467fb2a0 R08: 0000000000000000 R09: 00000000ffffffff
+  blocked_full.txt:2551:[97574.507403] R10: 00007204467fb260 R11: 0000000000000246 R12: 0000000000000001
+  blocked_full.txt:2552:[97574.507404] R13: 000072045f0c06e0 R14: 0000720454022240 R15: 000000000000000e
+  blocked_full.txt:2553:[97574.507405]  </TASK>
+  blocked_full.txt:2554:[97574.507410] task:kworker/0:2     state:D stack:0     pid:27078 tgid:27078 ppid:2      task_flags:0x4288060 flags:0x00080000
+> blocked_full.txt:2555:[97574.507412] Workqueue: hv_vmbus_rescind vmbus_onmessage_work
+  blocked_full.txt:2556:[97574.507414] Call Trace:
+  blocked_full.txt:2557:[97574.507415]  <TASK>
+  blocked_full.txt:2558:[97574.507416]  __schedule+0x546/0xc20
+  blocked_full.txt:2559:[97574.507418]  schedule+0x2b/0xf0
+> blocked_full.txt:2560:[97574.507420]  rndis_filter_device_remove+0x130/0x240
+  blocked_full.txt:2561:[97574.507423]  ? __pfx_autoremove_wake_function+0x10/0x10
+> blocked_full.txt:2562:[97574.507426]  netvsc_remove+0x89/0x140
+> blocked_full.txt:2563:[97574.507428]  vmbus_remove+0x2b/0x40
+  blocked_full.txt:2564:[97574.507429]  device_remove+0x43/0x70
+  blocked_full.txt:2565:[97574.507432]  device_release_driver_internal+0x1ad/0x210
+  blocked_full.txt:2566:[97574.507439]  device_release_driver+0x16/0x20
+  blocked_full.txt:2567:[97574.507440]  bus_remove_device+0xee/0x190
+  blocked_full.txt:2568:[97574.507441]  ? device_remove_attrs+0xa4/0xf0
+  blocked_full.txt:2569:[97574.507443]  device_del+0x166/0x3b0
+  blocked_full.txt:2570:[97574.507444]  ? sysfs_remove_dir+0x53/0x60
+  blocked_full.txt:2571:[97574.507448]  device_unregister+0x1b/0x60
+> blocked_full.txt:2572:[97574.507449]  vmbus_device_unregister+0x28/0x60
+> blocked_full.txt:2573:[97574.507450]  vmbus_onoffer_rescind+0x20d/0x240
+> blocked_full.txt:2574:[97574.507452]  vmbus_onmessage+0x29/0x80
+> blocked_full.txt:2575:[97574.507452]  vmbus_onmessage_work+0x29/0x40
+  blocked_full.txt:2576:[97574.507454]  process_one_work+0x19b/0x3c0
+  blocked_full.txt:2577:[97574.507455]  worker_thread+0x1a3/0x320
+  blocked_full.txt:2578:[97574.507457]  ? __pfx_worker_thread+0x10/0x10
+  blocked_full.txt:2579:[97574.507458]  kthread+0x111/0x240
+  blocked_full.txt:2580:[97574.507459]  ? _raw_spin_unlock_irq+0x12/0x40
+  blocked_full.txt:2581:[97574.507461]  ? __pfx_kthread+0x10/0x10
+  blocked_full.txt:2582:[97574.507463]  ret_from_fork+0x13c/0x1a0
+  blocked_full.txt:2583:[97574.507464]  ? __pfx_kthread+0x10/0x10
+  blocked_full.txt:2584:[97574.507466]  ret_from_fork_asm+0x1a/0x30
+  blocked_full.txt:2585:[97574.507468]  </TASK>
+  blocked_full.txt:2586:[97574.507468] task:ip              state:D stack:0     pid:30712 tgid:30712 ppid:2342   task_flags:0x400000 flags:0x00080003
+  blocked_full.txt:2587:[97574.507470] Call Trace:
+  blocked_full.txt:2844:[97574.507850]  schedule_preempt_disabled+0x19/0x30
+  blocked_full.txt:2845:[97574.507851]  __mutex_lock.constprop.0+0x521/0x9c0
+  blocked_full.txt:2846:[97574.507853]  ? __x64_sys_openat+0x58/0xa0
+  blocked_full.txt:2847:[97574.507854]  __mutex_lock_slowpath+0x13/0x20
+  blocked_full.txt:2848:[97574.507855]  mutex_lock+0x39/0x50
+> blocked_full.txt:2849:[97574.507856]  rtnl_lock+0x19/0x20
+  blocked_full.txt:2850:[97574.507857]  dev_ifconf+0x7c/0x160
+  blocked_full.txt:2851:[97574.507858]  sock_ioctl+0x219/0x2e0
+  blocked_full.txt:2852:[97574.507860]  ? selinux_file_ioctl+0xb0/0x160
+  blocked_full.txt:2853:[97574.507861]  __x64_sys_ioctl+0xa1/0xf0
+  blocked_full.txt:2854:[97574.507863]  ? __secure_computing+0x7d/0xd0
+  blocked_full.txt:2855:[97574.507864]  x64_sys_call+0x102c/0x20f0
+  blocked_full.txt:2856:[97574.507865]  do_syscall_64+0x73/0x990
+  blocked_full.txt:2857:[97574.507867]  ? do_syscall_64+0x73/0x990
+  blocked_full.txt:2858:[97574.507868]  ? do_user_addr_fault+0x179/0x710
+  blocked_full.txt:2859:[97574.507870]  ? irqentry_exit+0x3f/0x50
+  blocked_full.txt:2860:[97574.507871]  ? exc_page_fault+0x7f/0x170
+  blocked_full.txt:2861:[97574.507872]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+
+
+PS C:\Users\admin>
 
 [resource-watch] shm: python3(341) lck=0MB maps=863; python3(340) lck=0MB maps=907; python3(339) lck=0MB maps=848
 [resource-watch] shm: python3(341) lck=0MB maps=863; python3(340) lck=0MB maps=907; python3(339) lck=0MB maps=848
