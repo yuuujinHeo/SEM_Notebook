@@ -1,0 +1,18 @@
+# 0) 변경 전 내용 기록 (되돌릴 때 필요)
+$t = Get-ScheduledTask -TaskName 'WSL-AutoStart'
+$t.Actions[0] | Format-List Execute,Arguments | Out-File C:\Users\admin\Desktop\ALGN\WSL-AutoStart_before.txt
+Export-ScheduledTask -TaskName 'WSL-AutoStart' | Out-File C:\Users\admin\Desktop\ALGN\WSL-AutoStart_before.xml
+
+# 1) 실행 내용만 교체
+$t.Actions[0].Execute   = 'powershell.exe'
+$t.Actions[0].Arguments = '-NoProfile -WindowStyle Hidden -Command "wsl.exe -d Ubuntu-22.04"'
+Set-ScheduledTask -InputObject $t
+
+# 2) 새 내용으로 이어서 재시작 (기존 WSL 창은 이때 닫힘)
+Stop-ScheduledTask  -TaskName 'WSL-AutoStart'
+Start-ScheduledTask -TaskName 'WSL-AutoStart'
+
+# 3) 확인
+Start-Sleep 5
+Get-ScheduledTask -TaskName 'WSL-AutoStart' | Select State,@{n='Exec';e={$_.Actions.Execute}},@{n='Args';e={$_.Actions.Arguments}}
+wsl -l -v
