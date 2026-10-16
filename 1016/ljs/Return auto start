@@ -1,0 +1,5 @@
+$t = Get-ScheduledTask -TaskName 'WSL-AutoStart'
+$t.Actions[0].Execute   = 'wsl.exe'
+$t.Actions[0].Arguments = '-d Ubuntu-22.04'
+Set-ScheduledTask -InputObject $t
+Stop-ScheduledTask -TaskName 'WSL-AutoStart'; Start-ScheduledTask -TaskName 'WSL-AutoStart'
