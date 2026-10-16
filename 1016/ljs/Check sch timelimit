@@ -1,0 +1,5 @@
+foreach ($n in 'FRS-Network-Watch','WSL-AutoStart') {
+  $x = Export-ScheduledTask -TaskName $n
+  $m = [regex]::Match($x, '<ExecutionTimeLimit>(.*?)</ExecutionTimeLimit>')
+  "$n : " + $(if ($m.Success) { $m.Groups[1].Value } else { '항목 없음 → 기본 72시간 적용' })
+}
