@@ -1,0 +1,46 @@
+# 0) 감시 스크립트가 WSL을 건드리지 않게 막기 (증거 보존)
+New-Item -ItemType File -Force C:\ProgramData\FRSNetworkWatch\maintenance.flag | Out-Null
+
+$d = "C:\Users\admin\Desktop\ALGN\wifi_stuck_$(Get-Date -Format yyyyMMdd_HHmmss)"
+New-Item -ItemType Directory -Force $d | Out-Null
+$since = (Get-Date).AddMinutes(-60)
+
+# 1) 어댑터가 살아 있는가 (드라이버 수준)
+Get-NetAdapter | Format-Table Name,InterfaceDescription,Status,MediaConnectionState,LinkSpeed,DriverVersion -AutoSize | Out-File "$d\1_adapter.txt" -Width 300
+Get-PnpDevice -Class Net | Format-Table Status,FriendlyName,InstanceId -AutoSize | Out-File "$d\1_adapter.txt" -Append -Width 300
+
+# 2) 무선 연결 / 주변 AP가 보이는가
+netsh wlan show interfaces | Out-File "$d\2_wlan_interfaces.txt"
+netsh wlan show networks mode=bssid | Out-File "$d\2_wlan_networks.txt"
+
+# 3) IP를 받았는가
+ipconfig /all | Out-File "$d\3_ipconfig.txt"
+
+# 4) 데이터가 흐르는가
+ping -n 3 -w 1000 10.249.138.1   | Out-File "$d\4_ping.txt"
+ping -n 3 -w 1000 10.244.201.165 | Out-File "$d\4_ping.txt" -Append
+
+# 5) 최근 1시간 무선 이벤트
+Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-WLAN-AutoConfig/Operational';StartTime=$since} -ErrorAction SilentlyContinue |
+  Sort-Object TimeCreated | Format-Table TimeCreated,Id,@{n='Msg';e={$_.Message -replace '\s+',' '}} -Wrap |
+  Out-File "$d\5_wlan_events.txt" -Width 400
+
+# 6) 최근 1시간 시스템 이벤트 (드라이버 4003/8000, DHCP, 장치 변화)
+Get-WinEvent -FilterHashtable @{LogName='System';StartTime=$since} -ErrorAction SilentlyContinue |
+  Where-Object { $_.ProviderName -match 'Netwtw|WLAN|Dhcp|NDIS|Tcpip|Kernel-PnP|NetAdapter|Hyper-V' } |
+  Sort-Object TimeCreated | Format-Table TimeCreated,ProviderName,Id,@{n='Msg';e={$_.Message -replace '\s+',' '}} -Wrap |
+  Out-File "$d\6_system_events.txt" -Width 400
+
+# 7) WSL 상태 (멈춰 있으면 15초 뒤 넘어감)
+$j = Start-Job { wsl.exe -l -v }
+if (Wait-Job $j -Timeout 15) { Receive-Job $j | Out-File "$d\7_wsl.txt" } else { 'wsl -l -v 15s no response' | Out-File "$d\7_wsl.txt" }
+Get-ScheduledTask -TaskName 'FRS-Network-Watch','WSL-AutoStart' -ErrorAction SilentlyContinue | Select TaskName,State | Out-File "$d\7_wsl.txt" -Append
+
+# 8) 감시 로그 + wlan report
+Get-Content C:\ProgramData\FRSNetworkWatch\watch.log -Tail 100 -ErrorAction SilentlyContinue | Out-File "$d\8_watch_log.txt"
+Get-Content C:\ProgramData\FRSNetworkWatch\wifi.log  -Tail 200 -ErrorAction SilentlyContinue | Out-File "$d\8_wifi_log.txt"
+netsh wlan show wlanreport | Out-Null
+Copy-Item C:\ProgramData\Microsoft\Windows\WlanReport\wlan-report-latest.html $d -ErrorAction SilentlyContinue
+
+Compress-Archive $d "$d.zip" -Force
+"저장 완료: $d.zip"
